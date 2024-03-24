@@ -175,14 +175,6 @@
     function submit() {
       $.LoadingOverlay('show');
 
-      // Read the selected file
-      const fileInput = $('#file')[0];
-      if (fileInput.files.length === 0) {
-        $.LoadingOverlay('hide');
-        alert('Please select a file.');
-        return;
-      }
-
       const file = fileInput.files[0];
       const fr = new FileReader();
       fr.onload = function (e) {
