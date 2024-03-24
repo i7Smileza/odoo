@@ -117,7 +117,7 @@
         <div class="col-12">
           <label for="card-o">
             <i class="fa fa-id-card-o"></i> รหัสพนักงาน</label>
-          <input type="text" id="phone" name="phone" maxlength="10" class="form-control" placeholder="กรุณากรอก รหัสพนักงาน"
+          <input type="text" id="id" name="id" maxlength="10" class="form-control" placeholder="กรุณากรอก รหัสพนักงาน"
             required>
           <div class="invalid-feedback">
             กรุณากรอกรหัสพนักงาน
@@ -135,18 +135,18 @@
         </div>
 
         <div class="col-12">
-          <label for="place">
+          <label for="locationform">
             <i class="fa-solid fa-envelope"></i> ย้ายจากสาขา</label>
-          <input type="text" id="place" name="place" class="form-control" placeholder="กรุณากรอก ย้ายจากสาขา" required>
+          <input type="text" id="locationform" name="locationform" class="form-control" placeholder="กรุณากรอก ย้ายจากสาขา" required>
           <div class="invalid-feedback">
             กรุณากรอกย้ายจากสาขา
           </div>
         </div>
 
         <div class="col-12">
-          <label for="device">
+          <label for="locationto">
             <i class="fa fa-rocket" aria-hidden="true"></i> ย้ายไปใช้ที่สาขา </label>
-          <input type="text" id="device" name="device" class="form-control" placeholder="กรุณากรอก ย้ายไปใช้ที่สาขา" required>
+          <input type="text" id="locationto" name="locationto" class="form-control" placeholder="กรุณากรอก ย้ายไปใช้ที่สาขา" required>
           <div class="invalid-feedback">
             กรุณากรอก ย้ายไปใช้ที่สาขา
           </div>
@@ -192,11 +192,10 @@
           opt: 'savedata',
           uid: liff.getDecodedIDToken().sub,
           name: $('#name').val(),
+          id: $('#id').val(),
           phone: $('#phone').val(),
-          device: $('#device').val(),
-          problem: $('#problem').val(),
-          place: $('#place').val(),
-          file: base64File, // Add the Base64-encoded file to the data object
+          locationform: $('#locationform').val(),
+          locationto: $('#locationto').val(),          
         };
 
         // Send the AJAX request with the file data
