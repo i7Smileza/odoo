@@ -173,8 +173,13 @@
       })
     })
     function submit() {
-      $.LoadingOverlay('show');
-      
+      $.LoadingOverlay('show');  
+
+      const file = fileInput.files[0];
+      const fr = new FileReader();
+      fr.onload = function (e) {
+        const base64File = e.target.result.replace(/^.*,/, '');
+
         let data = {
           opt: 'savedata',
           uid: liff.getDecodedIDToken().sub,
