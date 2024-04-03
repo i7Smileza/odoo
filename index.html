@@ -137,7 +137,17 @@
         <div class="col-12">
           <label for="locationform">
             <i class="fa fa-rocket" aria-hidden="true"></i> ย้ายจากสาขา</label>
-          <input type="text" id="locationform" name="locationform" class="form-control" placeholder="กรุณากรอก ย้ายจากสาขา" required>
+           <select name="locationform" id="locationform">
+              <option value="" selected disabled>เลือกสาขา</option>
+              <option value="สาขาA"selected>สาขาA</option>
+              <option value="สาขาB"selected>สาขาB</option>
+              <option value="สาขาC"selected>สาขาC</option>
+              <option value="สาขาD"selected>สาขาD</option>
+              <option value="สาขาE"selected>สาขาE</option>
+              <option value="สาขาF"selected>สาขาF</option>
+
+           </select>            
+              
           <div class="invalid-feedback">
             กรุณากรอกย้ายจากสาขา
           </div>
