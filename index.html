@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Transfer user odoo </title>
- <!-- font-awesome@6.2.0 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <!-- font-awesome@6.2.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
-    <!-- jquery@3.6.0 -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <!-- jquery@3.6.0 -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -19,15 +19,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@200;300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai');
-/* @import url('https://fonts.googleapis.com/css2?family=Prompt'); */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai');
+    /* @import url('https://fonts.googleapis.com/css2?family=Prompt'); */
 
     * {
       box-sizing: border-box;
       font-family: 'Noto Sans Thai', sans-serif;
     }
+
     body {
       background: rgb(252, 233, 233);
       background: linear-gradient(0deg, rgba(252, 233, 233, 1) 0%, rgba(224, 244, 241, 1) 26%, rgba(255, 255, 255, 1) 71%);
@@ -127,8 +132,8 @@
         <div class="col-12">
           <label for="phone">
             <i class="fa-solid fa-phone"></i> เบอร์โทร</label>
-          <input type="text" id="phone" name="phone" maxlength="10" class="form-control" placeholder="กรุณากรอก เบอร์โทร"
-            required>
+          <input type="text" id="phone" name="phone" maxlength="10" class="form-control"
+            placeholder="กรุณากรอก เบอร์โทร" required>
           <div class="invalid-feedback">
             กรุณากรอกเบอร์โทร
           </div>
@@ -137,282 +142,332 @@
         <div class="col-12">
           <label for="locationform">
             <i class="fa fa-rocket" aria-hidden="true"></i> ย้ายจากสาขา</label>
-           <select name="locationform" id="locationform" maxlength="10" class="form-control" placeholder="กรุณากรอก สาขาย้ายออก"
-            required>
-<option value="" selected disabled> เลือกสาขา </option>
-<option value="BBDG1_TG FONE สาขาบิ๊กซีบ้านดุง (จ.อุดรธานี)"selected>BBDG1_TG FONE สาขาบิ๊กซีบ้านดุง (จ.อุดรธานี)</option>
-<option value="BBPE1_TG FONE บิ๊กซี บางพลี"selected>BBPE1_TG FONE บิ๊กซี บางพลี</option>
-<option value="BHMK1_TG FONE บิ๊กซี หัวหมาก ชั้น 1"selected>BHMK1_TG FONE บิ๊กซี หัวหมาก ชั้น 1</option>
-<option value="BHMK4_Samsung (SIS) Huamark Town Center บิ๊กซีหัวหมาก"selected>BHMK4_Samsung (SIS) Huamark Town Center บิ๊กซีหัวหมาก</option>
-<option value="BNSW3_tg บิ๊กซี นครสวรรค์ (Kiosk)"selected>BNSW3_tg บิ๊กซี นครสวรรค์ (Kiosk)</option>
-<option value="BNSW5_tg kiosk วี-สแควร์พลาซ่า บิ๊กซีนครสวรรค์"selected>BNSW5_tg kiosk วี-สแควร์พลาซ่า บิ๊กซีนครสวรรค์</option>
-<option value="BPTY1_TG FONE สาขาบิ๊กซีพัทยา 3 (กลาง)"selected>BPTY1_TG FONE สาขาบิ๊กซีพัทยา 3 (กลาง)</option>
-<option value="BPTY2_SAMSUNG SIS บิ๊กซี พัทยากลาง"selected>BPTY2_SAMSUNG SIS บิ๊กซี พัทยากลาง</option>
-<option value="BRAD2_TG FONE บิ๊กซีราชบุรี"selected>BRAD2_TG FONE บิ๊กซีราชบุรี</option>
-<option value="BSUK3_VIVO SHOP บิ๊กซีสุขสวัสดิ์"selected>BSUK3_VIVO SHOP บิ๊กซีสุขสวัสดิ์</option>
-<option value="BSWG1_VIVO SHOP บิ๊กซีสุวินทวงศ์"selected>BSWG1_VIVO SHOP บิ๊กซีสุวินทวงศ์</option>
-<option value="BTAK1_TG FONE บิ๊กซีท่าตะโก"selected>BTAK1_TG FONE บิ๊กซีท่าตะโก</option>
-<option value="BTAK2_Samsung (SIS) บิ๊กซีท่าตะโก"selected>BTAK2_Samsung (SIS) บิ๊กซีท่าตะโก</option>
-<option value="BWCB1_TG FONE บิ๊กซีวิเชียรบุรี"selected>BWCB1_TG FONE บิ๊กซีวิเชียรบุรี</option>
-<option value="CAYA1_XIAOMI SHOP เซ็นทรัลอยุธยา"selected>CAYA1_XIAOMI SHOP เซ็นทรัลอยุธยา</option>
-<option value="CAYA2_TG FONE เซ็นทรัลอยุธยา"selected>CAYA2_TG FONE เซ็นทรัลอยุธยา</option>
-<option value="CAYA3_Samsung เซ็นทรัลอยุธยา"selected>CAYA3_Samsung เซ็นทรัลอยุธยา</option>
-<option value="CBNA2_TG FONE เซ็นทรัล บางนา (ร้าน2)"selected>CBNA2_TG FONE เซ็นทรัล บางนา (ร้าน2)</option>
-<option value="CBYI1_OPPO SHOP เซ็นทรัลเวสเกต"selected>CBYI1_OPPO SHOP เซ็นทรัลเวสเกต</option>
-<option value="CBYI2_TG FONE เซ็นทรัลเวสเกต"selected>CBYI2_TG FONE เซ็นทรัลเวสเกต</option>
-<option value="CBYI3_TG Smart Life เซ็นทรัลเวสเกต"selected>CBYI3_TG Smart Life เซ็นทรัลเวสเกต</option>
-<option value="CBYI4_Realme kiosk เซ็นทรัลเวสเกต"selected>CBYI4_Realme kiosk เซ็นทรัลเวสเกต</option>
-<option value="CCAP1_TG FONE เซ็นทรัลแอร์พอร์ท เชียงใหม่"selected>CCAP1_TG FONE เซ็นทรัลแอร์พอร์ท เชียงใหม่</option>
-<option value="CCRI1_TG FONE เซ็นทรัลพลาซ่า เชียงราย"selected>CCRI1_TG FONE เซ็นทรัลพลาซ่า เชียงราย</option>
-<option value="CFTV1_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่"selected>CFTV1_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่</option>
-<option value="CFTV2_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่ (KIOSK)"selected>CFTV2_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่ (KIOSK)</option>
-<option value="CHDY1_TG FONE เซ็นทรัล หาดใหญ่"selected>CHDY1_TG FONE เซ็นทรัล หาดใหญ่</option>
-<option value="CKKN1_TG FONE เซ็นทรัล ขอนแก่น"selected>CKKN1_TG FONE เซ็นทรัล ขอนแก่น</option>
-<option value="CKKN2_Samsung : เซ็นทรัล ขอนแก่น"selected>CKKN2_Samsung : เซ็นทรัล ขอนแก่น</option>
-<option value="CLPA2_TG FONE ศูนย์การค้าเซ็นทรัลลำปาง (Kiosk)"selected>CLPA2_TG FONE ศูนย์การค้าเซ็นทรัลลำปาง (Kiosk)</option>
-<option value="CLPW3_Samsung : เซ็นทรัลลาดพร้าว ชั้น 3"selected>CLPW3_Samsung : เซ็นทรัลลาดพร้าว ชั้น 3</option>
-<option value="CLPW7_Huawei เซ็นทรัลลาดพร้าว"selected>CLPW7_Huawei เซ็นทรัลลาดพร้าว</option>
-<option value="CMCH1_TG FONE เซ็นทรัลมหาชัย"selected>CMCH1_TG FONE เซ็นทรัลมหาชัย</option>
-<option value="CNKO1_TG FONE เซ็นทรัลนครศรีธรรมราช"selected>CNKO1_TG FONE เซ็นทรัลนครศรีธรรมราช</option>
-<option value="CNSM1_TG FONE เซ็นทรัลนครราชสีมา (โคราช)"selected>CNSM1_TG FONE เซ็นทรัลนครราชสีมา (โคราช)</option>
-<option value="CNSM2_OPPO SHOP เซ็นทรัลโคราช"selected>CNSM2_OPPO SHOP เซ็นทรัลโคราช</option>
-<option value="CNSM3_SAMSUNG SHOP เซ็นทรัลนครราชสีมา(โคราช)"selected>CNSM3_SAMSUNG SHOP เซ็นทรัลนครราชสีมา(โคราช)</option>
-<option value="CNSM4_tg Kiosk เซ็นทรัลนครราชสีมา"selected>CNSM4_tg Kiosk เซ็นทรัลนครราชสีมา</option>
-<option value="CNSW1_tg เซ็นทรัลนครสวรรค์"selected>CNSW1_tg เซ็นทรัลนครสวรรค์</option>
-<option value="CPKO2_TG FONE เซ็นทรัล ปิ่นเกล้า ชั้น 3"selected>CPKO2_TG FONE เซ็นทรัล ปิ่นเกล้า ชั้น 3</option>
-<option value="CPSL2_TG FONE เซ็นทรัล พิษณุโลก (Kiosk)"selected>CPSL2_TG FONE เซ็นทรัล พิษณุโลก (Kiosk)</option>
-<option value="CRIN1_TG FONE เซ็นทรัล รามอินทรา"selected>CRIN1_TG FONE เซ็นทรัล รามอินทรา</option>
-<option value="CRIN3_TG FONE เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา"selected>CRIN3_TG FONE เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา</option>
-<option value="CRIN4_Samsung เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา"selected>CRIN4_Samsung เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา</option>
-<option value="CRM21_TG FONE เซ็นทรัล พระราม 2 (ห้อง IT-01)"selected>CRM21_TG FONE เซ็นทรัล พระราม 2 (ห้อง IT-01)</option>
-<option value="CRM22_Samsung : เซ็นทรัล พระราม 2 (ชั้น2)"selected>CRM22_Samsung : เซ็นทรัล พระราม 2 (ชั้น2)</option>
-<option value="CRM23_Samsung : เซ็นทรัล พระราม 2 (ชั้น3)"selected>CRM23_Samsung : เซ็นทรัล พระราม 2 (ชั้น3)</option>
-<option value="CRM24_TG FONE เซ็นทรัล พระราม2 (ชั้น3)"selected>CRM24_TG FONE เซ็นทรัล พระราม2 (ชั้น3)</option>
-<option value="CRM27_VIVO เซ็นทรัล พระราม 2 (ชั้น2)"selected>CRM27_VIVO เซ็นทรัล พระราม 2 (ชั้น2)</option>
-<option value="CRM32_TG FONE เซ็นทรัล พระราม 3"selected>CRM32_TG FONE เซ็นทรัล พระราม 3</option>
-<option value="CRM91_TG FONE เซ็นทรัล พระราม 9"selected>CRM91_TG FONE เซ็นทรัล พระราม 9</option>
-<option value="CRM92_vivo Brand Shop (Kiosk) เซ็นทรัล พระราม 9"selected>CRM92_vivo Brand Shop (Kiosk) เซ็นทรัล พระราม 9</option>
-<option value="CRM93_Samsung : เซ็นทรัล พระราม 9 (ชั้น G)"selected>CRM93_Samsung : เซ็นทรัล พระราม 9 (ชั้น G)</option>
-<option value="CRM94_TG FONE:สาขา service เซ็นทรัลพระราม 9 (ชั้น 4)"selected>CRM94_TG FONE:สาขา service เซ็นทรัลพระราม 9 (ชั้น 4)</option>
-<option value="CRYG1_TG FONE เซ็นทรัล ระยอง"selected>CRYG1_TG FONE เซ็นทรัล ระยอง</option>
-<option value="CSIR1_TG FONE เซ็นทรัลศรีราชา"selected>CSIR1_TG FONE เซ็นทรัลศรีราชา</option>
-<option value="CSIR2_XIAOMI SHOP เซ็นทรัลศรีราชา"selected>CSIR2_XIAOMI SHOP เซ็นทรัลศรีราชา</option>
-<option value="CSUM1_TG FONE เซ็นทรัลเฟสติวัลสมุย"selected>CSUM1_TG FONE เซ็นทรัลเฟสติวัลสมุย</option>
-<option value="CSUM2_Samsung : เซ็นทรัลเฟสติวัล สมุย"selected>CSUM2_Samsung : เซ็นทรัลเฟสติวัล สมุย</option>
-<option value="CSUR1_TG FONE เซ็นทรัล สุราษฎร์ธานี"selected>CSUR1_TG FONE เซ็นทรัล สุราษฎร์ธานี</option>
-<option value="CUBN1_TG FONE เซ็นทรัล อุบลราชธานี"selected>CUBN1_TG FONE เซ็นทรัล อุบลราชธานี</option>
-<option value="CWAT1_TG FONE เซ็นทรัล แจ้งวัฒนะ (ชั้น 4)"selected>CWAT1_TG FONE เซ็นทรัล แจ้งวัฒนะ (ชั้น 4)</option>
-<option value="CWEV1_tg เซ็นทรัลเวสวิลล์"selected>CWEV1_tg เซ็นทรัลเวสวิลล์</option>
-<option value="CWEV2_Realme Shop เซ็นทรัลเวสวิลล์"selected>CWEV2_Realme Shop เซ็นทรัลเวสวิลล์</option>
-<option value="CWOR3_Samsung:เซ็นทรัลเวิลด์"selected>CWOR3_Samsung:เซ็นทรัลเวิลด์</option>
-<option value="CWOR5_TG FONE เซ็นทรัลเวิลด์ ( ชั้น5 )"selected>CWOR5_TG FONE เซ็นทรัลเวิลด์ ( ชั้น5 )</option>
-<option value="CWSW1_TG FONE เซ็นทรัลวงศ์สว่าง Town Center"selected>CWSW1_TG FONE เซ็นทรัลวงศ์สว่าง Town Center</option>
-<option value="FRDA1_TG FONE บิ๊กซี รัชดาฯ"selected>FRDA1_TG FONE บิ๊กซี รัชดาฯ</option>
-<option value="FRM42_TG FONE บิ๊กซี พระราม 4"selected>FRM42_TG FONE บิ๊กซี พระราม 4</option>
-<option value="KMBK1_TG FONE สาขามาบุญครอง"selected>KMBK1_TG FONE สาขามาบุญครอง</option>
-<option value="KMBK5_Samsung : มาบุญครอง (ชั้น 4)"selected>KMBK5_Samsung : มาบุญครอง (ชั้น 4)</option>
-<option value="KMBK6_Honor : มาบุญครอง (ชั้น 4)"selected>KMBK6_Honor : มาบุญครอง (ชั้น 4)</option>
-<option value="KMBK7_TG FONE:สาขา service MBK (ชั้น 5)"selected>KMBK7_TG FONE:สาขา service MBK (ชั้น 5)</option>
-<option value="LATG1_TG FONE โลตัส อ่างทอง"selected>LATG1_TG FONE โลตัส อ่างทอง</option>
-<option value="LBAB1_TG FONE โลตัส บ้านบึง (Kiosk)"selected>LBAB1_TG FONE โลตัส บ้านบึง (Kiosk)</option>
-<option value="LBAB2_VIVO SHOP โลตัสบ้านบึง"selected>LBAB2_VIVO SHOP โลตัสบ้านบึง</option>
-<option value="LBAB3_AIS BUDDY โลตัส บ้านบึง"selected>LBAB3_AIS BUDDY โลตัส บ้านบึง</option>
-<option value="LBAB4_OPPO SHOP โลตัส บ้านบึง"selected>LBAB4_OPPO SHOP โลตัส บ้านบึง</option>
-<option value="LBAB5_Samsung (SIS) โลตัส บ้านบึง"selected>LBAB5_Samsung (SIS) โลตัส บ้านบึง</option>
-<option value="LBBO1_TG FONE สาขาโลตัสบางบ่อ (Kiosk)"selected>LBBO1_TG FONE สาขาโลตัสบางบ่อ (Kiosk)</option>
-<option value="LBKE3_Samsung (SIS) โลตัสบางแค"selected>LBKE3_Samsung (SIS) โลตัสบางแค</option>
-<option value="LBLN1_TG FONE โลตัสบางเลน"selected>LBLN1_TG FONE โลตัสบางเลน</option>
-<option value="LBOW2_Samsung (SIS) โลตัสบ่อวิน"selected>LBOW2_Samsung (SIS) โลตัสบ่อวิน</option>
-<option value="LBPK2_TG FONE โลตัส บางปะกอก (ชั้น3)"selected>LBPK2_TG FONE โลตัส บางปะกอก (ชั้น3)</option>
-<option value="LBSP1_TG FONE โลตัส บึงสามพัน"selected>LBSP1_TG FONE โลตัส บึงสามพัน</option>
-<option value="LBUH1_TG FONE โลตัสบัวใหญ่"selected>LBUH1_TG FONE โลตัสบัวใหญ่</option>
-<option value="LBWN1_TG FONE โลตัส บ่อวิน"selected>LBWN1_TG FONE โลตัส บ่อวิน</option>
-<option value="LBYI1_TG FONE โลตัส สาขาบางใหญ่"selected>LBYI1_TG FONE โลตัส สาขาบางใหญ่</option>
-<option value="LBYI2_Samsung : โลตัส บางใหญ่"selected>LBYI2_Samsung : โลตัส บางใหญ่</option>
-<option value="LCAM1_TG FONE สาขาโลตัสชะอำ (Kiosk)"selected>LCAM1_TG FONE สาขาโลตัสชะอำ (Kiosk)</option>
-<option value="LCAN2_tg โลตัสจันทบุรี"selected>LCAN2_tg โลตัสจันทบุรี</option>
-<option value="LCHP1_TG FONE โลตัส ชุมพร"selected>LCHP1_TG FONE โลตัส ชุมพร</option>
-<option value="LCHP2_Samsung (SIS) โลตัสชุมพร"selected>LCHP2_Samsung (SIS) โลตัสชุมพร</option>
-<option value="LCHY1_TG FONE โลตัสเชียงยืน"selected>LCHY1_TG FONE โลตัสเชียงยืน</option>
-<option value="LCKM1_TG FONE สาขาโลตัสเชียงคำ (จังหวัดพะเยา)"selected>LCKM1_TG FONE สาขาโลตัสเชียงคำ (จังหวัดพะเยา)</option>
-<option value="LCMT1_Telewiz: โลตัส จอมทอง เชียงใหม่"selected>LCMT1_Telewiz: โลตัส จอมทอง เชียงใหม่</option>
-<option value="LCMT2_TG FONE โลตัส จอมทอง เชียงใหม่"selected>LCMT2_TG FONE โลตัส จอมทอง เชียงใหม่</option>
-<option value="LCPE1_TG FONE โลตัส ชุมแพ"selected>LCPE1_TG FONE โลตัส ชุมแพ</option>
-<option value="LCRI1_Telewiz โลตัสแม่จัน"selected>LCRI1_Telewiz โลตัสแม่จัน</option>
-<option value="LCYP2_Realme โลตัสชัยภูมิ"selected>LCYP2_Realme โลตัสชัยภูมิ</option>
-<option value="LCYP3_TG FONE โลตัสชัยภูมิ"selected>LCYP3_TG FONE โลตัสชัยภูมิ</option>
-<option value="LDAN1_TG FONE โลตัสด่านขุนทด"selected>LDAN1_TG FONE โลตัสด่านขุนทด</option>
-<option value="LHAT1_TG FONE โลตัสหัวทะเลโคราช"selected>LHAT1_TG FONE โลตัสหัวทะเลโคราช</option>
-<option value="LHAT2_tg Kiosk โลตัสหัวทะเล 2"selected>LHAT2_tg Kiosk โลตัสหัวทะเล 2</option>
-<option value="LJOH1_TG FONE โลตัสจอหอ"selected>LJOH1_TG FONE โลตัสจอหอ</option>
-<option value="LKBI2_TG FONE โลตัส กระบี่"selected>LKBI2_TG FONE โลตัส กระบี่</option>
-<option value="LKKN2_TG FONE โลตัสขอนแก่น 2 (Kiosk)"selected>LKKN2_TG FONE โลตัสขอนแก่น 2 (Kiosk)</option>
-<option value="LKTB1_Telewiz โลตัสกระทุ่มแบน (สมุทรสาคร)"selected>LKTB1_Telewiz โลตัสกระทุ่มแบน (สมุทรสาคร)</option>
-<option value="LKUM1_Samsung (SIS) โลตัส คำเที่ยง (เชียงใหม่)"selected>LKUM1_Samsung (SIS) โลตัส คำเที่ยง (เชียงใหม่)</option>
-<option value="LKUM3_TG FONE โลตัส คำเที่ยง (Smart Phone)"selected>LKUM3_TG FONE โลตัส คำเที่ยง (Smart Phone)</option>
-<option value="LKUM4_VIVO SHOP โลตัส คำเที่ยง"selected>LKUM4_VIVO SHOP โลตัส คำเที่ยง</option>
-<option value="LKUP1_TG FONE โลตัสกุมภวาปี อุดรฯ"selected>LKUP1_TG FONE โลตัสกุมภวาปี อุดรฯ</option>
-<option value="LKUP2_TG FONE (H2O) โลตัสกุมภวาปี"selected>LKUP2_TG FONE (H2O) โลตัสกุมภวาปี</option>
-<option value="LLAM1_TG FONE โลตัสลำปลายมาศ"selected>LLAM1_TG FONE โลตัสลำปลายมาศ</option>
-<option value="LLKL2_TG FONE สาขาโลตัสเลียบคลอง 2"selected>LLKL2_TG FONE สาขาโลตัสเลียบคลอง 2</option>
-<option value="LLSI1_TG FONE โลตัส หลักสี่"selected>LLSI1_TG FONE โลตัส หลักสี่</option>
-<option value="LMEN2_TG FONE โลตัส มีนบุรี (Kiosk 2)"selected>LMEN2_TG FONE โลตัส มีนบุรี (Kiosk 2)</option>
-<option value="LNAR1_TG FONE โลตัส นางรอง"selected>LNAR1_TG FONE โลตัส นางรอง</option>
-<option value="LNAW3_TG FONE โลตัส นวนคร ชั้น2"selected>LNAW3_TG FONE โลตัส นวนคร ชั้น2</option>
-<option value="LNCS1_TG FONE โลตัสนครชัยศรี"selected>LNCS1_TG FONE โลตัสนครชัยศรี</option>
-<option value="LNOJ1_Samsung (SIS) โลตัส หนองจอก (KIOSK)"selected>LNOJ1_Samsung (SIS) โลตัส หนองจอก (KIOSK)</option>
-<option value="LNRP2_AIS SHOP โลตัส นอร์ทราชพฤกษ์"selected>LNRP2_AIS SHOP โลตัส นอร์ทราชพฤกษ์</option>
-<option value="LPAC1_TG FONE โลตัสประโคนชัย"selected>LPAC1_TG FONE โลตัสประโคนชัย</option>
-<option value="LPBR2_TG FONE โลตัส ปราณบุรี"selected>LPBR2_TG FONE โลตัส ปราณบุรี</option>
-<option value="LPCT1_TG FONE โลตัส พิจิตร ท่าหลวง"selected>LPCT1_TG FONE โลตัส พิจิตร ท่าหลวง</option>
-<option value="LPKT2_TG FONE โลตัส ภูเก็ต"selected>LPKT2_TG FONE โลตัส ภูเก็ต</option>
-<option value="LPNK1_TG FONE โลตัส พนมสารคาม"selected>LPNK1_TG FONE โลตัส พนมสารคาม</option>
-<option value="LPSL1_TG FONE โลตัส พิษณุโลก"selected>LPSL1_TG FONE โลตัส พิษณุโลก</option>
-<option value="LPSL2_TG FONE โลตัส พิษณุโลก ท่าทอง"selected>LPSL2_TG FONE โลตัส พิษณุโลก ท่าทอง</option>
-<option value="LPTC1_TG FONE โลตัส ปักธงชัย"selected>LPTC1_TG FONE โลตัส ปักธงชัย</option>
-<option value="LPTM1_TG FONE Kiosk โลตัส ปทุมธานี"selected>LPTM1_TG FONE Kiosk โลตัส ปทุมธานี</option>
-<option value="LPTN1_TG FONE โลตัส พัฒนาการ"selected>LPTN1_TG FONE โลตัส พัฒนาการ</option>
-<option value="LPTO1_TG FONE โลตัสปักธงชัย 1"selected>LPTO1_TG FONE โลตัสปักธงชัย 1</option>
-<option value="LPTO2_VIVO SHOP โลตัสปักธงชัย 2"selected>LPTO2_VIVO SHOP โลตัสปักธงชัย 2</option>
-<option value="LPTY1_Samsung (SIS) โลตัส พัทยาใต้"selected>LPTY1_Samsung (SIS) โลตัส พัทยาใต้</option>
-<option value="LPYA1_TG FONE โลตัส พะเยา (Kiosk)"selected>LPYA1_TG FONE โลตัส พะเยา (Kiosk)</option>
-<option value="LRM11_TG FONE โลตัส พระราม 1"selected>LRM11_TG FONE โลตัส พระราม 1</option>
-<option value="LRM32_TG FONE โลตัส พระราม 3 (Kiosk)"selected>LRM32_TG FONE โลตัส พระราม 3 (Kiosk)</option>
-<option value="LSIK1_TG FONE โลตัส สีคิ้ว"selected>LSIK1_TG FONE โลตัส สีคิ้ว</option>
-<option value="LSSK1_TG FONE โลตัส สมุทรสงคราม (Kiosk)"selected>LSSK1_TG FONE โลตัส สมุทรสงคราม (Kiosk)</option>
-<option value="LSUG1_TG FONE โลตัสสังขะ"selected>LSUG1_TG FONE โลตัสสังขะ</option>
-<option value="LSUR3_TG FONE โลตัสสุราษฎร์ธานี"selected>LSUR3_TG FONE โลตัสสุราษฎร์ธานี</option>
-<option value="LTAK1_TG FONE โลตัส ตาก"selected>LTAK1_TG FONE โลตัส ตาก</option>
-<option value="LTAK2_TG FONE โลตัสตาคลี"selected>LTAK2_TG FONE โลตัสตาคลี</option>
-<option value="LTPN2_TG FONE โลตัสธาตุพนม"selected>LTPN2_TG FONE โลตัสธาตุพนม</option>
-<option value="LTPN3_OPPO SHOP โลตัสธาตุพนม"selected>LTPN3_OPPO SHOP โลตัสธาตุพนม</option>
-<option value="LTPN4_Samsung SIS โลตัสธาตุพนม"selected>LTPN4_Samsung SIS โลตัสธาตุพนม</option>
-<option value="LTWN2_TG FONE โลตัส ติวานนท์"selected>LTWN2_TG FONE โลตัส ติวานนท์</option>
-<option value="LUBN2_TG FONE โลตัส อุบลราชธานี"selected>LUBN2_TG FONE โลตัส อุบลราชธานี</option>
-<option value="LUBN3_H2O โลตัส อุบลราชธานี"selected>LUBN3_H2O โลตัส อุบลราชธานี</option>
-<option value="LUBN4_Samsung (SIS) โลตัส อุบลราชธานี"selected>LUBN4_Samsung (SIS) โลตัส อุบลราชธานี</option>
-<option value="LUDI1_TG FONE โลตัสอุตรดิตถ์"selected>LUDI1_TG FONE โลตัสอุตรดิตถ์</option>
-<option value="MBKE2_TG FONE เดอะมอลล์ บางแค ชั้น2"selected>MBKE2_TG FONE เดอะมอลล์ บางแค ชั้น2</option>
-<option value="MBKE5_SAMSUNG SHOP เดอะมอลล์บางแค"selected>MBKE5_SAMSUNG SHOP เดอะมอลล์บางแค</option>
-<option value="MBKE6_Realme SHOP เดอะมอลล์บางแค"selected>MBKE6_Realme SHOP เดอะมอลล์บางแค</option>
-<option value="MBKP5_TG FONE เดอะมอลล์บางกะปิ (ร้าน 2)"selected>MBKP5_TG FONE เดอะมอลล์บางกะปิ (ร้าน 2)</option>
-<option value="MBKP7_VIVO Shop เดอะมอลล์บางกะปิ"selected>MBKP7_VIVO Shop เดอะมอลล์บางกะปิ</option>
-<option value="MNGW1_TG FONE เดอะมอลล์ งามวงศ์วาน (ชั้น 6)"selected>MNGW1_TG FONE เดอะมอลล์ งามวงศ์วาน (ชั้น 6)</option>
-<option value="MNGW3_Samsung : เดอะมอลล์ งามวงศ์วาน (ชั้น 6)"selected>MNGW3_Samsung : เดอะมอลล์ งามวงศ์วาน (ชั้น 6)</option>
-<option value="MNSM1_TG FONE เดอะมอลล์ นครราชสีมา"selected>MNSM1_TG FONE เดอะมอลล์ นครราชสีมา</option>
-<option value="MNSM3_SAMSUNG SHOP เดอะมอลล์นครราชสีมา(โคราช)"selected>MNSM3_SAMSUNG SHOP เดอะมอลล์นครราชสีมา(โคราช)</option>
-<option value="MTPA3_TG FONE เดอะมอลล์ ท่าพระ (ชั้น 3)"selected>MTPA3_TG FONE เดอะมอลล์ ท่าพระ (ชั้น 3)</option>
-<option value="OAYA2_OPPO SHOP อยุธยาซิติ้พาร์ค G12 สาขา 1"selected>OAYA2_OPPO SHOP อยุธยาซิติ้พาร์ค G12 สาขา 1</option>
-<option value="OAYA3_OPPO SHOP อยุธยาซิติ้พาร์ค G66 สาขา 2"selected>OAYA3_OPPO SHOP อยุธยาซิติ้พาร์ค G66 สาขา 2</option>
-<option value="OBNA1_TG FONE เมกะบางนา"selected>OBNA1_TG FONE เมกะบางนา</option>
-<option value="OBRM2_SAMSUNG SHOP ทวีกิจบุรีรัมย์"selected>OBRM2_SAMSUNG SHOP ทวีกิจบุรีรัมย์</option>
-<option value="OBRM3_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 1"selected>OBRM3_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 1</option>
-<option value="OBRM4_TG FONE ทวีกิจซุปเปอร์เซ็นเตอร์ บุรีรัมย์"selected>OBRM4_TG FONE ทวีกิจซุปเปอร์เซ็นเตอร์ บุรีรัมย์</option>
-<option value="OBRM5_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 2"selected>OBRM5_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 2</option>
-<option value="OBSN1_Samsung (SIS) แหลมทอง บางแสน"selected>OBSN1_Samsung (SIS) แหลมทอง บางแสน</option>
-<option value="OCUD1_TG FONE เซ็นทรัลอุดรธานี"selected>OCUD1_TG FONE เซ็นทรัลอุดรธานี</option>
-<option value="OCUD4_TG FONE ตึกคอมอุดรธานี"selected>OCUD4_TG FONE ตึกคอมอุดรธานี</option>
-<option value="OCUD5_Samsung (SIS) ตึกคอมอุดรธานี"selected>OCUD5_Samsung (SIS) ตึกคอมอุดรธานี</option>
-<option value="OESR2_TG FONE อิมพิเรียลเวิลด์สำโรง"selected>OESR2_TG FONE อิมพิเรียลเวิลด์สำโรง</option>
-<option value="OFIL1_TG FONE แฟชั่น ไอส์แลนด์ ชั้น 3"selected>OFIL1_TG FONE แฟชั่น ไอส์แลนด์ ชั้น 3</option>
-<option value="OFNK2_TG FONE Asawann Shopping Complex 1 หนองคาย"selected>OFNK2_TG FONE Asawann Shopping Complex 1 หนองคาย</option>
-<option value="OFPK1_TG FONE ฟิวเจอร์พาร์ค รังสิต ชั้น 3"selected>OFPK1_TG FONE ฟิวเจอร์พาร์ค รังสิต ชั้น 3</option>
-<option value="OFPK3_Samsung : สาขาฟิวเจอร์พาร์ค รังสิต"selected>OFPK3_Samsung : สาขาฟิวเจอร์พาร์ค รังสิต</option>
-<option value="OFPK4_TG FONE:สาขา service ฟิวเจอร์พาร์ค รังสิต"selected>OFPK4_TG FONE:สาขา service ฟิวเจอร์พาร์ค รังสิต</option>
-<option value="OITS3_TG FONE ไอทีสแควร์ (ร้าน 3)"selected>OITS3_TG FONE ไอทีสแควร์ (ร้าน 3)</option>
-<option value="OITS4_Samsung SIS ไอทีสแควร์หลักสี่"selected>OITS4_Samsung SIS ไอทีสแควร์หลักสี่</option>
-<option value="OPTY1_TG FONE ตึกคอม พัทยา"selected>OPTY1_TG FONE ตึกคอม พัทยา</option>
-<option value="OPTY3_tg Terminal 21 พัทยา"selected>OPTY3_tg Terminal 21 พัทยา</option>
-<option value="OSBK3_TG FONE ศูนย์การค้าซีคอนบางแค"selected>OSBK3_TG FONE ศูนย์การค้าซีคอนบางแค</option>
-<option value="OSSQ6_TG FONE ซีคอนสแควร์ ชั้น 2"selected>OSSQ6_TG FONE ซีคอนสแควร์ ชั้น 2</option>
-<option value="OSSQ7_TG FONE ซีคอนสแควร์ ศรีนครินทร์ ชั้น G"selected>OSSQ7_TG FONE ซีคอนสแควร์ ศรีนครินทร์ ชั้น G</option>
-<option value="OSSQ8_TG FONE Smart club ซีคอนสแควร์ ศรีนครินทร์"selected>OSSQ8_TG FONE Smart club ซีคอนสแควร์ ศรีนครินทร์</option>
-<option value="OSTP1_TG FONE ศูนย์การค้าเสริมไทยคอมเพล็กซ์"selected>OSTP1_TG FONE ศูนย์การค้าเสริมไทยคอมเพล็กซ์</option>
-<option value="OSTP2_Realme Kiosk ศูนย์การค้าเสริมไทยคอมเพล็กซ์"selected>OSTP2_Realme Kiosk ศูนย์การค้าเสริมไทยคอมเพล็กซ์</option>
-<option value="OTMI2_SAMSUNG SHOP เทอร์มินอลทเวนตี้วัน(โคราช)"selected>OTMI2_SAMSUNG SHOP เทอร์มินอลทเวนตี้วัน(โคราช)</option>
-<option value="OUCS1_TG FONE:สาขา service ยูไนเต็ด สีลม (ชั้น 3)"selected>OUCS1_TG FONE:สาขา service ยูไนเต็ด สีลม (ชั้น 3)</option>
-<option value="OVSB1_TG FONE ศูนย์การค้ามาร์เก็ตวิลเลจสุวรรณภูมิ"selected>OVSB1_TG FONE ศูนย์การค้ามาร์เก็ตวิลเลจสุวรรณภูมิ</option>
-<option value="RBOW1_Realme โรบินสัน บ่อวิน"selected>RBOW1_Realme โรบินสัน บ่อวิน</option>
-<option value="RBRM1_SAMSUNG SHOP โรบินสันบุรีรัมย์"selected>RBRM1_SAMSUNG SHOP โรบินสันบุรีรัมย์</option>
-<option value="RCHL1_tg โรบินสันฉลอง"selected>RCHL1_tg โรบินสันฉลอง</option>
-<option value="RCYP1_SAMSUNG SHOP โรบินสันชัยภูมิ"selected>RCYP1_SAMSUNG SHOP โรบินสันชัยภูมิ</option>
-<option value="RSKN1_SAMSUNG (SIS) โรบินสันสกลนคร"selected>RSKN1_SAMSUNG (SIS) โรบินสันสกลนคร</option>
-<option value="RSRN1_SAMSUNG SHOP โรบินสันสุรินทร์"selected>RSRN1_SAMSUNG SHOP โรบินสันสุรินทร์</option>
-<option value="SCMA1_TG FONE :สาขา service ฟิวเจอร์ เชียงใหม่"selected>SCMA1_TG FONE :สาขา service ฟิวเจอร์ เชียงใหม่</option>
-<option value="SHAY1_TG FONE :สาขา service เมกา หาดใหญ่"selected>SHAY1_TG FONE :สาขา service เมกา หาดใหญ่</option>
-<option value="SKKN1_TG FONE :สาขา service SY THAI ขอนแก่น"selected>SKKN1_TG FONE :สาขา service SY THAI ขอนแก่น</option>
-<option value="SKOR1_TG FONE :สาขา service STS โคราช"selected>SKOR1_TG FONE :สาขา service STS โคราช</option>
-<option value="SPKT1_TG FONE :สาขา service SMT ภูเก็ต"selected>SPKT1_TG FONE :สาขา service SMT ภูเก็ต</option>
-<option value="SPSL1_TG FONE :สาขา service ฟิวเจอร์ พิษณุโลก"selected>SPSL1_TG FONE :สาขา service ฟิวเจอร์ พิษณุโลก</option>
-<option value="SSUR1_TG FONE :สาขา service SMTสุราษฎร์ธานี"selected>SSUR1_TG FONE :สาขา service SMTสุราษฎร์ธานี</option>
-<option value="SUBN2_TG FONE :สาขา service AITอุบลราชธานี"selected>SUBN2_TG FONE :สาขา service AITอุบลราชธานี</option>
-<option value="SUDO1_TG FONE :สาขา service ASM อุดรธานี"selected>SUDO1_TG FONE :สาขา service ASM อุดรธานี</option>
-<option value="BC001_Consignment Big C:สาขาอำนาจเจริญ"selected>BC001_Consignment Big C:สาขาอำนาจเจริญ</option>
-<option value="BC004_Consignment Big C:สาขาเมกาบางนา"selected>BC004_Consignment Big C:สาขาเมกาบางนา</option>
-<option value="BC005_Consignment Big C:สาขาบางบอน"selected>BC005_Consignment Big C:สาขาบางบอน</option>
-<option value="BC007_Consignment Big C:สาขาบางพลี"selected>BC007_Consignment Big C:สาขาบางพลี</option>
-<option value="BC010_Consignment Big C:สาขาบางปะกอก"selected>BC010_Consignment Big C:สาขาบางปะกอก</option>
-<option value="BC011_Consignment Big C:สาขาบางใหญ่"selected>BC011_Consignment Big C:สาขาบางใหญ่</option>
-<option value="BC014_Consignment Big C:ฉะเชิงเทรา"selected>BC014_Consignment Big C:ฉะเชิงเทรา</option>
-<option value="BC015_Consignment Big C:สาขาฉะเชิงเทรา (ร้าน2)"selected>BC015_Consignment Big C:สาขาฉะเชิงเทรา (ร้าน2)</option>
-<option value="BC016_Consignment Big C:สาขาเชียงใหม่ (ร้าน2)"selected>BC016_Consignment Big C:สาขาเชียงใหม่ (ร้าน2)</option>
-<option value="BC017_Consignment Big C:สาขาแจ้งวัฒนะ 2"selected>BC017_Consignment Big C:สาขาแจ้งวัฒนะ 2</option>
-<option value="BC018_Consignment Big C:สาขาชัยภูมิ"selected>BC018_Consignment Big C:สาขาชัยภูมิ</option>
-<option value="BC020_Consignment Big C:สาขาดาวคะนอง"selected>BC020_Consignment Big C:สาขาดาวคะนอง</option>
-<option value="BC021_Consignment Big C:สาขาดอนเมือง"selected>BC021_Consignment Big C:สาขาดอนเมือง</option>
-<option value="BC022_Consignment Big C:สาขาเอกมัย"selected>BC022_Consignment Big C:สาขาเอกมัย</option>
-<option value="BC023_Consignment Big C:สาขาแฟชั่น ไอแลนด์"selected>BC023_Consignment Big C:สาขาแฟชั่น ไอแลนด์</option>
-<option value="BC027_Consignment Big C:สาขาขอนแก่น"selected>BC027_Consignment Big C:สาขาขอนแก่น</option>
-<option value="BC033_Consignment Big C:สาขาลำลูกกา"selected>BC033_Consignment Big C:สาขาลำลูกกา</option>
-<option value="BC037_Consignment Big C:อิมพีเรียลลาดพร้าว"selected>BC037_Consignment Big C:อิมพีเรียลลาดพร้าว</option>
-<option value="BC038_Consignment Big C:สาขาลาดพร้าว"selected>BC038_Consignment Big C:สาขาลาดพร้าว</option>
-<option value="BC039_Consignment Big C:สาขามหาชัย"selected>BC039_Consignment Big C:สาขามหาชัย</option>
-<option value="BC043_Consignment Big C:สาขานครปฐม"selected>BC043_Consignment Big C:สาขานครปฐม</option>
-<option value="BC044_Consignment Big C:สาขาศรีนครินทร์"selected>BC044_Consignment Big C:สาขาศรีนครินทร์</option>
-<option value="BC045_Consignment Big C:สาขานครสวรรค์"selected>BC045_Consignment Big C:สาขานครสวรรค์</option>
-<option value="BC046_Consignment Big C:สาขาหนองบัว"selected>BC046_Consignment Big C:สาขาหนองบัว</option>
-<option value="BC047_Consignment Big C:สาขาหนองจอก"selected>BC047_Consignment Big C:สาขาหนองจอก</option>
-<option value="BC048_Consignment Big C:สาขาหนองกี่"selected>BC048_Consignment Big C:สาขาหนองกี่</option>
-<option value="BC056_Consignment Big C:สาขาเพชรเกษม"selected>BC056_Consignment Big C:สาขาเพชรเกษม</option>
-<option value="BC057_Consignment Big C:สาขาโพนพิสัย-หนองคาย"selected>BC057_Consignment Big C:สาขาโพนพิสัย-หนองคาย</option>
-<option value="BC061_Consignment Big C:สาขาราชบุรี"selected>BC061_Consignment Big C:สาขาราชบุรี</option>
-<option value="BC062_Consignment Big C:สาขารัชดา"selected>BC062_Consignment Big C:สาขารัชดา</option>
-<option value="BC063_Consignment Big C:สาขารามอินทรา"selected>BC063_Consignment Big C:สาขารามอินทรา</option>
-<option value="BC064_Consignment Big C:สาขาพระราม2 สาขา2"selected>BC064_Consignment Big C:สาขาพระราม2 สาขา2</option>
-<option value="BC065_Consignment Big C:สาขาร่มเกล้า"selected>BC065_Consignment Big C:สาขาร่มเกล้า</option>
-<option value="BC067_Consignment Big C:สาขารังสิต"selected>BC067_Consignment Big C:สาขารังสิต</option>
-<option value="BC071_Consignment Big C:สาขาศรีมหาโพธิ์ (ปราจีน)"selected>BC071_Consignment Big C:สาขาศรีมหาโพธิ์ (ปราจีน)</option>
-<option value="BC072_Consignment Big C:สาขาสกลนคร"selected>BC072_Consignment Big C:สาขาสกลนคร</option>
-<option value="BC073_Consignment Big C:สาขาสุขาภิบาล 3 (ร้าน2)"selected>BC073_Consignment Big C:สาขาสุขาภิบาล 3 (ร้าน2)</option>
-<option value="BC074_Consignment Big C:สาขาสุโขทัย"selected>BC074_Consignment Big C:สาขาสุโขทัย</option>
-<option value="BC076_Consignment Big C:สาขาสุขาภิบาล 3"selected>BC076_Consignment Big C:สาขาสุขาภิบาล 3</option>
-<option value="BC077_Consignment Big C:สาขาสะพานควาย"selected>BC077_Consignment Big C:สาขาสะพานควาย</option>
-<option value="BC078_Consignment Big C:สาขาสำโรง"selected>BC078_Consignment Big C:สาขาสำโรง</option>
-<option value="BC079_Consignment Big C:สาขาสุรินทร์"selected>BC079_Consignment Big C:สาขาสุรินทร์</option>
-<option value="BC080_Consignment Big C:สาขาศรีษะเกษ"selected>BC080_Consignment Big C:สาขาศรีษะเกษ</option>
-<option value="BC081_Consignment Big C:สาขาสุขสวัสดิ์"selected>BC081_Consignment Big C:สาขาสุขสวัสดิ์</option>
-<option value="BC086_Consignment Big C:สาขาลำลูกกา คลอง 4"selected>BC086_Consignment Big C:สาขาลำลูกกา คลอง 4</option>
-<option value="BC087_Consignment Big C:สาขาวิเชียรบุรี (จ.เพชรบูรณ์)"selected>BC087_Consignment Big C:สาขาวิเชียรบุรี (จ.เพชรบูรณ์)</option>
-<option value="BC090_Consignment Big C:สาขาวงศ์สว่าง"selected>BC090_Consignment Big C:สาขาวงศ์สว่าง</option>
-<option value="BC091_Consignment Big C:สาขาบางนา"selected>BC091_Consignment Big C:สาขาบางนา</option>
-<option value="BC094_Consignment Big C:สาขาแจ้งวัฒนะ 1"selected>BC094_Consignment Big C:สาขาแจ้งวัฒนะ 1</option>
-<option value="BC096_Consignment Big C:สาขาหางดง"selected>BC096_Consignment Big C:สาขาหางดง</option>
-<option value="BC105_Consignment Big C:สาขาพระราม 2 สาขา 1"selected>BC105_Consignment Big C:สาขาพระราม 2 สาขา 1</option>
-<option value="BC106_Consignment Big C:สาขารัตนาธิเบศร์ 1"selected>BC106_Consignment Big C:สาขารัตนาธิเบศร์ 1</option>
-<option value="BC108_Consignment Big C สาขาสวนหลวง (MK)"selected>BC108_Consignment Big C สาขาสวนหลวง (MK)</option>
-<option value="BC110_Consignment Big C สาขาสุขาภิบาล 5 (MK)"selected>BC110_Consignment Big C สาขาสุขาภิบาล 5 (MK)</option>
-<option value="BC111_Consignment Big C สาขาทุ่งครุ (MK)"selected>BC111_Consignment Big C สาขาทุ่งครุ (MK)</option>
-<option value="BC116_Consignment Big C:สาขาสระบุรี"selected>BC116_Consignment Big C:สาขาสระบุรี</option>
-<option value="PM001_Power Mall สาขาเดอะมอลล์รามคำแหง (M3)"selected>PM001_Power Mall สาขาเดอะมอลล์รามคำแหง (M3)</option>
-<option value="PM002_Power Mall สาขาเดอะมอลล์โคราช (M10)"selected>PM002_Power Mall สาขาเดอะมอลล์โคราช (M10)</option>
-<option value="PM003_Power Mall สาขาเดอะมอลล์งามวงศ์วาน (M6)"selected>PM003_Power Mall สาขาเดอะมอลล์งามวงศ์วาน (M6)</option>
-<option value="PM004_Power Mall สาขาเดอะมอลล์บางแค (M7)"selected>PM004_Power Mall สาขาเดอะมอลล์บางแค (M7)</option>
-<option value="PM005_Power Mall สาขาเดอะมอลลบางกะปิ (M8)"selected>PM005_Power Mall สาขาเดอะมอลลบางกะปิ (M8)</option>
-<option value="PM006_Power Mall สาขาพารากอน (M11)"selected>PM006_Power Mall สาขาพารากอน (M11)</option>
-<option value="PM007_Power Mall สาขาเอ็มโพเรี่ยม (M9)"selected>PM007_Power Mall สาขาเอ็มโพเรี่ยม (M9)</option>
-<option value="PM008_Power Mall สาขาเดอะมอลล์ท่าพระ (M5)"selected>PM008_Power Mall สาขาเดอะมอลล์ท่าพระ (M5)</option>
-<option value="กรุณากรอกย้ายจากสาขา"selected>กรุณากรอกย้ายจากสาขา</option>          
-           </select>
+          <select name="locationform" id="locationform" maxlength="10" class="form-control"
+            placeholder="กรุณากรอก สาขาย้ายออก" required>
+            <option value="" selected disabled> เลือกสาขา </option>
+            <option value="BBDG1_TG FONE สาขาบิ๊กซีบ้านดุง (จ.อุดรธานี)">BBDG1_TG FONE สาขาบิ๊กซีบ้านดุง (จ.อุดรธานี)
+            </option>
+            <option value="BBPE1_TG FONE บิ๊กซี บางพลี">BBPE1_TG FONE บิ๊กซี บางพลี</option>
+            <option value="BHMK1_TG FONE บิ๊กซี หัวหมาก ชั้น 1">BHMK1_TG FONE บิ๊กซี หัวหมาก ชั้น 1</option>
+            <option value="BHMK4_Samsung (SIS) Huamark Town Center บิ๊กซีหัวหมาก">BHMK4_Samsung (SIS) Huamark Town
+              Center บิ๊กซีหัวหมาก</option>
+            <option value="BNSW3_tg บิ๊กซี นครสวรรค์ (Kiosk)">BNSW3_tg บิ๊กซี นครสวรรค์ (Kiosk)</option>
+            <option value="BNSW5_tg kiosk วี-สแควร์พลาซ่า บิ๊กซีนครสวรรค์">BNSW5_tg kiosk วี-สแควร์พลาซ่า
+              บิ๊กซีนครสวรรค์</option>
+            <option value="BPTY1_TG FONE สาขาบิ๊กซีพัทยา 3 (กลาง)">BPTY1_TG FONE สาขาบิ๊กซีพัทยา 3 (กลาง)</option>
+            <option value="BPTY2_SAMSUNG SIS บิ๊กซี พัทยากลาง">BPTY2_SAMSUNG SIS บิ๊กซี พัทยากลาง</option>
+            <option value="BRAD2_TG FONE บิ๊กซีราชบุรี">BRAD2_TG FONE บิ๊กซีราชบุรี</option>
+            <option value="BSUK3_VIVO SHOP บิ๊กซีสุขสวัสดิ์">BSUK3_VIVO SHOP บิ๊กซีสุขสวัสดิ์</option>
+            <option value="BSWG1_VIVO SHOP บิ๊กซีสุวินทวงศ์">BSWG1_VIVO SHOP บิ๊กซีสุวินทวงศ์</option>
+            <option value="BTAK1_TG FONE บิ๊กซีท่าตะโก">BTAK1_TG FONE บิ๊กซีท่าตะโก</option>
+            <option value="BTAK2_Samsung (SIS) บิ๊กซีท่าตะโก">BTAK2_Samsung (SIS) บิ๊กซีท่าตะโก</option>
+            <option value="BWCB1_TG FONE บิ๊กซีวิเชียรบุรี">BWCB1_TG FONE บิ๊กซีวิเชียรบุรี</option>
+            <option value="CAYA1_XIAOMI SHOP เซ็นทรัลอยุธยา">CAYA1_XIAOMI SHOP เซ็นทรัลอยุธยา</option>
+            <option value="CAYA2_TG FONE เซ็นทรัลอยุธยา">CAYA2_TG FONE เซ็นทรัลอยุธยา</option>
+            <option value="CAYA3_Samsung เซ็นทรัลอยุธยา">CAYA3_Samsung เซ็นทรัลอยุธยา</option>
+            <option value="CBNA2_TG FONE เซ็นทรัล บางนา (ร้าน2)">CBNA2_TG FONE เซ็นทรัล บางนา (ร้าน2)</option>
+            <option value="CBYI1_OPPO SHOP เซ็นทรัลเวสเกต">CBYI1_OPPO SHOP เซ็นทรัลเวสเกต</option>
+            <option value="CBYI2_TG FONE เซ็นทรัลเวสเกต">CBYI2_TG FONE เซ็นทรัลเวสเกต</option>
+            <option value="CBYI3_TG Smart Life เซ็นทรัลเวสเกต">CBYI3_TG Smart Life เซ็นทรัลเวสเกต</option>
+            <option value="CBYI4_Realme kiosk เซ็นทรัลเวสเกต">CBYI4_Realme kiosk เซ็นทรัลเวสเกต</option>
+            <option value="CCAP1_TG FONE เซ็นทรัลแอร์พอร์ท เชียงใหม่">CCAP1_TG FONE เซ็นทรัลแอร์พอร์ท เชียงใหม่</option>
+            <option value="CCRI1_TG FONE เซ็นทรัลพลาซ่า เชียงราย">CCRI1_TG FONE เซ็นทรัลพลาซ่า เชียงราย</option>
+            <option value="CFTV1_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่">CFTV1_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่</option>
+            <option value="CFTV2_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่ (KIOSK)">CFTV2_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่
+              (KIOSK)</option>
+            <option value="CHDY1_TG FONE เซ็นทรัล หาดใหญ่">CHDY1_TG FONE เซ็นทรัล หาดใหญ่</option>
+            <option value="CKKN1_TG FONE เซ็นทรัล ขอนแก่น">CKKN1_TG FONE เซ็นทรัล ขอนแก่น</option>
+            <option value="CKKN2_Samsung : เซ็นทรัล ขอนแก่น">CKKN2_Samsung : เซ็นทรัล ขอนแก่น</option>
+            <option value="CLPA2_TG FONE ศูนย์การค้าเซ็นทรัลลำปาง (Kiosk)">CLPA2_TG FONE ศูนย์การค้าเซ็นทรัลลำปาง
+              (Kiosk)</option>
+            <option value="CLPW3_Samsung : เซ็นทรัลลาดพร้าว ชั้น 3">CLPW3_Samsung : เซ็นทรัลลาดพร้าว ชั้น 3</option>
+            <option value="CLPW7_Huawei เซ็นทรัลลาดพร้าว">CLPW7_Huawei เซ็นทรัลลาดพร้าว</option>
+            <option value="CMCH1_TG FONE เซ็นทรัลมหาชัย">CMCH1_TG FONE เซ็นทรัลมหาชัย</option>
+            <option value="CNKO1_TG FONE เซ็นทรัลนครศรีธรรมราช">CNKO1_TG FONE เซ็นทรัลนครศรีธรรมราช</option>
+            <option value="CNSM1_TG FONE เซ็นทรัลนครราชสีมา (โคราช)">CNSM1_TG FONE เซ็นทรัลนครราชสีมา (โคราช)</option>
+            <option value="CNSM2_OPPO SHOP เซ็นทรัลโคราช">CNSM2_OPPO SHOP เซ็นทรัลโคราช</option>
+            <option value="CNSM3_SAMSUNG SHOP เซ็นทรัลนครราชสีมา(โคราช)">CNSM3_SAMSUNG SHOP เซ็นทรัลนครราชสีมา(โคราช)
+            </option>
+            <option value="CNSM4_tg Kiosk เซ็นทรัลนครราชสีมา">CNSM4_tg Kiosk เซ็นทรัลนครราชสีมา</option>
+            <option value="CNSW1_tg เซ็นทรัลนครสวรรค์">CNSW1_tg เซ็นทรัลนครสวรรค์</option>
+            <option value="CPKO2_TG FONE เซ็นทรัล ปิ่นเกล้า ชั้น 3">CPKO2_TG FONE เซ็นทรัล ปิ่นเกล้า ชั้น 3</option>
+            <option value="CPSL2_TG FONE เซ็นทรัล พิษณุโลก (Kiosk)">CPSL2_TG FONE เซ็นทรัล พิษณุโลก (Kiosk)</option>
+            <option value="CRIN1_TG FONE เซ็นทรัล รามอินทรา">CRIN1_TG FONE เซ็นทรัล รามอินทรา</option>
+            <option value="CRIN3_TG FONE เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา">CRIN3_TG FONE
+              เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา</option>
+            <option value="CRIN4_Samsung เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา">CRIN4_Samsung
+              เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา</option>
+            <option value="CRM21_TG FONE เซ็นทรัล พระราม 2 (ห้อง IT-01)">CRM21_TG FONE เซ็นทรัล พระราม 2 (ห้อง IT-01)
+            </option>
+            <option value="CRM22_Samsung : เซ็นทรัล พระราม 2 (ชั้น2)">CRM22_Samsung : เซ็นทรัล พระราม 2 (ชั้น2)</option>
+            <option value="CRM23_Samsung : เซ็นทรัล พระราม 2 (ชั้น3)">CRM23_Samsung : เซ็นทรัล พระราม 2 (ชั้น3)</option>
+            <option value="CRM24_TG FONE เซ็นทรัล พระราม2 (ชั้น3)">CRM24_TG FONE เซ็นทรัล พระราม2 (ชั้น3)</option>
+            <option value="CRM27_VIVO เซ็นทรัล พระราม 2 (ชั้น2)">CRM27_VIVO เซ็นทรัล พระราม 2 (ชั้น2)</option>
+            <option value="CRM32_TG FONE เซ็นทรัล พระราม 3">CRM32_TG FONE เซ็นทรัล พระราม 3</option>
+            <option value="CRM91_TG FONE เซ็นทรัล พระราม 9">CRM91_TG FONE เซ็นทรัล พระราม 9</option>
+            <option value="CRM92_vivo Brand Shop (Kiosk) เซ็นทรัล พระราม 9">CRM92_vivo Brand Shop (Kiosk) เซ็นทรัล
+              พระราม 9</option>
+            <option value="CRM93_Samsung : เซ็นทรัล พระราม 9 (ชั้น G)">CRM93_Samsung : เซ็นทรัล พระราม 9 (ชั้น G)
+            </option>
+            <option value="CRM94_TG FONE:สาขา service เซ็นทรัลพระราม 9 (ชั้น 4)">CRM94_TG FONE:สาขา service
+              เซ็นทรัลพระราม 9 (ชั้น 4)</option>
+            <option value="CRYG1_TG FONE เซ็นทรัล ระยอง">CRYG1_TG FONE เซ็นทรัล ระยอง</option>
+            <option value="CSIR1_TG FONE เซ็นทรัลศรีราชา">CSIR1_TG FONE เซ็นทรัลศรีราชา</option>
+            <option value="CSIR2_XIAOMI SHOP เซ็นทรัลศรีราชา">CSIR2_XIAOMI SHOP เซ็นทรัลศรีราชา</option>
+            <option value="CSUM1_TG FONE เซ็นทรัลเฟสติวัลสมุย">CSUM1_TG FONE เซ็นทรัลเฟสติวัลสมุย</option>
+            <option value="CSUM2_Samsung : เซ็นทรัลเฟสติวัล สมุย">CSUM2_Samsung : เซ็นทรัลเฟสติวัล สมุย</option>
+            <option value="CSUR1_TG FONE เซ็นทรัล สุราษฎร์ธานี">CSUR1_TG FONE เซ็นทรัล สุราษฎร์ธานี</option>
+            <option value="CUBN1_TG FONE เซ็นทรัล อุบลราชธานี">CUBN1_TG FONE เซ็นทรัล อุบลราชธานี</option>
+            <option value="CWAT1_TG FONE เซ็นทรัล แจ้งวัฒนะ (ชั้น 4)">CWAT1_TG FONE เซ็นทรัล แจ้งวัฒนะ (ชั้น 4)</option>
+            <option value="CWEV1_tg เซ็นทรัลเวสวิลล์">CWEV1_tg เซ็นทรัลเวสวิลล์</option>
+            <option value="CWEV2_Realme Shop เซ็นทรัลเวสวิลล์">CWEV2_Realme Shop เซ็นทรัลเวสวิลล์</option>
+            <option value="CWOR3_Samsung:เซ็นทรัลเวิลด์">CWOR3_Samsung:เซ็นทรัลเวิลด์</option>
+            <option value="CWOR5_TG FONE เซ็นทรัลเวิลด์ ( ชั้น5 )">CWOR5_TG FONE เซ็นทรัลเวิลด์ ( ชั้น5 )</option>
+            <option value="CWSW1_TG FONE เซ็นทรัลวงศ์สว่าง Town Center">CWSW1_TG FONE เซ็นทรัลวงศ์สว่าง Town Center
+            </option>
+            <option value="FRDA1_TG FONE บิ๊กซี รัชดาฯ">FRDA1_TG FONE บิ๊กซี รัชดาฯ</option>
+            <option value="FRM42_TG FONE บิ๊กซี พระราม 4">FRM42_TG FONE บิ๊กซี พระราม 4</option>
+            <option value="KMBK1_TG FONE สาขามาบุญครอง">KMBK1_TG FONE สาขามาบุญครอง</option>
+            <option value="KMBK5_Samsung : มาบุญครอง (ชั้น 4)">KMBK5_Samsung : มาบุญครอง (ชั้น 4)</option>
+            <option value="KMBK6_Honor : มาบุญครอง (ชั้น 4)">KMBK6_Honor : มาบุญครอง (ชั้น 4)</option>
+            <option value="KMBK7_TG FONE:สาขา service MBK (ชั้น 5)">KMBK7_TG FONE:สาขา service MBK (ชั้น 5)</option>
+            <option value="LATG1_TG FONE โลตัส อ่างทอง">LATG1_TG FONE โลตัส อ่างทอง</option>
+            <option value="LBAB1_TG FONE โลตัส บ้านบึง (Kiosk)">LBAB1_TG FONE โลตัส บ้านบึง (Kiosk)</option>
+            <option value="LBAB2_VIVO SHOP โลตัสบ้านบึง">LBAB2_VIVO SHOP โลตัสบ้านบึง</option>
+            <option value="LBAB3_AIS BUDDY โลตัส บ้านบึง">LBAB3_AIS BUDDY โลตัส บ้านบึง</option>
+            <option value="LBAB4_OPPO SHOP โลตัส บ้านบึง">LBAB4_OPPO SHOP โลตัส บ้านบึง</option>
+            <option value="LBAB5_Samsung (SIS) โลตัส บ้านบึง">LBAB5_Samsung (SIS) โลตัส บ้านบึง</option>
+            <option value="LBBO1_TG FONE สาขาโลตัสบางบ่อ (Kiosk)">LBBO1_TG FONE สาขาโลตัสบางบ่อ (Kiosk)</option>
+            <option value="LBKE3_Samsung (SIS) โลตัสบางแค">LBKE3_Samsung (SIS) โลตัสบางแค</option>
+            <option value="LBLN1_TG FONE โลตัสบางเลน">LBLN1_TG FONE โลตัสบางเลน</option>
+            <option value="LBOW2_Samsung (SIS) โลตัสบ่อวิน">LBOW2_Samsung (SIS) โลตัสบ่อวิน</option>
+            <option value="LBPK2_TG FONE โลตัส บางปะกอก (ชั้น3)">LBPK2_TG FONE โลตัส บางปะกอก (ชั้น3)</option>
+            <option value="LBSP1_TG FONE โลตัส บึงสามพัน">LBSP1_TG FONE โลตัส บึงสามพัน</option>
+            <option value="LBUH1_TG FONE โลตัสบัวใหญ่">LBUH1_TG FONE โลตัสบัวใหญ่</option>
+            <option value="LBWN1_TG FONE โลตัส บ่อวิน">LBWN1_TG FONE โลตัส บ่อวิน</option>
+            <option value="LBYI1_TG FONE โลตัส สาขาบางใหญ่">LBYI1_TG FONE โลตัส สาขาบางใหญ่</option>
+            <option value="LBYI2_Samsung : โลตัส บางใหญ่">LBYI2_Samsung : โลตัส บางใหญ่</option>
+            <option value="LCAM1_TG FONE สาขาโลตัสชะอำ (Kiosk)">LCAM1_TG FONE สาขาโลตัสชะอำ (Kiosk)</option>
+            <option value="LCAN2_tg โลตัสจันทบุรี">LCAN2_tg โลตัสจันทบุรี</option>
+            <option value="LCHP1_TG FONE โลตัส ชุมพร">LCHP1_TG FONE โลตัส ชุมพร</option>
+            <option value="LCHP2_Samsung (SIS) โลตัสชุมพร">LCHP2_Samsung (SIS) โลตัสชุมพร</option>
+            <option value="LCHY1_TG FONE โลตัสเชียงยืน">LCHY1_TG FONE โลตัสเชียงยืน</option>
+            <option value="LCKM1_TG FONE สาขาโลตัสเชียงคำ (จังหวัดพะเยา)">LCKM1_TG FONE สาขาโลตัสเชียงคำ (จังหวัดพะเยา)
+            </option>
+            <option value="LCMT1_Telewiz: โลตัส จอมทอง เชียงใหม่">LCMT1_Telewiz: โลตัส จอมทอง เชียงใหม่</option>
+            <option value="LCMT2_TG FONE โลตัส จอมทอง เชียงใหม่">LCMT2_TG FONE โลตัส จอมทอง เชียงใหม่</option>
+            <option value="LCPE1_TG FONE โลตัส ชุมแพ">LCPE1_TG FONE โลตัส ชุมแพ</option>
+            <option value="LCRI1_Telewiz โลตัสแม่จัน">LCRI1_Telewiz โลตัสแม่จัน</option>
+            <option value="LCYP2_Realme โลตัสชัยภูมิ">LCYP2_Realme โลตัสชัยภูมิ</option>
+            <option value="LCYP3_TG FONE โลตัสชัยภูมิ">LCYP3_TG FONE โลตัสชัยภูมิ</option>
+            <option value="LDAN1_TG FONE โลตัสด่านขุนทด">LDAN1_TG FONE โลตัสด่านขุนทด</option>
+            <option value="LHAT1_TG FONE โลตัสหัวทะเลโคราช">LHAT1_TG FONE โลตัสหัวทะเลโคราช</option>
+            <option value="LHAT2_tg Kiosk โลตัสหัวทะเล 2">LHAT2_tg Kiosk โลตัสหัวทะเล 2</option>
+            <option value="LJOH1_TG FONE โลตัสจอหอ">LJOH1_TG FONE โลตัสจอหอ</option>
+            <option value="LKBI2_TG FONE โลตัส กระบี่">LKBI2_TG FONE โลตัส กระบี่</option>
+            <option value="LKKN2_TG FONE โลตัสขอนแก่น 2 (Kiosk)">LKKN2_TG FONE โลตัสขอนแก่น 2 (Kiosk)</option>
+            <option value="LKTB1_Telewiz โลตัสกระทุ่มแบน (สมุทรสาคร)">LKTB1_Telewiz โลตัสกระทุ่มแบน (สมุทรสาคร)</option>
+            <option value="LKUM1_Samsung (SIS) โลตัส คำเที่ยง (เชียงใหม่)">LKUM1_Samsung (SIS) โลตัส คำเที่ยง
+              (เชียงใหม่)</option>
+            <option value="LKUM3_TG FONE โลตัส คำเที่ยง (Smart Phone)">LKUM3_TG FONE โลตัส คำเที่ยง (Smart Phone)
+            </option>
+            <option value="LKUM4_VIVO SHOP โลตัส คำเที่ยง">LKUM4_VIVO SHOP โลตัส คำเที่ยง</option>
+            <option value="LKUP1_TG FONE โลตัสกุมภวาปี อุดรฯ">LKUP1_TG FONE โลตัสกุมภวาปี อุดรฯ</option>
+            <option value="LKUP2_TG FONE (H2O) โลตัสกุมภวาปี">LKUP2_TG FONE (H2O) โลตัสกุมภวาปี</option>
+            <option value="LLAM1_TG FONE โลตัสลำปลายมาศ">LLAM1_TG FONE โลตัสลำปลายมาศ</option>
+            <option value="LLKL2_TG FONE สาขาโลตัสเลียบคลอง 2">LLKL2_TG FONE สาขาโลตัสเลียบคลอง 2</option>
+            <option value="LLSI1_TG FONE โลตัส หลักสี่">LLSI1_TG FONE โลตัส หลักสี่</option>
+            <option value="LMEN2_TG FONE โลตัส มีนบุรี (Kiosk 2)">LMEN2_TG FONE โลตัส มีนบุรี (Kiosk 2)</option>
+            <option value="LNAR1_TG FONE โลตัส นางรอง">LNAR1_TG FONE โลตัส นางรอง</option>
+            <option value="LNAW3_TG FONE โลตัส นวนคร ชั้น2">LNAW3_TG FONE โลตัส นวนคร ชั้น2</option>
+            <option value="LNCS1_TG FONE โลตัสนครชัยศรี">LNCS1_TG FONE โลตัสนครชัยศรี</option>
+            <option value="LNOJ1_Samsung (SIS) โลตัส หนองจอก (KIOSK)">LNOJ1_Samsung (SIS) โลตัส หนองจอก (KIOSK)</option>
+            <option value="LNRP2_AIS SHOP โลตัส นอร์ทราชพฤกษ์">LNRP2_AIS SHOP โลตัส นอร์ทราชพฤกษ์</option>
+            <option value="LPAC1_TG FONE โลตัสประโคนชัย">LPAC1_TG FONE โลตัสประโคนชัย</option>
+            <option value="LPBR2_TG FONE โลตัส ปราณบุรี">LPBR2_TG FONE โลตัส ปราณบุรี</option>
+            <option value="LPCT1_TG FONE โลตัส พิจิตร ท่าหลวง">LPCT1_TG FONE โลตัส พิจิตร ท่าหลวง</option>
+            <option value="LPKT2_TG FONE โลตัส ภูเก็ต">LPKT2_TG FONE โลตัส ภูเก็ต</option>
+            <option value="LPNK1_TG FONE โลตัส พนมสารคาม">LPNK1_TG FONE โลตัส พนมสารคาม</option>
+            <option value="LPSL1_TG FONE โลตัส พิษณุโลก">LPSL1_TG FONE โลตัส พิษณุโลก</option>
+            <option value="LPSL2_TG FONE โลตัส พิษณุโลก ท่าทอง">LPSL2_TG FONE โลตัส พิษณุโลก ท่าทอง</option>
+            <option value="LPTC1_TG FONE โลตัส ปักธงชัย">LPTC1_TG FONE โลตัส ปักธงชัย</option>
+            <option value="LPTM1_TG FONE Kiosk โลตัส ปทุมธานี">LPTM1_TG FONE Kiosk โลตัส ปทุมธานี</option>
+            <option value="LPTN1_TG FONE โลตัส พัฒนาการ">LPTN1_TG FONE โลตัส พัฒนาการ</option>
+            <option value="LPTO1_TG FONE โลตัสปักธงชัย 1">LPTO1_TG FONE โลตัสปักธงชัย 1</option>
+            <option value="LPTO2_VIVO SHOP โลตัสปักธงชัย 2">LPTO2_VIVO SHOP โลตัสปักธงชัย 2</option>
+            <option value="LPTY1_Samsung (SIS) โลตัส พัทยาใต้">LPTY1_Samsung (SIS) โลตัส พัทยาใต้</option>
+            <option value="LPYA1_TG FONE โลตัส พะเยา (Kiosk)">LPYA1_TG FONE โลตัส พะเยา (Kiosk)</option>
+            <option value="LRM11_TG FONE โลตัส พระราม 1">LRM11_TG FONE โลตัส พระราม 1</option>
+            <option value="LRM32_TG FONE โลตัส พระราม 3 (Kiosk)">LRM32_TG FONE โลตัส พระราม 3 (Kiosk)</option>
+            <option value="LSIK1_TG FONE โลตัส สีคิ้ว">LSIK1_TG FONE โลตัส สีคิ้ว</option>
+            <option value="LSSK1_TG FONE โลตัส สมุทรสงคราม (Kiosk)">LSSK1_TG FONE โลตัส สมุทรสงคราม (Kiosk)</option>
+            <option value="LSUG1_TG FONE โลตัสสังขะ">LSUG1_TG FONE โลตัสสังขะ</option>
+            <option value="LSUR3_TG FONE โลตัสสุราษฎร์ธานี">LSUR3_TG FONE โลตัสสุราษฎร์ธานี</option>
+            <option value="LTAK1_TG FONE โลตัส ตาก">LTAK1_TG FONE โลตัส ตาก</option>
+            <option value="LTAK2_TG FONE โลตัสตาคลี">LTAK2_TG FONE โลตัสตาคลี</option>
+            <option value="LTPN2_TG FONE โลตัสธาตุพนม">LTPN2_TG FONE โลตัสธาตุพนม</option>
+            <option value="LTPN3_OPPO SHOP โลตัสธาตุพนม">LTPN3_OPPO SHOP โลตัสธาตุพนม</option>
+            <option value="LTPN4_Samsung SIS โลตัสธาตุพนม">LTPN4_Samsung SIS โลตัสธาตุพนม</option>
+            <option value="LTWN2_TG FONE โลตัส ติวานนท์">LTWN2_TG FONE โลตัส ติวานนท์</option>
+            <option value="LUBN2_TG FONE โลตัส อุบลราชธานี">LUBN2_TG FONE โลตัส อุบลราชธานี</option>
+            <option value="LUBN3_H2O โลตัส อุบลราชธานี">LUBN3_H2O โลตัส อุบลราชธานี</option>
+            <option value="LUBN4_Samsung (SIS) โลตัส อุบลราชธานี">LUBN4_Samsung (SIS) โลตัส อุบลราชธานี</option>
+            <option value="LUDI1_TG FONE โลตัสอุตรดิตถ์">LUDI1_TG FONE โลตัสอุตรดิตถ์</option>
+            <option value="MBKE2_TG FONE เดอะมอลล์ บางแค ชั้น2">MBKE2_TG FONE เดอะมอลล์ บางแค ชั้น2</option>
+            <option value="MBKE5_SAMSUNG SHOP เดอะมอลล์บางแค">MBKE5_SAMSUNG SHOP เดอะมอลล์บางแค</option>
+            <option value="MBKE6_Realme SHOP เดอะมอลล์บางแค">MBKE6_Realme SHOP เดอะมอลล์บางแค</option>
+            <option value="MBKP5_TG FONE เดอะมอลล์บางกะปิ (ร้าน 2)">MBKP5_TG FONE เดอะมอลล์บางกะปิ (ร้าน 2)</option>
+            <option value="MBKP7_VIVO Shop เดอะมอลล์บางกะปิ">MBKP7_VIVO Shop เดอะมอลล์บางกะปิ</option>
+            <option value="MNGW1_TG FONE เดอะมอลล์ งามวงศ์วาน (ชั้น 6)">MNGW1_TG FONE เดอะมอลล์ งามวงศ์วาน (ชั้น 6)
+            </option>
+            <option value="MNGW3_Samsung : เดอะมอลล์ งามวงศ์วาน (ชั้น 6)">MNGW3_Samsung : เดอะมอลล์ งามวงศ์วาน (ชั้น 6)
+            </option>
+            <option value="MNSM1_TG FONE เดอะมอลล์ นครราชสีมา">MNSM1_TG FONE เดอะมอลล์ นครราชสีมา</option>
+            <option value="MNSM3_SAMSUNG SHOP เดอะมอลล์นครราชสีมา(โคราช)">MNSM3_SAMSUNG SHOP เดอะมอลล์นครราชสีมา(โคราช)
+            </option>
+            <option value="MTPA3_TG FONE เดอะมอลล์ ท่าพระ (ชั้น 3)">MTPA3_TG FONE เดอะมอลล์ ท่าพระ (ชั้น 3)</option>
+            <option value="OAYA2_OPPO SHOP อยุธยาซิติ้พาร์ค G12 สาขา 1">OAYA2_OPPO SHOP อยุธยาซิติ้พาร์ค G12 สาขา 1
+            </option>
+            <option value="OAYA3_OPPO SHOP อยุธยาซิติ้พาร์ค G66 สาขา 2">OAYA3_OPPO SHOP อยุธยาซิติ้พาร์ค G66 สาขา 2
+            </option>
+            <option value="OBNA1_TG FONE เมกะบางนา">OBNA1_TG FONE เมกะบางนา</option>
+            <option value="OBRM2_SAMSUNG SHOP ทวีกิจบุรีรัมย์">OBRM2_SAMSUNG SHOP ทวีกิจบุรีรัมย์</option>
+            <option value="OBRM3_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 1">OBRM3_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 1</option>
+            <option value="OBRM4_TG FONE ทวีกิจซุปเปอร์เซ็นเตอร์ บุรีรัมย์">OBRM4_TG FONE ทวีกิจซุปเปอร์เซ็นเตอร์
+              บุรีรัมย์</option>
+            <option value="OBRM5_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 2">OBRM5_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 2</option>
+            <option value="OBSN1_Samsung (SIS) แหลมทอง บางแสน">OBSN1_Samsung (SIS) แหลมทอง บางแสน</option>
+            <option value="OCUD1_TG FONE เซ็นทรัลอุดรธานี">OCUD1_TG FONE เซ็นทรัลอุดรธานี</option>
+            <option value="OCUD4_TG FONE ตึกคอมอุดรธานี">OCUD4_TG FONE ตึกคอมอุดรธานี</option>
+            <option value="OCUD5_Samsung (SIS) ตึกคอมอุดรธานี">OCUD5_Samsung (SIS) ตึกคอมอุดรธานี</option>
+            <option value="OESR2_TG FONE อิมพิเรียลเวิลด์สำโรง">OESR2_TG FONE อิมพิเรียลเวิลด์สำโรง</option>
+            <option value="OFIL1_TG FONE แฟชั่น ไอส์แลนด์ ชั้น 3">OFIL1_TG FONE แฟชั่น ไอส์แลนด์ ชั้น 3</option>
+            <option value="OFNK2_TG FONE Asawann Shopping Complex 1 หนองคาย">OFNK2_TG FONE Asawann Shopping Complex 1
+              หนองคาย</option>
+            <option value="OFPK1_TG FONE ฟิวเจอร์พาร์ค รังสิต ชั้น 3">OFPK1_TG FONE ฟิวเจอร์พาร์ค รังสิต ชั้น 3</option>
+            <option value="OFPK3_Samsung : สาขาฟิวเจอร์พาร์ค รังสิต">OFPK3_Samsung : สาขาฟิวเจอร์พาร์ค รังสิต</option>
+            <option value="OFPK4_TG FONE:สาขา service ฟิวเจอร์พาร์ค รังสิต">OFPK4_TG FONE:สาขา service ฟิวเจอร์พาร์ค
+              รังสิต</option>
+            <option value="OITS3_TG FONE ไอทีสแควร์ (ร้าน 3)">OITS3_TG FONE ไอทีสแควร์ (ร้าน 3)</option>
+            <option value="OITS4_Samsung SIS ไอทีสแควร์หลักสี่">OITS4_Samsung SIS ไอทีสแควร์หลักสี่</option>
+            <option value="OPTY1_TG FONE ตึกคอม พัทยา">OPTY1_TG FONE ตึกคอม พัทยา</option>
+            <option value="OPTY3_tg Terminal 21 พัทยา">OPTY3_tg Terminal 21 พัทยา</option>
+            <option value="OSBK3_TG FONE ศูนย์การค้าซีคอนบางแค">OSBK3_TG FONE ศูนย์การค้าซีคอนบางแค</option>
+            <option value="OSSQ6_TG FONE ซีคอนสแควร์ ชั้น 2">OSSQ6_TG FONE ซีคอนสแควร์ ชั้น 2</option>
+            <option value="OSSQ7_TG FONE ซีคอนสแควร์ ศรีนครินทร์ ชั้น G">OSSQ7_TG FONE ซีคอนสแควร์ ศรีนครินทร์ ชั้น G
+            </option>
+            <option value="OSSQ8_TG FONE Smart club ซีคอนสแควร์ ศรีนครินทร์">OSSQ8_TG FONE Smart club ซีคอนสแควร์
+              ศรีนครินทร์</option>
+            <option value="OSTP1_TG FONE ศูนย์การค้าเสริมไทยคอมเพล็กซ์">OSTP1_TG FONE ศูนย์การค้าเสริมไทยคอมเพล็กซ์
+            </option>
+            <option value="OSTP2_Realme Kiosk ศูนย์การค้าเสริมไทยคอมเพล็กซ์">OSTP2_Realme Kiosk
+              ศูนย์การค้าเสริมไทยคอมเพล็กซ์</option>
+            <option value="OTMI2_SAMSUNG SHOP เทอร์มินอลทเวนตี้วัน(โคราช)">OTMI2_SAMSUNG SHOP
+              เทอร์มินอลทเวนตี้วัน(โคราช)</option>
+            <option value="OUCS1_TG FONE:สาขา service ยูไนเต็ด สีลม (ชั้น 3)">OUCS1_TG FONE:สาขา service ยูไนเต็ด สีลม
+              (ชั้น 3)</option>
+            <option value="OVSB1_TG FONE ศูนย์การค้ามาร์เก็ตวิลเลจสุวรรณภูมิ">OVSB1_TG FONE
+              ศูนย์การค้ามาร์เก็ตวิลเลจสุวรรณภูมิ</option>
+            <option value="RBOW1_Realme โรบินสัน บ่อวิน">RBOW1_Realme โรบินสัน บ่อวิน</option>
+            <option value="RBRM1_SAMSUNG SHOP โรบินสันบุรีรัมย์">RBRM1_SAMSUNG SHOP โรบินสันบุรีรัมย์</option>
+            <option value="RCHL1_tg โรบินสันฉลอง">RCHL1_tg โรบินสันฉลอง</option>
+            <option value="RCYP1_SAMSUNG SHOP โรบินสันชัยภูมิ">RCYP1_SAMSUNG SHOP โรบินสันชัยภูมิ</option>
+            <option value="RSKN1_SAMSUNG (SIS) โรบินสันสกลนคร">RSKN1_SAMSUNG (SIS) โรบินสันสกลนคร</option>
+            <option value="RSRN1_SAMSUNG SHOP โรบินสันสุรินทร์">RSRN1_SAMSUNG SHOP โรบินสันสุรินทร์</option>
+            <option value="SCMA1_TG FONE :สาขา service ฟิวเจอร์ เชียงใหม่">SCMA1_TG FONE :สาขา service ฟิวเจอร์
+              เชียงใหม่</option>
+            <option value="SHAY1_TG FONE :สาขา service เมกา หาดใหญ่">SHAY1_TG FONE :สาขา service เมกา หาดใหญ่</option>
+            <option value="SKKN1_TG FONE :สาขา service SY THAI ขอนแก่น">SKKN1_TG FONE :สาขา service SY THAI ขอนแก่น
+            </option>
+            <option value="SKOR1_TG FONE :สาขา service STS โคราช">SKOR1_TG FONE :สาขา service STS โคราช</option>
+            <option value="SPKT1_TG FONE :สาขา service SMT ภูเก็ต">SPKT1_TG FONE :สาขา service SMT ภูเก็ต</option>
+            <option value="SPSL1_TG FONE :สาขา service ฟิวเจอร์ พิษณุโลก">SPSL1_TG FONE :สาขา service ฟิวเจอร์ พิษณุโลก
+            </option>
+            <option value="SSUR1_TG FONE :สาขา service SMTสุราษฎร์ธานี">SSUR1_TG FONE :สาขา service SMTสุราษฎร์ธานี
+            </option>
+            <option value="SUBN2_TG FONE :สาขา service AITอุบลราชธานี">SUBN2_TG FONE :สาขา service AITอุบลราชธานี
+            </option>
+            <option value="SUDO1_TG FONE :สาขา service ASM อุดรธานี">SUDO1_TG FONE :สาขา service ASM อุดรธานี</option>
+            <option value="BC001_Consignment Big C:สาขาอำนาจเจริญ">BC001_Consignment Big C:สาขาอำนาจเจริญ</option>
+            <option value="BC004_Consignment Big C:สาขาเมกาบางนา">BC004_Consignment Big C:สาขาเมกาบางนา</option>
+            <option value="BC005_Consignment Big C:สาขาบางบอน">BC005_Consignment Big C:สาขาบางบอน</option>
+            <option value="BC007_Consignment Big C:สาขาบางพลี">BC007_Consignment Big C:สาขาบางพลี</option>
+            <option value="BC010_Consignment Big C:สาขาบางปะกอก">BC010_Consignment Big C:สาขาบางปะกอก</option>
+            <option value="BC011_Consignment Big C:สาขาบางใหญ่">BC011_Consignment Big C:สาขาบางใหญ่</option>
+            <option value="BC014_Consignment Big C:ฉะเชิงเทรา">BC014_Consignment Big C:ฉะเชิงเทรา</option>
+            <option value="BC015_Consignment Big C:สาขาฉะเชิงเทรา (ร้าน2)">BC015_Consignment Big C:สาขาฉะเชิงเทรา
+              (ร้าน2)</option>
+            <option value="BC016_Consignment Big C:สาขาเชียงใหม่ (ร้าน2)">BC016_Consignment Big C:สาขาเชียงใหม่ (ร้าน2)
+            </option>
+            <option value="BC017_Consignment Big C:สาขาแจ้งวัฒนะ 2">BC017_Consignment Big C:สาขาแจ้งวัฒนะ 2</option>
+            <option value="BC018_Consignment Big C:สาขาชัยภูมิ">BC018_Consignment Big C:สาขาชัยภูมิ</option>
+            <option value="BC020_Consignment Big C:สาขาดาวคะนอง">BC020_Consignment Big C:สาขาดาวคะนอง</option>
+            <option value="BC021_Consignment Big C:สาขาดอนเมือง">BC021_Consignment Big C:สาขาดอนเมือง</option>
+            <option value="BC022_Consignment Big C:สาขาเอกมัย">BC022_Consignment Big C:สาขาเอกมัย</option>
+            <option value="BC023_Consignment Big C:สาขาแฟชั่น ไอแลนด์">BC023_Consignment Big C:สาขาแฟชั่น ไอแลนด์
+            </option>
+            <option value="BC027_Consignment Big C:สาขาขอนแก่น">BC027_Consignment Big C:สาขาขอนแก่น</option>
+            <option value="BC033_Consignment Big C:สาขาลำลูกกา">BC033_Consignment Big C:สาขาลำลูกกา</option>
+            <option value="BC037_Consignment Big C:อิมพีเรียลลาดพร้าว">BC037_Consignment Big C:อิมพีเรียลลาดพร้าว
+            </option>
+            <option value="BC038_Consignment Big C:สาขาลาดพร้าว">BC038_Consignment Big C:สาขาลาดพร้าว</option>
+            <option value="BC039_Consignment Big C:สาขามหาชัย">BC039_Consignment Big C:สาขามหาชัย</option>
+            <option value="BC043_Consignment Big C:สาขานครปฐม">BC043_Consignment Big C:สาขานครปฐม</option>
+            <option value="BC044_Consignment Big C:สาขาศรีนครินทร์">BC044_Consignment Big C:สาขาศรีนครินทร์</option>
+            <option value="BC045_Consignment Big C:สาขานครสวรรค์">BC045_Consignment Big C:สาขานครสวรรค์</option>
+            <option value="BC046_Consignment Big C:สาขาหนองบัว">BC046_Consignment Big C:สาขาหนองบัว</option>
+            <option value="BC047_Consignment Big C:สาขาหนองจอก">BC047_Consignment Big C:สาขาหนองจอก</option>
+            <option value="BC048_Consignment Big C:สาขาหนองกี่">BC048_Consignment Big C:สาขาหนองกี่</option>
+            <option value="BC056_Consignment Big C:สาขาเพชรเกษม">BC056_Consignment Big C:สาขาเพชรเกษม</option>
+            <option value="BC057_Consignment Big C:สาขาโพนพิสัย-หนองคาย">BC057_Consignment Big C:สาขาโพนพิสัย-หนองคาย
+            </option>
+            <option value="BC061_Consignment Big C:สาขาราชบุรี">BC061_Consignment Big C:สาขาราชบุรี</option>
+            <option value="BC062_Consignment Big C:สาขารัชดา">BC062_Consignment Big C:สาขารัชดา</option>
+            <option value="BC063_Consignment Big C:สาขารามอินทรา">BC063_Consignment Big C:สาขารามอินทรา</option>
+            <option value="BC064_Consignment Big C:สาขาพระราม2 สาขา2">BC064_Consignment Big C:สาขาพระราม2 สาขา2</option>
+            <option value="BC065_Consignment Big C:สาขาร่มเกล้า">BC065_Consignment Big C:สาขาร่มเกล้า</option>
+            <option value="BC067_Consignment Big C:สาขารังสิต">BC067_Consignment Big C:สาขารังสิต</option>
+            <option value="BC071_Consignment Big C:สาขาศรีมหาโพธิ์ (ปราจีน)">BC071_Consignment Big C:สาขาศรีมหาโพธิ์
+              (ปราจีน)</option>
+            <option value="BC072_Consignment Big C:สาขาสกลนคร">BC072_Consignment Big C:สาขาสกลนคร</option>
+            <option value="BC073_Consignment Big C:สาขาสุขาภิบาล 3 (ร้าน2)">BC073_Consignment Big C:สาขาสุขาภิบาล 3
+              (ร้าน2)</option>
+            <option value="BC074_Consignment Big C:สาขาสุโขทัย">BC074_Consignment Big C:สาขาสุโขทัย</option>
+            <option value="BC076_Consignment Big C:สาขาสุขาภิบาล 3">BC076_Consignment Big C:สาขาสุขาภิบาล 3</option>
+            <option value="BC077_Consignment Big C:สาขาสะพานควาย">BC077_Consignment Big C:สาขาสะพานควาย</option>
+            <option value="BC078_Consignment Big C:สาขาสำโรง">BC078_Consignment Big C:สาขาสำโรง</option>
+            <option value="BC079_Consignment Big C:สาขาสุรินทร์">BC079_Consignment Big C:สาขาสุรินทร์</option>
+            <option value="BC080_Consignment Big C:สาขาศรีษะเกษ">BC080_Consignment Big C:สาขาศรีษะเกษ</option>
+            <option value="BC081_Consignment Big C:สาขาสุขสวัสดิ์">BC081_Consignment Big C:สาขาสุขสวัสดิ์</option>
+            <option value="BC086_Consignment Big C:สาขาลำลูกกา คลอง 4">BC086_Consignment Big C:สาขาลำลูกกา คลอง 4
+            </option>
+            <option value="BC087_Consignment Big C:สาขาวิเชียรบุรี (จ.เพชรบูรณ์)">BC087_Consignment Big
+              C:สาขาวิเชียรบุรี (จ.เพชรบูรณ์)</option>
+            <option value="BC090_Consignment Big C:สาขาวงศ์สว่าง">BC090_Consignment Big C:สาขาวงศ์สว่าง</option>
+            <option value="BC091_Consignment Big C:สาขาบางนา">BC091_Consignment Big C:สาขาบางนา</option>
+            <option value="BC094_Consignment Big C:สาขาแจ้งวัฒนะ 1">BC094_Consignment Big C:สาขาแจ้งวัฒนะ 1</option>
+            <option value="BC096_Consignment Big C:สาขาหางดง">BC096_Consignment Big C:สาขาหางดง</option>
+            <option value="BC105_Consignment Big C:สาขาพระราม 2 สาขา 1">BC105_Consignment Big C:สาขาพระราม 2 สาขา 1
+            </option>
+            <option value="BC106_Consignment Big C:สาขารัตนาธิเบศร์ 1">BC106_Consignment Big C:สาขารัตนาธิเบศร์ 1
+            </option>
+            <option value="BC108_Consignment Big C สาขาสวนหลวง (MK)">BC108_Consignment Big C สาขาสวนหลวง (MK)</option>
+            <option value="BC110_Consignment Big C สาขาสุขาภิบาล 5 (MK)">BC110_Consignment Big C สาขาสุขาภิบาล 5 (MK)
+            </option>
+            <option value="BC111_Consignment Big C สาขาทุ่งครุ (MK)">BC111_Consignment Big C สาขาทุ่งครุ (MK)</option>
+            <option value="BC116_Consignment Big C:สาขาสระบุรี">BC116_Consignment Big C:สาขาสระบุรี</option>
+            <option value="PM001_Power Mall สาขาเดอะมอลล์รามคำแหง (M3)">PM001_Power Mall สาขาเดอะมอลล์รามคำแหง (M3)
+            </option>
+            <option value="PM002_Power Mall สาขาเดอะมอลล์โคราช (M10)">PM002_Power Mall สาขาเดอะมอลล์โคราช (M10)</option>
+            <option value="PM003_Power Mall สาขาเดอะมอลล์งามวงศ์วาน (M6)">PM003_Power Mall สาขาเดอะมอลล์งามวงศ์วาน (M6)
+            </option>
+            <option value="PM004_Power Mall สาขาเดอะมอลล์บางแค (M7)">PM004_Power Mall สาขาเดอะมอลล์บางแค (M7)</option>
+            <option value="PM005_Power Mall สาขาเดอะมอลลบางกะปิ (M8)">PM005_Power Mall สาขาเดอะมอลลบางกะปิ (M8)</option>
+            <option value="PM006_Power Mall สาขาพารากอน (M11)">PM006_Power Mall สาขาพารากอน (M11)</option>
+            <option value="PM007_Power Mall สาขาเอ็มโพเรี่ยม (M9)">PM007_Power Mall สาขาเอ็มโพเรี่ยม (M9)</option>
+            <option value="PM008_Power Mall สาขาเดอะมอลล์ท่าพระ (M5)">PM008_Power Mall สาขาเดอะมอลล์ท่าพระ (M5)</option>
+            <option value="กรุณากรอกย้ายจากสาขา">กรุณากรอกย้ายจากสาขา</option>
+          </select>
           <div class="invalid-feedback">
             กรุณากรอกย้ายจากสาขา
           </div>
@@ -421,287 +476,389 @@
         <div class="col-12">
           <label for="locationto">
             <i class="fa fa-exchange" aria-hidden="true"></i> ย้ายไปใช้ที่สาขา </label>
-              <select name="locationto" id="locationto" maxlength="10" class="form-control" placeholder="กรุณากรอก สาขาย้ายเข้า"
-            required>
-<option value="" selected disabled> เลือกสาขา </option>
-<option value="BBDG1_TG FONE สาขาบิ๊กซีบ้านดุง (จ.อุดรธานี)"selected>BBDG1_TG FONE สาขาบิ๊กซีบ้านดุง (จ.อุดรธานี)</option>
-<option value="BBPE1_TG FONE บิ๊กซี บางพลี"selected>BBPE1_TG FONE บิ๊กซี บางพลี</option>
-<option value="BHMK1_TG FONE บิ๊กซี หัวหมาก ชั้น 1"selected>BHMK1_TG FONE บิ๊กซี หัวหมาก ชั้น 1</option>
-<option value="BHMK4_Samsung (SIS) Huamark Town Center บิ๊กซีหัวหมาก"selected>BHMK4_Samsung (SIS) Huamark Town Center บิ๊กซีหัวหมาก</option>
-<option value="BNSW3_tg บิ๊กซี นครสวรรค์ (Kiosk)"selected>BNSW3_tg บิ๊กซี นครสวรรค์ (Kiosk)</option>
-<option value="BNSW5_tg kiosk วี-สแควร์พลาซ่า บิ๊กซีนครสวรรค์"selected>BNSW5_tg kiosk วี-สแควร์พลาซ่า บิ๊กซีนครสวรรค์</option>
-<option value="BPTY1_TG FONE สาขาบิ๊กซีพัทยา 3 (กลาง)"selected>BPTY1_TG FONE สาขาบิ๊กซีพัทยา 3 (กลาง)</option>
-<option value="BPTY2_SAMSUNG SIS บิ๊กซี พัทยากลาง"selected>BPTY2_SAMSUNG SIS บิ๊กซี พัทยากลาง</option>
-<option value="BRAD2_TG FONE บิ๊กซีราชบุรี"selected>BRAD2_TG FONE บิ๊กซีราชบุรี</option>
-<option value="BSUK3_VIVO SHOP บิ๊กซีสุขสวัสดิ์"selected>BSUK3_VIVO SHOP บิ๊กซีสุขสวัสดิ์</option>
-<option value="BSWG1_VIVO SHOP บิ๊กซีสุวินทวงศ์"selected>BSWG1_VIVO SHOP บิ๊กซีสุวินทวงศ์</option>
-<option value="BTAK1_TG FONE บิ๊กซีท่าตะโก"selected>BTAK1_TG FONE บิ๊กซีท่าตะโก</option>
-<option value="BTAK2_Samsung (SIS) บิ๊กซีท่าตะโก"selected>BTAK2_Samsung (SIS) บิ๊กซีท่าตะโก</option>
-<option value="BWCB1_TG FONE บิ๊กซีวิเชียรบุรี"selected>BWCB1_TG FONE บิ๊กซีวิเชียรบุรี</option>
-<option value="CAYA1_XIAOMI SHOP เซ็นทรัลอยุธยา"selected>CAYA1_XIAOMI SHOP เซ็นทรัลอยุธยา</option>
-<option value="CAYA2_TG FONE เซ็นทรัลอยุธยา"selected>CAYA2_TG FONE เซ็นทรัลอยุธยา</option>
-<option value="CAYA3_Samsung เซ็นทรัลอยุธยา"selected>CAYA3_Samsung เซ็นทรัลอยุธยา</option>
-<option value="CBNA2_TG FONE เซ็นทรัล บางนา (ร้าน2)"selected>CBNA2_TG FONE เซ็นทรัล บางนา (ร้าน2)</option>
-<option value="CBYI1_OPPO SHOP เซ็นทรัลเวสเกต"selected>CBYI1_OPPO SHOP เซ็นทรัลเวสเกต</option>
-<option value="CBYI2_TG FONE เซ็นทรัลเวสเกต"selected>CBYI2_TG FONE เซ็นทรัลเวสเกต</option>
-<option value="CBYI3_TG Smart Life เซ็นทรัลเวสเกต"selected>CBYI3_TG Smart Life เซ็นทรัลเวสเกต</option>
-<option value="CBYI4_Realme kiosk เซ็นทรัลเวสเกต"selected>CBYI4_Realme kiosk เซ็นทรัลเวสเกต</option>
-<option value="CCAP1_TG FONE เซ็นทรัลแอร์พอร์ท เชียงใหม่"selected>CCAP1_TG FONE เซ็นทรัลแอร์พอร์ท เชียงใหม่</option>
-<option value="CCRI1_TG FONE เซ็นทรัลพลาซ่า เชียงราย"selected>CCRI1_TG FONE เซ็นทรัลพลาซ่า เชียงราย</option>
-<option value="CFTV1_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่"selected>CFTV1_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่</option>
-<option value="CFTV2_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่ (KIOSK)"selected>CFTV2_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่ (KIOSK)</option>
-<option value="CHDY1_TG FONE เซ็นทรัล หาดใหญ่"selected>CHDY1_TG FONE เซ็นทรัล หาดใหญ่</option>
-<option value="CKKN1_TG FONE เซ็นทรัล ขอนแก่น"selected>CKKN1_TG FONE เซ็นทรัล ขอนแก่น</option>
-<option value="CKKN2_Samsung : เซ็นทรัล ขอนแก่น"selected>CKKN2_Samsung : เซ็นทรัล ขอนแก่น</option>
-<option value="CLPA2_TG FONE ศูนย์การค้าเซ็นทรัลลำปาง (Kiosk)"selected>CLPA2_TG FONE ศูนย์การค้าเซ็นทรัลลำปาง (Kiosk)</option>
-<option value="CLPW3_Samsung : เซ็นทรัลลาดพร้าว ชั้น 3"selected>CLPW3_Samsung : เซ็นทรัลลาดพร้าว ชั้น 3</option>
-<option value="CLPW7_Huawei เซ็นทรัลลาดพร้าว"selected>CLPW7_Huawei เซ็นทรัลลาดพร้าว</option>
-<option value="CMCH1_TG FONE เซ็นทรัลมหาชัย"selected>CMCH1_TG FONE เซ็นทรัลมหาชัย</option>
-<option value="CNKO1_TG FONE เซ็นทรัลนครศรีธรรมราช"selected>CNKO1_TG FONE เซ็นทรัลนครศรีธรรมราช</option>
-<option value="CNSM1_TG FONE เซ็นทรัลนครราชสีมา (โคราช)"selected>CNSM1_TG FONE เซ็นทรัลนครราชสีมา (โคราช)</option>
-<option value="CNSM2_OPPO SHOP เซ็นทรัลโคราช"selected>CNSM2_OPPO SHOP เซ็นทรัลโคราช</option>
-<option value="CNSM3_SAMSUNG SHOP เซ็นทรัลนครราชสีมา(โคราช)"selected>CNSM3_SAMSUNG SHOP เซ็นทรัลนครราชสีมา(โคราช)</option>
-<option value="CNSM4_tg Kiosk เซ็นทรัลนครราชสีมา"selected>CNSM4_tg Kiosk เซ็นทรัลนครราชสีมา</option>
-<option value="CNSW1_tg เซ็นทรัลนครสวรรค์"selected>CNSW1_tg เซ็นทรัลนครสวรรค์</option>
-<option value="CPKO2_TG FONE เซ็นทรัล ปิ่นเกล้า ชั้น 3"selected>CPKO2_TG FONE เซ็นทรัล ปิ่นเกล้า ชั้น 3</option>
-<option value="CPSL2_TG FONE เซ็นทรัล พิษณุโลก (Kiosk)"selected>CPSL2_TG FONE เซ็นทรัล พิษณุโลก (Kiosk)</option>
-<option value="CRIN1_TG FONE เซ็นทรัล รามอินทรา"selected>CRIN1_TG FONE เซ็นทรัล รามอินทรา</option>
-<option value="CRIN3_TG FONE เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา"selected>CRIN3_TG FONE เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา</option>
-<option value="CRIN4_Samsung เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา"selected>CRIN4_Samsung เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา</option>
-<option value="CRM21_TG FONE เซ็นทรัล พระราม 2 (ห้อง IT-01)"selected>CRM21_TG FONE เซ็นทรัล พระราม 2 (ห้อง IT-01)</option>
-<option value="CRM22_Samsung : เซ็นทรัล พระราม 2 (ชั้น2)"selected>CRM22_Samsung : เซ็นทรัล พระราม 2 (ชั้น2)</option>
-<option value="CRM23_Samsung : เซ็นทรัล พระราม 2 (ชั้น3)"selected>CRM23_Samsung : เซ็นทรัล พระราม 2 (ชั้น3)</option>
-<option value="CRM24_TG FONE เซ็นทรัล พระราม2 (ชั้น3)"selected>CRM24_TG FONE เซ็นทรัล พระราม2 (ชั้น3)</option>
-<option value="CRM27_VIVO เซ็นทรัล พระราม 2 (ชั้น2)"selected>CRM27_VIVO เซ็นทรัล พระราม 2 (ชั้น2)</option>
-<option value="CRM32_TG FONE เซ็นทรัล พระราม 3"selected>CRM32_TG FONE เซ็นทรัล พระราม 3</option>
-<option value="CRM91_TG FONE เซ็นทรัล พระราม 9"selected>CRM91_TG FONE เซ็นทรัล พระราม 9</option>
-<option value="CRM92_vivo Brand Shop (Kiosk) เซ็นทรัล พระราม 9"selected>CRM92_vivo Brand Shop (Kiosk) เซ็นทรัล พระราม 9</option>
-<option value="CRM93_Samsung : เซ็นทรัล พระราม 9 (ชั้น G)"selected>CRM93_Samsung : เซ็นทรัล พระราม 9 (ชั้น G)</option>
-<option value="CRM94_TG FONE:สาขา service เซ็นทรัลพระราม 9 (ชั้น 4)"selected>CRM94_TG FONE:สาขา service เซ็นทรัลพระราม 9 (ชั้น 4)</option>
-<option value="CRYG1_TG FONE เซ็นทรัล ระยอง"selected>CRYG1_TG FONE เซ็นทรัล ระยอง</option>
-<option value="CSIR1_TG FONE เซ็นทรัลศรีราชา"selected>CSIR1_TG FONE เซ็นทรัลศรีราชา</option>
-<option value="CSIR2_XIAOMI SHOP เซ็นทรัลศรีราชา"selected>CSIR2_XIAOMI SHOP เซ็นทรัลศรีราชา</option>
-<option value="CSUM1_TG FONE เซ็นทรัลเฟสติวัลสมุย"selected>CSUM1_TG FONE เซ็นทรัลเฟสติวัลสมุย</option>
-<option value="CSUM2_Samsung : เซ็นทรัลเฟสติวัล สมุย"selected>CSUM2_Samsung : เซ็นทรัลเฟสติวัล สมุย</option>
-<option value="CSUR1_TG FONE เซ็นทรัล สุราษฎร์ธานี"selected>CSUR1_TG FONE เซ็นทรัล สุราษฎร์ธานี</option>
-<option value="CUBN1_TG FONE เซ็นทรัล อุบลราชธานี"selected>CUBN1_TG FONE เซ็นทรัล อุบลราชธานี</option>
-<option value="CWAT1_TG FONE เซ็นทรัล แจ้งวัฒนะ (ชั้น 4)"selected>CWAT1_TG FONE เซ็นทรัล แจ้งวัฒนะ (ชั้น 4)</option>
-<option value="CWEV1_tg เซ็นทรัลเวสวิลล์"selected>CWEV1_tg เซ็นทรัลเวสวิลล์</option>
-<option value="CWEV2_Realme Shop เซ็นทรัลเวสวิลล์"selected>CWEV2_Realme Shop เซ็นทรัลเวสวิลล์</option>
-<option value="CWOR3_Samsung:เซ็นทรัลเวิลด์"selected>CWOR3_Samsung:เซ็นทรัลเวิลด์</option>
-<option value="CWOR5_TG FONE เซ็นทรัลเวิลด์ ( ชั้น5 )"selected>CWOR5_TG FONE เซ็นทรัลเวิลด์ ( ชั้น5 )</option>
-<option value="CWSW1_TG FONE เซ็นทรัลวงศ์สว่าง Town Center"selected>CWSW1_TG FONE เซ็นทรัลวงศ์สว่าง Town Center</option>
-<option value="FRDA1_TG FONE บิ๊กซี รัชดาฯ"selected>FRDA1_TG FONE บิ๊กซี รัชดาฯ</option>
-<option value="FRM42_TG FONE บิ๊กซี พระราม 4"selected>FRM42_TG FONE บิ๊กซี พระราม 4</option>
-<option value="KMBK1_TG FONE สาขามาบุญครอง"selected>KMBK1_TG FONE สาขามาบุญครอง</option>
-<option value="KMBK5_Samsung : มาบุญครอง (ชั้น 4)"selected>KMBK5_Samsung : มาบุญครอง (ชั้น 4)</option>
-<option value="KMBK6_Honor : มาบุญครอง (ชั้น 4)"selected>KMBK6_Honor : มาบุญครอง (ชั้น 4)</option>
-<option value="KMBK7_TG FONE:สาขา service MBK (ชั้น 5)"selected>KMBK7_TG FONE:สาขา service MBK (ชั้น 5)</option>
-<option value="LATG1_TG FONE โลตัส อ่างทอง"selected>LATG1_TG FONE โลตัส อ่างทอง</option>
-<option value="LBAB1_TG FONE โลตัส บ้านบึง (Kiosk)"selected>LBAB1_TG FONE โลตัส บ้านบึง (Kiosk)</option>
-<option value="LBAB2_VIVO SHOP โลตัสบ้านบึง"selected>LBAB2_VIVO SHOP โลตัสบ้านบึง</option>
-<option value="LBAB3_AIS BUDDY โลตัส บ้านบึง"selected>LBAB3_AIS BUDDY โลตัส บ้านบึง</option>
-<option value="LBAB4_OPPO SHOP โลตัส บ้านบึง"selected>LBAB4_OPPO SHOP โลตัส บ้านบึง</option>
-<option value="LBAB5_Samsung (SIS) โลตัส บ้านบึง"selected>LBAB5_Samsung (SIS) โลตัส บ้านบึง</option>
-<option value="LBBO1_TG FONE สาขาโลตัสบางบ่อ (Kiosk)"selected>LBBO1_TG FONE สาขาโลตัสบางบ่อ (Kiosk)</option>
-<option value="LBKE3_Samsung (SIS) โลตัสบางแค"selected>LBKE3_Samsung (SIS) โลตัสบางแค</option>
-<option value="LBLN1_TG FONE โลตัสบางเลน"selected>LBLN1_TG FONE โลตัสบางเลน</option>
-<option value="LBOW2_Samsung (SIS) โลตัสบ่อวิน"selected>LBOW2_Samsung (SIS) โลตัสบ่อวิน</option>
-<option value="LBPK2_TG FONE โลตัส บางปะกอก (ชั้น3)"selected>LBPK2_TG FONE โลตัส บางปะกอก (ชั้น3)</option>
-<option value="LBSP1_TG FONE โลตัส บึงสามพัน"selected>LBSP1_TG FONE โลตัส บึงสามพัน</option>
-<option value="LBUH1_TG FONE โลตัสบัวใหญ่"selected>LBUH1_TG FONE โลตัสบัวใหญ่</option>
-<option value="LBWN1_TG FONE โลตัส บ่อวิน"selected>LBWN1_TG FONE โลตัส บ่อวิน</option>
-<option value="LBYI1_TG FONE โลตัส สาขาบางใหญ่"selected>LBYI1_TG FONE โลตัส สาขาบางใหญ่</option>
-<option value="LBYI2_Samsung : โลตัส บางใหญ่"selected>LBYI2_Samsung : โลตัส บางใหญ่</option>
-<option value="LCAM1_TG FONE สาขาโลตัสชะอำ (Kiosk)"selected>LCAM1_TG FONE สาขาโลตัสชะอำ (Kiosk)</option>
-<option value="LCAN2_tg โลตัสจันทบุรี"selected>LCAN2_tg โลตัสจันทบุรี</option>
-<option value="LCHP1_TG FONE โลตัส ชุมพร"selected>LCHP1_TG FONE โลตัส ชุมพร</option>
-<option value="LCHP2_Samsung (SIS) โลตัสชุมพร"selected>LCHP2_Samsung (SIS) โลตัสชุมพร</option>
-<option value="LCHY1_TG FONE โลตัสเชียงยืน"selected>LCHY1_TG FONE โลตัสเชียงยืน</option>
-<option value="LCKM1_TG FONE สาขาโลตัสเชียงคำ (จังหวัดพะเยา)"selected>LCKM1_TG FONE สาขาโลตัสเชียงคำ (จังหวัดพะเยา)</option>
-<option value="LCMT1_Telewiz: โลตัส จอมทอง เชียงใหม่"selected>LCMT1_Telewiz: โลตัส จอมทอง เชียงใหม่</option>
-<option value="LCMT2_TG FONE โลตัส จอมทอง เชียงใหม่"selected>LCMT2_TG FONE โลตัส จอมทอง เชียงใหม่</option>
-<option value="LCPE1_TG FONE โลตัส ชุมแพ"selected>LCPE1_TG FONE โลตัส ชุมแพ</option>
-<option value="LCRI1_Telewiz โลตัสแม่จัน"selected>LCRI1_Telewiz โลตัสแม่จัน</option>
-<option value="LCYP2_Realme โลตัสชัยภูมิ"selected>LCYP2_Realme โลตัสชัยภูมิ</option>
-<option value="LCYP3_TG FONE โลตัสชัยภูมิ"selected>LCYP3_TG FONE โลตัสชัยภูมิ</option>
-<option value="LDAN1_TG FONE โลตัสด่านขุนทด"selected>LDAN1_TG FONE โลตัสด่านขุนทด</option>
-<option value="LHAT1_TG FONE โลตัสหัวทะเลโคราช"selected>LHAT1_TG FONE โลตัสหัวทะเลโคราช</option>
-<option value="LHAT2_tg Kiosk โลตัสหัวทะเล 2"selected>LHAT2_tg Kiosk โลตัสหัวทะเล 2</option>
-<option value="LJOH1_TG FONE โลตัสจอหอ"selected>LJOH1_TG FONE โลตัสจอหอ</option>
-<option value="LKBI2_TG FONE โลตัส กระบี่"selected>LKBI2_TG FONE โลตัส กระบี่</option>
-<option value="LKKN2_TG FONE โลตัสขอนแก่น 2 (Kiosk)"selected>LKKN2_TG FONE โลตัสขอนแก่น 2 (Kiosk)</option>
-<option value="LKTB1_Telewiz โลตัสกระทุ่มแบน (สมุทรสาคร)"selected>LKTB1_Telewiz โลตัสกระทุ่มแบน (สมุทรสาคร)</option>
-<option value="LKUM1_Samsung (SIS) โลตัส คำเที่ยง (เชียงใหม่)"selected>LKUM1_Samsung (SIS) โลตัส คำเที่ยง (เชียงใหม่)</option>
-<option value="LKUM3_TG FONE โลตัส คำเที่ยง (Smart Phone)"selected>LKUM3_TG FONE โลตัส คำเที่ยง (Smart Phone)</option>
-<option value="LKUM4_VIVO SHOP โลตัส คำเที่ยง"selected>LKUM4_VIVO SHOP โลตัส คำเที่ยง</option>
-<option value="LKUP1_TG FONE โลตัสกุมภวาปี อุดรฯ"selected>LKUP1_TG FONE โลตัสกุมภวาปี อุดรฯ</option>
-<option value="LKUP2_TG FONE (H2O) โลตัสกุมภวาปี"selected>LKUP2_TG FONE (H2O) โลตัสกุมภวาปี</option>
-<option value="LLAM1_TG FONE โลตัสลำปลายมาศ"selected>LLAM1_TG FONE โลตัสลำปลายมาศ</option>
-<option value="LLKL2_TG FONE สาขาโลตัสเลียบคลอง 2"selected>LLKL2_TG FONE สาขาโลตัสเลียบคลอง 2</option>
-<option value="LLSI1_TG FONE โลตัส หลักสี่"selected>LLSI1_TG FONE โลตัส หลักสี่</option>
-<option value="LMEN2_TG FONE โลตัส มีนบุรี (Kiosk 2)"selected>LMEN2_TG FONE โลตัส มีนบุรี (Kiosk 2)</option>
-<option value="LNAR1_TG FONE โลตัส นางรอง"selected>LNAR1_TG FONE โลตัส นางรอง</option>
-<option value="LNAW3_TG FONE โลตัส นวนคร ชั้น2"selected>LNAW3_TG FONE โลตัส นวนคร ชั้น2</option>
-<option value="LNCS1_TG FONE โลตัสนครชัยศรี"selected>LNCS1_TG FONE โลตัสนครชัยศรี</option>
-<option value="LNOJ1_Samsung (SIS) โลตัส หนองจอก (KIOSK)"selected>LNOJ1_Samsung (SIS) โลตัส หนองจอก (KIOSK)</option>
-<option value="LNRP2_AIS SHOP โลตัส นอร์ทราชพฤกษ์"selected>LNRP2_AIS SHOP โลตัส นอร์ทราชพฤกษ์</option>
-<option value="LPAC1_TG FONE โลตัสประโคนชัย"selected>LPAC1_TG FONE โลตัสประโคนชัย</option>
-<option value="LPBR2_TG FONE โลตัส ปราณบุรี"selected>LPBR2_TG FONE โลตัส ปราณบุรี</option>
-<option value="LPCT1_TG FONE โลตัส พิจิตร ท่าหลวง"selected>LPCT1_TG FONE โลตัส พิจิตร ท่าหลวง</option>
-<option value="LPKT2_TG FONE โลตัส ภูเก็ต"selected>LPKT2_TG FONE โลตัส ภูเก็ต</option>
-<option value="LPNK1_TG FONE โลตัส พนมสารคาม"selected>LPNK1_TG FONE โลตัส พนมสารคาม</option>
-<option value="LPSL1_TG FONE โลตัส พิษณุโลก"selected>LPSL1_TG FONE โลตัส พิษณุโลก</option>
-<option value="LPSL2_TG FONE โลตัส พิษณุโลก ท่าทอง"selected>LPSL2_TG FONE โลตัส พิษณุโลก ท่าทอง</option>
-<option value="LPTC1_TG FONE โลตัส ปักธงชัย"selected>LPTC1_TG FONE โลตัส ปักธงชัย</option>
-<option value="LPTM1_TG FONE Kiosk โลตัส ปทุมธานี"selected>LPTM1_TG FONE Kiosk โลตัส ปทุมธานี</option>
-<option value="LPTN1_TG FONE โลตัส พัฒนาการ"selected>LPTN1_TG FONE โลตัส พัฒนาการ</option>
-<option value="LPTO1_TG FONE โลตัสปักธงชัย 1"selected>LPTO1_TG FONE โลตัสปักธงชัย 1</option>
-<option value="LPTO2_VIVO SHOP โลตัสปักธงชัย 2"selected>LPTO2_VIVO SHOP โลตัสปักธงชัย 2</option>
-<option value="LPTY1_Samsung (SIS) โลตัส พัทยาใต้"selected>LPTY1_Samsung (SIS) โลตัส พัทยาใต้</option>
-<option value="LPYA1_TG FONE โลตัส พะเยา (Kiosk)"selected>LPYA1_TG FONE โลตัส พะเยา (Kiosk)</option>
-<option value="LRM11_TG FONE โลตัส พระราม 1"selected>LRM11_TG FONE โลตัส พระราม 1</option>
-<option value="LRM32_TG FONE โลตัส พระราม 3 (Kiosk)"selected>LRM32_TG FONE โลตัส พระราม 3 (Kiosk)</option>
-<option value="LSIK1_TG FONE โลตัส สีคิ้ว"selected>LSIK1_TG FONE โลตัส สีคิ้ว</option>
-<option value="LSSK1_TG FONE โลตัส สมุทรสงคราม (Kiosk)"selected>LSSK1_TG FONE โลตัส สมุทรสงคราม (Kiosk)</option>
-<option value="LSUG1_TG FONE โลตัสสังขะ"selected>LSUG1_TG FONE โลตัสสังขะ</option>
-<option value="LSUR3_TG FONE โลตัสสุราษฎร์ธานี"selected>LSUR3_TG FONE โลตัสสุราษฎร์ธานี</option>
-<option value="LTAK1_TG FONE โลตัส ตาก"selected>LTAK1_TG FONE โลตัส ตาก</option>
-<option value="LTAK2_TG FONE โลตัสตาคลี"selected>LTAK2_TG FONE โลตัสตาคลี</option>
-<option value="LTPN2_TG FONE โลตัสธาตุพนม"selected>LTPN2_TG FONE โลตัสธาตุพนม</option>
-<option value="LTPN3_OPPO SHOP โลตัสธาตุพนม"selected>LTPN3_OPPO SHOP โลตัสธาตุพนม</option>
-<option value="LTPN4_Samsung SIS โลตัสธาตุพนม"selected>LTPN4_Samsung SIS โลตัสธาตุพนม</option>
-<option value="LTWN2_TG FONE โลตัส ติวานนท์"selected>LTWN2_TG FONE โลตัส ติวานนท์</option>
-<option value="LUBN2_TG FONE โลตัส อุบลราชธานี"selected>LUBN2_TG FONE โลตัส อุบลราชธานี</option>
-<option value="LUBN3_H2O โลตัส อุบลราชธานี"selected>LUBN3_H2O โลตัส อุบลราชธานี</option>
-<option value="LUBN4_Samsung (SIS) โลตัส อุบลราชธานี"selected>LUBN4_Samsung (SIS) โลตัส อุบลราชธานี</option>
-<option value="LUDI1_TG FONE โลตัสอุตรดิตถ์"selected>LUDI1_TG FONE โลตัสอุตรดิตถ์</option>
-<option value="MBKE2_TG FONE เดอะมอลล์ บางแค ชั้น2"selected>MBKE2_TG FONE เดอะมอลล์ บางแค ชั้น2</option>
-<option value="MBKE5_SAMSUNG SHOP เดอะมอลล์บางแค"selected>MBKE5_SAMSUNG SHOP เดอะมอลล์บางแค</option>
-<option value="MBKE6_Realme SHOP เดอะมอลล์บางแค"selected>MBKE6_Realme SHOP เดอะมอลล์บางแค</option>
-<option value="MBKP5_TG FONE เดอะมอลล์บางกะปิ (ร้าน 2)"selected>MBKP5_TG FONE เดอะมอลล์บางกะปิ (ร้าน 2)</option>
-<option value="MBKP7_VIVO Shop เดอะมอลล์บางกะปิ"selected>MBKP7_VIVO Shop เดอะมอลล์บางกะปิ</option>
-<option value="MNGW1_TG FONE เดอะมอลล์ งามวงศ์วาน (ชั้น 6)"selected>MNGW1_TG FONE เดอะมอลล์ งามวงศ์วาน (ชั้น 6)</option>
-<option value="MNGW3_Samsung : เดอะมอลล์ งามวงศ์วาน (ชั้น 6)"selected>MNGW3_Samsung : เดอะมอลล์ งามวงศ์วาน (ชั้น 6)</option>
-<option value="MNSM1_TG FONE เดอะมอลล์ นครราชสีมา"selected>MNSM1_TG FONE เดอะมอลล์ นครราชสีมา</option>
-<option value="MNSM3_SAMSUNG SHOP เดอะมอลล์นครราชสีมา(โคราช)"selected>MNSM3_SAMSUNG SHOP เดอะมอลล์นครราชสีมา(โคราช)</option>
-<option value="MTPA3_TG FONE เดอะมอลล์ ท่าพระ (ชั้น 3)"selected>MTPA3_TG FONE เดอะมอลล์ ท่าพระ (ชั้น 3)</option>
-<option value="OAYA2_OPPO SHOP อยุธยาซิติ้พาร์ค G12 สาขา 1"selected>OAYA2_OPPO SHOP อยุธยาซิติ้พาร์ค G12 สาขา 1</option>
-<option value="OAYA3_OPPO SHOP อยุธยาซิติ้พาร์ค G66 สาขา 2"selected>OAYA3_OPPO SHOP อยุธยาซิติ้พาร์ค G66 สาขา 2</option>
-<option value="OBNA1_TG FONE เมกะบางนา"selected>OBNA1_TG FONE เมกะบางนา</option>
-<option value="OBRM2_SAMSUNG SHOP ทวีกิจบุรีรัมย์"selected>OBRM2_SAMSUNG SHOP ทวีกิจบุรีรัมย์</option>
-<option value="OBRM3_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 1"selected>OBRM3_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 1</option>
-<option value="OBRM4_TG FONE ทวีกิจซุปเปอร์เซ็นเตอร์ บุรีรัมย์"selected>OBRM4_TG FONE ทวีกิจซุปเปอร์เซ็นเตอร์ บุรีรัมย์</option>
-<option value="OBRM5_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 2"selected>OBRM5_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 2</option>
-<option value="OBSN1_Samsung (SIS) แหลมทอง บางแสน"selected>OBSN1_Samsung (SIS) แหลมทอง บางแสน</option>
-<option value="OCUD1_TG FONE เซ็นทรัลอุดรธานี"selected>OCUD1_TG FONE เซ็นทรัลอุดรธานี</option>
-<option value="OCUD4_TG FONE ตึกคอมอุดรธานี"selected>OCUD4_TG FONE ตึกคอมอุดรธานี</option>
-<option value="OCUD5_Samsung (SIS) ตึกคอมอุดรธานี"selected>OCUD5_Samsung (SIS) ตึกคอมอุดรธานี</option>
-<option value="OESR2_TG FONE อิมพิเรียลเวิลด์สำโรง"selected>OESR2_TG FONE อิมพิเรียลเวิลด์สำโรง</option>
-<option value="OFIL1_TG FONE แฟชั่น ไอส์แลนด์ ชั้น 3"selected>OFIL1_TG FONE แฟชั่น ไอส์แลนด์ ชั้น 3</option>
-<option value="OFNK2_TG FONE Asawann Shopping Complex 1 หนองคาย"selected>OFNK2_TG FONE Asawann Shopping Complex 1 หนองคาย</option>
-<option value="OFPK1_TG FONE ฟิวเจอร์พาร์ค รังสิต ชั้น 3"selected>OFPK1_TG FONE ฟิวเจอร์พาร์ค รังสิต ชั้น 3</option>
-<option value="OFPK3_Samsung : สาขาฟิวเจอร์พาร์ค รังสิต"selected>OFPK3_Samsung : สาขาฟิวเจอร์พาร์ค รังสิต</option>
-<option value="OFPK4_TG FONE:สาขา service ฟิวเจอร์พาร์ค รังสิต"selected>OFPK4_TG FONE:สาขา service ฟิวเจอร์พาร์ค รังสิต</option>
-<option value="OITS3_TG FONE ไอทีสแควร์ (ร้าน 3)"selected>OITS3_TG FONE ไอทีสแควร์ (ร้าน 3)</option>
-<option value="OITS4_Samsung SIS ไอทีสแควร์หลักสี่"selected>OITS4_Samsung SIS ไอทีสแควร์หลักสี่</option>
-<option value="OPTY1_TG FONE ตึกคอม พัทยา"selected>OPTY1_TG FONE ตึกคอม พัทยา</option>
-<option value="OPTY3_tg Terminal 21 พัทยา"selected>OPTY3_tg Terminal 21 พัทยา</option>
-<option value="OSBK3_TG FONE ศูนย์การค้าซีคอนบางแค"selected>OSBK3_TG FONE ศูนย์การค้าซีคอนบางแค</option>
-<option value="OSSQ6_TG FONE ซีคอนสแควร์ ชั้น 2"selected>OSSQ6_TG FONE ซีคอนสแควร์ ชั้น 2</option>
-<option value="OSSQ7_TG FONE ซีคอนสแควร์ ศรีนครินทร์ ชั้น G"selected>OSSQ7_TG FONE ซีคอนสแควร์ ศรีนครินทร์ ชั้น G</option>
-<option value="OSSQ8_TG FONE Smart club ซีคอนสแควร์ ศรีนครินทร์"selected>OSSQ8_TG FONE Smart club ซีคอนสแควร์ ศรีนครินทร์</option>
-<option value="OSTP1_TG FONE ศูนย์การค้าเสริมไทยคอมเพล็กซ์"selected>OSTP1_TG FONE ศูนย์การค้าเสริมไทยคอมเพล็กซ์</option>
-<option value="OSTP2_Realme Kiosk ศูนย์การค้าเสริมไทยคอมเพล็กซ์"selected>OSTP2_Realme Kiosk ศูนย์การค้าเสริมไทยคอมเพล็กซ์</option>
-<option value="OTMI2_SAMSUNG SHOP เทอร์มินอลทเวนตี้วัน(โคราช)"selected>OTMI2_SAMSUNG SHOP เทอร์มินอลทเวนตี้วัน(โคราช)</option>
-<option value="OUCS1_TG FONE:สาขา service ยูไนเต็ด สีลม (ชั้น 3)"selected>OUCS1_TG FONE:สาขา service ยูไนเต็ด สีลม (ชั้น 3)</option>
-<option value="OVSB1_TG FONE ศูนย์การค้ามาร์เก็ตวิลเลจสุวรรณภูมิ"selected>OVSB1_TG FONE ศูนย์การค้ามาร์เก็ตวิลเลจสุวรรณภูมิ</option>
-<option value="RBOW1_Realme โรบินสัน บ่อวิน"selected>RBOW1_Realme โรบินสัน บ่อวิน</option>
-<option value="RBRM1_SAMSUNG SHOP โรบินสันบุรีรัมย์"selected>RBRM1_SAMSUNG SHOP โรบินสันบุรีรัมย์</option>
-<option value="RCHL1_tg โรบินสันฉลอง"selected>RCHL1_tg โรบินสันฉลอง</option>
-<option value="RCYP1_SAMSUNG SHOP โรบินสันชัยภูมิ"selected>RCYP1_SAMSUNG SHOP โรบินสันชัยภูมิ</option>
-<option value="RSKN1_SAMSUNG (SIS) โรบินสันสกลนคร"selected>RSKN1_SAMSUNG (SIS) โรบินสันสกลนคร</option>
-<option value="RSRN1_SAMSUNG SHOP โรบินสันสุรินทร์"selected>RSRN1_SAMSUNG SHOP โรบินสันสุรินทร์</option>
-<option value="SCMA1_TG FONE :สาขา service ฟิวเจอร์ เชียงใหม่"selected>SCMA1_TG FONE :สาขา service ฟิวเจอร์ เชียงใหม่</option>
-<option value="SHAY1_TG FONE :สาขา service เมกา หาดใหญ่"selected>SHAY1_TG FONE :สาขา service เมกา หาดใหญ่</option>
-<option value="SKKN1_TG FONE :สาขา service SY THAI ขอนแก่น"selected>SKKN1_TG FONE :สาขา service SY THAI ขอนแก่น</option>
-<option value="SKOR1_TG FONE :สาขา service STS โคราช"selected>SKOR1_TG FONE :สาขา service STS โคราช</option>
-<option value="SPKT1_TG FONE :สาขา service SMT ภูเก็ต"selected>SPKT1_TG FONE :สาขา service SMT ภูเก็ต</option>
-<option value="SPSL1_TG FONE :สาขา service ฟิวเจอร์ พิษณุโลก"selected>SPSL1_TG FONE :สาขา service ฟิวเจอร์ พิษณุโลก</option>
-<option value="SSUR1_TG FONE :สาขา service SMTสุราษฎร์ธานี"selected>SSUR1_TG FONE :สาขา service SMTสุราษฎร์ธานี</option>
-<option value="SUBN2_TG FONE :สาขา service AITอุบลราชธานี"selected>SUBN2_TG FONE :สาขา service AITอุบลราชธานี</option>
-<option value="SUDO1_TG FONE :สาขา service ASM อุดรธานี"selected>SUDO1_TG FONE :สาขา service ASM อุดรธานี</option>
-<option value="BC001_Consignment Big C:สาขาอำนาจเจริญ"selected>BC001_Consignment Big C:สาขาอำนาจเจริญ</option>
-<option value="BC004_Consignment Big C:สาขาเมกาบางนา"selected>BC004_Consignment Big C:สาขาเมกาบางนา</option>
-<option value="BC005_Consignment Big C:สาขาบางบอน"selected>BC005_Consignment Big C:สาขาบางบอน</option>
-<option value="BC007_Consignment Big C:สาขาบางพลี"selected>BC007_Consignment Big C:สาขาบางพลี</option>
-<option value="BC010_Consignment Big C:สาขาบางปะกอก"selected>BC010_Consignment Big C:สาขาบางปะกอก</option>
-<option value="BC011_Consignment Big C:สาขาบางใหญ่"selected>BC011_Consignment Big C:สาขาบางใหญ่</option>
-<option value="BC014_Consignment Big C:ฉะเชิงเทรา"selected>BC014_Consignment Big C:ฉะเชิงเทรา</option>
-<option value="BC015_Consignment Big C:สาขาฉะเชิงเทรา (ร้าน2)"selected>BC015_Consignment Big C:สาขาฉะเชิงเทรา (ร้าน2)</option>
-<option value="BC016_Consignment Big C:สาขาเชียงใหม่ (ร้าน2)"selected>BC016_Consignment Big C:สาขาเชียงใหม่ (ร้าน2)</option>
-<option value="BC017_Consignment Big C:สาขาแจ้งวัฒนะ 2"selected>BC017_Consignment Big C:สาขาแจ้งวัฒนะ 2</option>
-<option value="BC018_Consignment Big C:สาขาชัยภูมิ"selected>BC018_Consignment Big C:สาขาชัยภูมิ</option>
-<option value="BC020_Consignment Big C:สาขาดาวคะนอง"selected>BC020_Consignment Big C:สาขาดาวคะนอง</option>
-<option value="BC021_Consignment Big C:สาขาดอนเมือง"selected>BC021_Consignment Big C:สาขาดอนเมือง</option>
-<option value="BC022_Consignment Big C:สาขาเอกมัย"selected>BC022_Consignment Big C:สาขาเอกมัย</option>
-<option value="BC023_Consignment Big C:สาขาแฟชั่น ไอแลนด์"selected>BC023_Consignment Big C:สาขาแฟชั่น ไอแลนด์</option>
-<option value="BC027_Consignment Big C:สาขาขอนแก่น"selected>BC027_Consignment Big C:สาขาขอนแก่น</option>
-<option value="BC033_Consignment Big C:สาขาลำลูกกา"selected>BC033_Consignment Big C:สาขาลำลูกกา</option>
-<option value="BC037_Consignment Big C:อิมพีเรียลลาดพร้าว"selected>BC037_Consignment Big C:อิมพีเรียลลาดพร้าว</option>
-<option value="BC038_Consignment Big C:สาขาลาดพร้าว"selected>BC038_Consignment Big C:สาขาลาดพร้าว</option>
-<option value="BC039_Consignment Big C:สาขามหาชัย"selected>BC039_Consignment Big C:สาขามหาชัย</option>
-<option value="BC043_Consignment Big C:สาขานครปฐม"selected>BC043_Consignment Big C:สาขานครปฐม</option>
-<option value="BC044_Consignment Big C:สาขาศรีนครินทร์"selected>BC044_Consignment Big C:สาขาศรีนครินทร์</option>
-<option value="BC045_Consignment Big C:สาขานครสวรรค์"selected>BC045_Consignment Big C:สาขานครสวรรค์</option>
-<option value="BC046_Consignment Big C:สาขาหนองบัว"selected>BC046_Consignment Big C:สาขาหนองบัว</option>
-<option value="BC047_Consignment Big C:สาขาหนองจอก"selected>BC047_Consignment Big C:สาขาหนองจอก</option>
-<option value="BC048_Consignment Big C:สาขาหนองกี่"selected>BC048_Consignment Big C:สาขาหนองกี่</option>
-<option value="BC056_Consignment Big C:สาขาเพชรเกษม"selected>BC056_Consignment Big C:สาขาเพชรเกษม</option>
-<option value="BC057_Consignment Big C:สาขาโพนพิสัย-หนองคาย"selected>BC057_Consignment Big C:สาขาโพนพิสัย-หนองคาย</option>
-<option value="BC061_Consignment Big C:สาขาราชบุรี"selected>BC061_Consignment Big C:สาขาราชบุรี</option>
-<option value="BC062_Consignment Big C:สาขารัชดา"selected>BC062_Consignment Big C:สาขารัชดา</option>
-<option value="BC063_Consignment Big C:สาขารามอินทรา"selected>BC063_Consignment Big C:สาขารามอินทรา</option>
-<option value="BC064_Consignment Big C:สาขาพระราม2 สาขา2"selected>BC064_Consignment Big C:สาขาพระราม2 สาขา2</option>
-<option value="BC065_Consignment Big C:สาขาร่มเกล้า"selected>BC065_Consignment Big C:สาขาร่มเกล้า</option>
-<option value="BC067_Consignment Big C:สาขารังสิต"selected>BC067_Consignment Big C:สาขารังสิต</option>
-<option value="BC071_Consignment Big C:สาขาศรีมหาโพธิ์ (ปราจีน)"selected>BC071_Consignment Big C:สาขาศรีมหาโพธิ์ (ปราจีน)</option>
-<option value="BC072_Consignment Big C:สาขาสกลนคร"selected>BC072_Consignment Big C:สาขาสกลนคร</option>
-<option value="BC073_Consignment Big C:สาขาสุขาภิบาล 3 (ร้าน2)"selected>BC073_Consignment Big C:สาขาสุขาภิบาล 3 (ร้าน2)</option>
-<option value="BC074_Consignment Big C:สาขาสุโขทัย"selected>BC074_Consignment Big C:สาขาสุโขทัย</option>
-<option value="BC076_Consignment Big C:สาขาสุขาภิบาล 3"selected>BC076_Consignment Big C:สาขาสุขาภิบาล 3</option>
-<option value="BC077_Consignment Big C:สาขาสะพานควาย"selected>BC077_Consignment Big C:สาขาสะพานควาย</option>
-<option value="BC078_Consignment Big C:สาขาสำโรง"selected>BC078_Consignment Big C:สาขาสำโรง</option>
-<option value="BC079_Consignment Big C:สาขาสุรินทร์"selected>BC079_Consignment Big C:สาขาสุรินทร์</option>
-<option value="BC080_Consignment Big C:สาขาศรีษะเกษ"selected>BC080_Consignment Big C:สาขาศรีษะเกษ</option>
-<option value="BC081_Consignment Big C:สาขาสุขสวัสดิ์"selected>BC081_Consignment Big C:สาขาสุขสวัสดิ์</option>
-<option value="BC086_Consignment Big C:สาขาลำลูกกา คลอง 4"selected>BC086_Consignment Big C:สาขาลำลูกกา คลอง 4</option>
-<option value="BC087_Consignment Big C:สาขาวิเชียรบุรี (จ.เพชรบูรณ์)"selected>BC087_Consignment Big C:สาขาวิเชียรบุรี (จ.เพชรบูรณ์)</option>
-<option value="BC090_Consignment Big C:สาขาวงศ์สว่าง"selected>BC090_Consignment Big C:สาขาวงศ์สว่าง</option>
-<option value="BC091_Consignment Big C:สาขาบางนา"selected>BC091_Consignment Big C:สาขาบางนา</option>
-<option value="BC094_Consignment Big C:สาขาแจ้งวัฒนะ 1"selected>BC094_Consignment Big C:สาขาแจ้งวัฒนะ 1</option>
-<option value="BC096_Consignment Big C:สาขาหางดง"selected>BC096_Consignment Big C:สาขาหางดง</option>
-<option value="BC105_Consignment Big C:สาขาพระราม 2 สาขา 1"selected>BC105_Consignment Big C:สาขาพระราม 2 สาขา 1</option>
-<option value="BC106_Consignment Big C:สาขารัตนาธิเบศร์ 1"selected>BC106_Consignment Big C:สาขารัตนาธิเบศร์ 1</option>
-<option value="BC108_Consignment Big C สาขาสวนหลวง (MK)"selected>BC108_Consignment Big C สาขาสวนหลวง (MK)</option>
-<option value="BC110_Consignment Big C สาขาสุขาภิบาล 5 (MK)"selected>BC110_Consignment Big C สาขาสุขาภิบาล 5 (MK)</option>
-<option value="BC111_Consignment Big C สาขาทุ่งครุ (MK)"selected>BC111_Consignment Big C สาขาทุ่งครุ (MK)</option>
-<option value="BC116_Consignment Big C:สาขาสระบุรี"selected>BC116_Consignment Big C:สาขาสระบุรี</option>
-<option value="PM001_Power Mall สาขาเดอะมอลล์รามคำแหง (M3)"selected>PM001_Power Mall สาขาเดอะมอลล์รามคำแหง (M3)</option>
-<option value="PM002_Power Mall สาขาเดอะมอลล์โคราช (M10)"selected>PM002_Power Mall สาขาเดอะมอลล์โคราช (M10)</option>
-<option value="PM003_Power Mall สาขาเดอะมอลล์งามวงศ์วาน (M6)"selected>PM003_Power Mall สาขาเดอะมอลล์งามวงศ์วาน (M6)</option>
-<option value="PM004_Power Mall สาขาเดอะมอลล์บางแค (M7)"selected>PM004_Power Mall สาขาเดอะมอลล์บางแค (M7)</option>
-<option value="PM005_Power Mall สาขาเดอะมอลลบางกะปิ (M8)"selected>PM005_Power Mall สาขาเดอะมอลลบางกะปิ (M8)</option>
-<option value="PM006_Power Mall สาขาพารากอน (M11)"selected>PM006_Power Mall สาขาพารากอน (M11)</option>
-<option value="PM007_Power Mall สาขาเอ็มโพเรี่ยม (M9)"selected>PM007_Power Mall สาขาเอ็มโพเรี่ยม (M9)</option>
-<option value="PM008_Power Mall สาขาเดอะมอลล์ท่าพระ (M5)"selected>PM008_Power Mall สาขาเดอะมอลล์ท่าพระ (M5)</option>
-<option value="กรุณากรอกย้ายจากสาขา"selected>กรุณากรอกย้ายจากสาขา</option>               
-           
-           </select>  
+          <select name="locationto" id="locationto" maxlength="10" class="form-control"
+            placeholder="กรุณากรอก สาขาย้ายเข้า" required>
+            <option value="" selected disabled> เลือกสาขา </option>
+            <option value="BBDG1_TG FONE สาขาบิ๊กซีบ้านดุง (จ.อุดรธานี)" >BBDG1_TG FONE สาขาบิ๊กซีบ้านดุง
+              (จ.อุดรธานี)</option>
+            <option value="BBPE1_TG FONE บิ๊กซี บางพลี">BBPE1_TG FONE บิ๊กซี บางพลี</option>
+            <option value="BHMK1_TG FONE บิ๊กซี หัวหมาก ชั้น 1" >BHMK1_TG FONE บิ๊กซี หัวหมาก ชั้น 1</option>
+            <option value="BHMK4_Samsung (SIS) Huamark Town Center บิ๊กซีหัวหมาก" >BHMK4_Samsung (SIS) Huamark
+              Town Center บิ๊กซีหัวหมาก</option>
+            <option value="BNSW3_tg บิ๊กซี นครสวรรค์ (Kiosk)" >BNSW3_tg บิ๊กซี นครสวรรค์ (Kiosk)</option>
+            <option value="BNSW5_tg kiosk วี-สแควร์พลาซ่า บิ๊กซีนครสวรรค์" >BNSW5_tg kiosk วี-สแควร์พลาซ่า
+              บิ๊กซีนครสวรรค์</option>
+            <option value="BPTY1_TG FONE สาขาบิ๊กซีพัทยา 3 (กลาง)" >BPTY1_TG FONE สาขาบิ๊กซีพัทยา 3 (กลาง)
+            </option>
+            <option value="BPTY2_SAMSUNG SIS บิ๊กซี พัทยากลาง" >BPTY2_SAMSUNG SIS บิ๊กซี พัทยากลาง</option>
+            <option value="BRAD2_TG FONE บิ๊กซีราชบุรี" >BRAD2_TG FONE บิ๊กซีราชบุรี</option>
+            <option value="BSUK3_VIVO SHOP บิ๊กซีสุขสวัสดิ์" >BSUK3_VIVO SHOP บิ๊กซีสุขสวัสดิ์</option>
+            <option value="BSWG1_VIVO SHOP บิ๊กซีสุวินทวงศ์" >BSWG1_VIVO SHOP บิ๊กซีสุวินทวงศ์</option>
+            <option value="BTAK1_TG FONE บิ๊กซีท่าตะโก" >BTAK1_TG FONE บิ๊กซีท่าตะโก</option>
+            <option value="BTAK2_Samsung (SIS) บิ๊กซีท่าตะโก" >BTAK2_Samsung (SIS) บิ๊กซีท่าตะโก</option>
+            <option value="BWCB1_TG FONE บิ๊กซีวิเชียรบุรี" >BWCB1_TG FONE บิ๊กซีวิเชียรบุรี</option>
+            <option value="CAYA1_XIAOMI SHOP เซ็นทรัลอยุธยา" >CAYA1_XIAOMI SHOP เซ็นทรัลอยุธยา</option>
+            <option value="CAYA2_TG FONE เซ็นทรัลอยุธยา" >CAYA2_TG FONE เซ็นทรัลอยุธยา</option>
+            <option value="CAYA3_Samsung เซ็นทรัลอยุธยา" >CAYA3_Samsung เซ็นทรัลอยุธยา</option>
+            <option value="CBNA2_TG FONE เซ็นทรัล บางนา (ร้าน2)" >CBNA2_TG FONE เซ็นทรัล บางนา (ร้าน2)</option>
+            <option value="CBYI1_OPPO SHOP เซ็นทรัลเวสเกต" >CBYI1_OPPO SHOP เซ็นทรัลเวสเกต</option>
+            <option value="CBYI2_TG FONE เซ็นทรัลเวสเกต" >CBYI2_TG FONE เซ็นทรัลเวสเกต</option>
+            <option value="CBYI3_TG Smart Life เซ็นทรัลเวสเกต" >CBYI3_TG Smart Life เซ็นทรัลเวสเกต</option>
+            <option value="CBYI4_Realme kiosk เซ็นทรัลเวสเกต" >CBYI4_Realme kiosk เซ็นทรัลเวสเกต</option>
+            <option value="CCAP1_TG FONE เซ็นทรัลแอร์พอร์ท เชียงใหม่" >CCAP1_TG FONE เซ็นทรัลแอร์พอร์ท เชียงใหม่
+            </option>
+            <option value="CCRI1_TG FONE เซ็นทรัลพลาซ่า เชียงราย" >CCRI1_TG FONE เซ็นทรัลพลาซ่า เชียงราย
+            </option>
+            <option value="CFTV1_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่" >CFTV1_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่
+            </option>
+            <option value="CFTV2_TG FONE เซ็นทรัลเฟสติวัล เชียงใหม่ (KIOSK)" >CFTV2_TG FONE เซ็นทรัลเฟสติวัล
+              เชียงใหม่ (KIOSK)</option>
+            <option value="CHDY1_TG FONE เซ็นทรัล หาดใหญ่" >CHDY1_TG FONE เซ็นทรัล หาดใหญ่</option>
+            <option value="CKKN1_TG FONE เซ็นทรัล ขอนแก่น" >CKKN1_TG FONE เซ็นทรัล ขอนแก่น</option>
+            <option value="CKKN2_Samsung : เซ็นทรัล ขอนแก่น" >CKKN2_Samsung : เซ็นทรัล ขอนแก่น</option>
+            <option value="CLPA2_TG FONE ศูนย์การค้าเซ็นทรัลลำปาง (Kiosk)" >CLPA2_TG FONE
+              ศูนย์การค้าเซ็นทรัลลำปาง (Kiosk)</option>
+            <option value="CLPW3_Samsung : เซ็นทรัลลาดพร้าว ชั้น 3" >CLPW3_Samsung : เซ็นทรัลลาดพร้าว ชั้น 3
+            </option>
+            <option value="CLPW7_Huawei เซ็นทรัลลาดพร้าว" >CLPW7_Huawei เซ็นทรัลลาดพร้าว</option>
+            <option value="CMCH1_TG FONE เซ็นทรัลมหาชัย" >CMCH1_TG FONE เซ็นทรัลมหาชัย</option>
+            <option value="CNKO1_TG FONE เซ็นทรัลนครศรีธรรมราช" >CNKO1_TG FONE เซ็นทรัลนครศรีธรรมราช</option>
+            <option value="CNSM1_TG FONE เซ็นทรัลนครราชสีมา (โคราช)" >CNSM1_TG FONE เซ็นทรัลนครราชสีมา (โคราช)
+            </option>
+            <option value="CNSM2_OPPO SHOP เซ็นทรัลโคราช" >CNSM2_OPPO SHOP เซ็นทรัลโคราช</option>
+            <option value="CNSM3_SAMSUNG SHOP เซ็นทรัลนครราชสีมา(โคราช)" >CNSM3_SAMSUNG SHOP
+              เซ็นทรัลนครราชสีมา(โคราช)</option>
+            <option value="CNSM4_tg Kiosk เซ็นทรัลนครราชสีมา" >CNSM4_tg Kiosk เซ็นทรัลนครราชสีมา</option>
+            <option value="CNSW1_tg เซ็นทรัลนครสวรรค์" >CNSW1_tg เซ็นทรัลนครสวรรค์</option>
+            <option value="CPKO2_TG FONE เซ็นทรัล ปิ่นเกล้า ชั้น 3" >CPKO2_TG FONE เซ็นทรัล ปิ่นเกล้า ชั้น 3
+            </option>
+            <option value="CPSL2_TG FONE เซ็นทรัล พิษณุโลก (Kiosk)" >CPSL2_TG FONE เซ็นทรัล พิษณุโลก (Kiosk)
+            </option>
+            <option value="CRIN1_TG FONE เซ็นทรัล รามอินทรา" >CRIN1_TG FONE เซ็นทรัล รามอินทรา</option>
+            <option value="CRIN3_TG FONE เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา" >CRIN3_TG FONE
+              เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา</option>
+            <option value="CRIN4_Samsung เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา" >CRIN4_Samsung
+              เซ็นทรัลเฟสติวัล:เลียบทางด่วนรามอินทรา</option>
+            <option value="CRM21_TG FONE เซ็นทรัล พระราม 2 (ห้อง IT-01)" >CRM21_TG FONE เซ็นทรัล พระราม 2 (ห้อง
+              IT-01)</option>
+            <option value="CRM22_Samsung : เซ็นทรัล พระราม 2 (ชั้น2)" >CRM22_Samsung : เซ็นทรัล พระราม 2 (ชั้น2)
+            </option>
+            <option value="CRM23_Samsung : เซ็นทรัล พระราม 2 (ชั้น3)" >CRM23_Samsung : เซ็นทรัล พระราม 2 (ชั้น3)
+            </option>
+            <option value="CRM24_TG FONE เซ็นทรัล พระราม2 (ชั้น3)" >CRM24_TG FONE เซ็นทรัล พระราม2 (ชั้น3)
+            </option>
+            <option value="CRM27_VIVO เซ็นทรัล พระราม 2 (ชั้น2)" >CRM27_VIVO เซ็นทรัล พระราม 2 (ชั้น2)</option>
+            <option value="CRM32_TG FONE เซ็นทรัล พระราม 3" >CRM32_TG FONE เซ็นทรัล พระราม 3</option>
+            <option value="CRM91_TG FONE เซ็นทรัล พระราม 9" >CRM91_TG FONE เซ็นทรัล พระราม 9</option>
+            <option value="CRM92_vivo Brand Shop (Kiosk) เซ็นทรัล พระราม 9" >CRM92_vivo Brand Shop (Kiosk)
+              เซ็นทรัล พระราม 9</option>
+            <option value="CRM93_Samsung : เซ็นทรัล พระราม 9 (ชั้น G)" >CRM93_Samsung : เซ็นทรัล พระราม 9 (ชั้น
+              G)</option>
+            <option value="CRM94_TG FONE:สาขา service เซ็นทรัลพระราม 9 (ชั้น 4)" >CRM94_TG FONE:สาขา service
+              เซ็นทรัลพระราม 9 (ชั้น 4)</option>
+            <option value="CRYG1_TG FONE เซ็นทรัล ระยอง" >CRYG1_TG FONE เซ็นทรัล ระยอง</option>
+            <option value="CSIR1_TG FONE เซ็นทรัลศรีราชา" >CSIR1_TG FONE เซ็นทรัลศรีราชา</option>
+            <option value="CSIR2_XIAOMI SHOP เซ็นทรัลศรีราชา" >CSIR2_XIAOMI SHOP เซ็นทรัลศรีราชา</option>
+            <option value="CSUM1_TG FONE เซ็นทรัลเฟสติวัลสมุย" >CSUM1_TG FONE เซ็นทรัลเฟสติวัลสมุย</option>
+            <option value="CSUM2_Samsung : เซ็นทรัลเฟสติวัล สมุย" >CSUM2_Samsung : เซ็นทรัลเฟสติวัล สมุย
+            </option>
+            <option value="CSUR1_TG FONE เซ็นทรัล สุราษฎร์ธานี" >CSUR1_TG FONE เซ็นทรัล สุราษฎร์ธานี</option>
+            <option value="CUBN1_TG FONE เซ็นทรัล อุบลราชธานี" >CUBN1_TG FONE เซ็นทรัล อุบลราชธานี</option>
+            <option value="CWAT1_TG FONE เซ็นทรัล แจ้งวัฒนะ (ชั้น 4)" >CWAT1_TG FONE เซ็นทรัล แจ้งวัฒนะ (ชั้น 4)
+            </option>
+            <option value="CWEV1_tg เซ็นทรัลเวสวิลล์" >CWEV1_tg เซ็นทรัลเวสวิลล์</option>
+            <option value="CWEV2_Realme Shop เซ็นทรัลเวสวิลล์" >CWEV2_Realme Shop เซ็นทรัลเวสวิลล์</option>
+            <option value="CWOR3_Samsung:เซ็นทรัลเวิลด์" >CWOR3_Samsung:เซ็นทรัลเวิลด์</option>
+            <option value="CWOR5_TG FONE เซ็นทรัลเวิลด์ ( ชั้น5 )" >CWOR5_TG FONE เซ็นทรัลเวิลด์ ( ชั้น5 )
+            </option>
+            <option value="CWSW1_TG FONE เซ็นทรัลวงศ์สว่าง Town Center" >CWSW1_TG FONE เซ็นทรัลวงศ์สว่าง Town
+              Center</option>
+            <option value="FRDA1_TG FONE บิ๊กซี รัชดาฯ" >FRDA1_TG FONE บิ๊กซี รัชดาฯ</option>
+            <option value="FRM42_TG FONE บิ๊กซี พระราม 4" >FRM42_TG FONE บิ๊กซี พระราม 4</option>
+            <option value="KMBK1_TG FONE สาขามาบุญครอง" >KMBK1_TG FONE สาขามาบุญครอง</option>
+            <option value="KMBK5_Samsung : มาบุญครอง (ชั้น 4)" >KMBK5_Samsung : มาบุญครอง (ชั้น 4)</option>
+            <option value="KMBK6_Honor : มาบุญครอง (ชั้น 4)" >KMBK6_Honor : มาบุญครอง (ชั้น 4)</option>
+            <option value="KMBK7_TG FONE:สาขา service MBK (ชั้น 5)" >KMBK7_TG FONE:สาขา service MBK (ชั้น 5)
+            </option>
+            <option value="LATG1_TG FONE โลตัส อ่างทอง" >LATG1_TG FONE โลตัส อ่างทอง</option>
+            <option value="LBAB1_TG FONE โลตัส บ้านบึง (Kiosk)" >LBAB1_TG FONE โลตัส บ้านบึง (Kiosk)</option>
+            <option value="LBAB2_VIVO SHOP โลตัสบ้านบึง" >LBAB2_VIVO SHOP โลตัสบ้านบึง</option>
+            <option value="LBAB3_AIS BUDDY โลตัส บ้านบึง" >LBAB3_AIS BUDDY โลตัส บ้านบึง</option>
+            <option value="LBAB4_OPPO SHOP โลตัส บ้านบึง" >LBAB4_OPPO SHOP โลตัส บ้านบึง</option>
+            <option value="LBAB5_Samsung (SIS) โลตัส บ้านบึง" >LBAB5_Samsung (SIS) โลตัส บ้านบึง</option>
+            <option value="LBBO1_TG FONE สาขาโลตัสบางบ่อ (Kiosk)" >LBBO1_TG FONE สาขาโลตัสบางบ่อ (Kiosk)
+            </option>
+            <option value="LBKE3_Samsung (SIS) โลตัสบางแค" >LBKE3_Samsung (SIS) โลตัสบางแค</option>
+            <option value="LBLN1_TG FONE โลตัสบางเลน" >LBLN1_TG FONE โลตัสบางเลน</option>
+            <option value="LBOW2_Samsung (SIS) โลตัสบ่อวิน" >LBOW2_Samsung (SIS) โลตัสบ่อวิน</option>
+            <option value="LBPK2_TG FONE โลตัส บางปะกอก (ชั้น3)" >LBPK2_TG FONE โลตัส บางปะกอก (ชั้น3)</option>
+            <option value="LBSP1_TG FONE โลตัส บึงสามพัน" >LBSP1_TG FONE โลตัส บึงสามพัน</option>
+            <option value="LBUH1_TG FONE โลตัสบัวใหญ่" >LBUH1_TG FONE โลตัสบัวใหญ่</option>
+            <option value="LBWN1_TG FONE โลตัส บ่อวิน" >LBWN1_TG FONE โลตัส บ่อวิน</option>
+            <option value="LBYI1_TG FONE โลตัส สาขาบางใหญ่" >LBYI1_TG FONE โลตัส สาขาบางใหญ่</option>
+            <option value="LBYI2_Samsung : โลตัส บางใหญ่" >LBYI2_Samsung : โลตัส บางใหญ่</option>
+            <option value="LCAM1_TG FONE สาขาโลตัสชะอำ (Kiosk)" >LCAM1_TG FONE สาขาโลตัสชะอำ (Kiosk)</option>
+            <option value="LCAN2_tg โลตัสจันทบุรี" >LCAN2_tg โลตัสจันทบุรี</option>
+            <option value="LCHP1_TG FONE โลตัส ชุมพร" >LCHP1_TG FONE โลตัส ชุมพร</option>
+            <option value="LCHP2_Samsung (SIS) โลตัสชุมพร" >LCHP2_Samsung (SIS) โลตัสชุมพร</option>
+            <option value="LCHY1_TG FONE โลตัสเชียงยืน" >LCHY1_TG FONE โลตัสเชียงยืน</option>
+            <option value="LCKM1_TG FONE สาขาโลตัสเชียงคำ (จังหวัดพะเยา)" >LCKM1_TG FONE สาขาโลตัสเชียงคำ
+              (จังหวัดพะเยา)</option>
+            <option value="LCMT1_Telewiz: โลตัส จอมทอง เชียงใหม่" >LCMT1_Telewiz: โลตัส จอมทอง เชียงใหม่
+            </option>
+            <option value="LCMT2_TG FONE โลตัส จอมทอง เชียงใหม่" >LCMT2_TG FONE โลตัส จอมทอง เชียงใหม่</option>
+            <option value="LCPE1_TG FONE โลตัส ชุมแพ" >LCPE1_TG FONE โลตัส ชุมแพ</option>
+            <option value="LCRI1_Telewiz โลตัสแม่จัน" >LCRI1_Telewiz โลตัสแม่จัน</option>
+            <option value="LCYP2_Realme โลตัสชัยภูมิ" >LCYP2_Realme โลตัสชัยภูมิ</option>
+            <option value="LCYP3_TG FONE โลตัสชัยภูมิ" >LCYP3_TG FONE โลตัสชัยภูมิ</option>
+            <option value="LDAN1_TG FONE โลตัสด่านขุนทด" >LDAN1_TG FONE โลตัสด่านขุนทด</option>
+            <option value="LHAT1_TG FONE โลตัสหัวทะเลโคราช" >LHAT1_TG FONE โลตัสหัวทะเลโคราช</option>
+            <option value="LHAT2_tg Kiosk โลตัสหัวทะเล 2" >LHAT2_tg Kiosk โลตัสหัวทะเล 2</option>
+            <option value="LJOH1_TG FONE โลตัสจอหอ" >LJOH1_TG FONE โลตัสจอหอ</option>
+            <option value="LKBI2_TG FONE โลตัส กระบี่" >LKBI2_TG FONE โลตัส กระบี่</option>
+            <option value="LKKN2_TG FONE โลตัสขอนแก่น 2 (Kiosk)" >LKKN2_TG FONE โลตัสขอนแก่น 2 (Kiosk)</option>
+            <option value="LKTB1_Telewiz โลตัสกระทุ่มแบน (สมุทรสาคร)" >LKTB1_Telewiz โลตัสกระทุ่มแบน (สมุทรสาคร)
+            </option>
+            <option value="LKUM1_Samsung (SIS) โลตัส คำเที่ยง (เชียงใหม่)" >LKUM1_Samsung (SIS) โลตัส คำเที่ยง
+              (เชียงใหม่)</option>
+            <option value="LKUM3_TG FONE โลตัส คำเที่ยง (Smart Phone)" >LKUM3_TG FONE โลตัส คำเที่ยง (Smart
+              Phone)</option>
+            <option value="LKUM4_VIVO SHOP โลตัส คำเที่ยง" >LKUM4_VIVO SHOP โลตัส คำเที่ยง</option>
+            <option value="LKUP1_TG FONE โลตัสกุมภวาปี อุดรฯ" >LKUP1_TG FONE โลตัสกุมภวาปี อุดรฯ</option>
+            <option value="LKUP2_TG FONE (H2O) โลตัสกุมภวาปี" >LKUP2_TG FONE (H2O) โลตัสกุมภวาปี</option>
+            <option value="LLAM1_TG FONE โลตัสลำปลายมาศ" >LLAM1_TG FONE โลตัสลำปลายมาศ</option>
+            <option value="LLKL2_TG FONE สาขาโลตัสเลียบคลอง 2" >LLKL2_TG FONE สาขาโลตัสเลียบคลอง 2</option>
+            <option value="LLSI1_TG FONE โลตัส หลักสี่" >LLSI1_TG FONE โลตัส หลักสี่</option>
+            <option value="LMEN2_TG FONE โลตัส มีนบุรี (Kiosk 2)" >LMEN2_TG FONE โลตัส มีนบุรี (Kiosk 2)
+            </option>
+            <option value="LNAR1_TG FONE โลตัส นางรอง" >LNAR1_TG FONE โลตัส นางรอง</option>
+            <option value="LNAW3_TG FONE โลตัส นวนคร ชั้น2" >LNAW3_TG FONE โลตัส นวนคร ชั้น2</option>
+            <option value="LNCS1_TG FONE โลตัสนครชัยศรี" >LNCS1_TG FONE โลตัสนครชัยศรี</option>
+            <option value="LNOJ1_Samsung (SIS) โลตัส หนองจอก (KIOSK)" >LNOJ1_Samsung (SIS) โลตัส หนองจอก (KIOSK)
+            </option>
+            <option value="LNRP2_AIS SHOP โลตัส นอร์ทราชพฤกษ์" >LNRP2_AIS SHOP โลตัส นอร์ทราชพฤกษ์</option>
+            <option value="LPAC1_TG FONE โลตัสประโคนชัย" >LPAC1_TG FONE โลตัสประโคนชัย</option>
+            <option value="LPBR2_TG FONE โลตัส ปราณบุรี" >LPBR2_TG FONE โลตัส ปราณบุรี</option>
+            <option value="LPCT1_TG FONE โลตัส พิจิตร ท่าหลวง" >LPCT1_TG FONE โลตัส พิจิตร ท่าหลวง</option>
+            <option value="LPKT2_TG FONE โลตัส ภูเก็ต" >LPKT2_TG FONE โลตัส ภูเก็ต</option>
+            <option value="LPNK1_TG FONE โลตัส พนมสารคาม" >LPNK1_TG FONE โลตัส พนมสารคาม</option>
+            <option value="LPSL1_TG FONE โลตัส พิษณุโลก" >LPSL1_TG FONE โลตัส พิษณุโลก</option>
+            <option value="LPSL2_TG FONE โลตัส พิษณุโลก ท่าทอง" >LPSL2_TG FONE โลตัส พิษณุโลก ท่าทอง</option>
+            <option value="LPTC1_TG FONE โลตัส ปักธงชัย" >LPTC1_TG FONE โลตัส ปักธงชัย</option>
+            <option value="LPTM1_TG FONE Kiosk โลตัส ปทุมธานี" >LPTM1_TG FONE Kiosk โลตัส ปทุมธานี</option>
+            <option value="LPTN1_TG FONE โลตัส พัฒนาการ" >LPTN1_TG FONE โลตัส พัฒนาการ</option>
+            <option value="LPTO1_TG FONE โลตัสปักธงชัย 1" >LPTO1_TG FONE โลตัสปักธงชัย 1</option>
+            <option value="LPTO2_VIVO SHOP โลตัสปักธงชัย 2" >LPTO2_VIVO SHOP โลตัสปักธงชัย 2</option>
+            <option value="LPTY1_Samsung (SIS) โลตัส พัทยาใต้" >LPTY1_Samsung (SIS) โลตัส พัทยาใต้</option>
+            <option value="LPYA1_TG FONE โลตัส พะเยา (Kiosk)" >LPYA1_TG FONE โลตัส พะเยา (Kiosk)</option>
+            <option value="LRM11_TG FONE โลตัส พระราม 1" >LRM11_TG FONE โลตัส พระราม 1</option>
+            <option value="LRM32_TG FONE โลตัส พระราม 3 (Kiosk)" >LRM32_TG FONE โลตัส พระราม 3 (Kiosk)</option>
+            <option value="LSIK1_TG FONE โลตัส สีคิ้ว" >LSIK1_TG FONE โลตัส สีคิ้ว</option>
+            <option value="LSSK1_TG FONE โลตัส สมุทรสงคราม (Kiosk)" >LSSK1_TG FONE โลตัส สมุทรสงคราม (Kiosk)
+            </option>
+            <option value="LSUG1_TG FONE โลตัสสังขะ" >LSUG1_TG FONE โลตัสสังขะ</option>
+            <option value="LSUR3_TG FONE โลตัสสุราษฎร์ธานี" >LSUR3_TG FONE โลตัสสุราษฎร์ธานี</option>
+            <option value="LTAK1_TG FONE โลตัส ตาก" >LTAK1_TG FONE โลตัส ตาก</option>
+            <option value="LTAK2_TG FONE โลตัสตาคลี" >LTAK2_TG FONE โลตัสตาคลี</option>
+            <option value="LTPN2_TG FONE โลตัสธาตุพนม" >LTPN2_TG FONE โลตัสธาตุพนม</option>
+            <option value="LTPN3_OPPO SHOP โลตัสธาตุพนม" >LTPN3_OPPO SHOP โลตัสธาตุพนม</option>
+            <option value="LTPN4_Samsung SIS โลตัสธาตุพนม" >LTPN4_Samsung SIS โลตัสธาตุพนม</option>
+            <option value="LTWN2_TG FONE โลตัส ติวานนท์" >LTWN2_TG FONE โลตัส ติวานนท์</option>
+            <option value="LUBN2_TG FONE โลตัส อุบลราชธานี" >LUBN2_TG FONE โลตัส อุบลราชธานี</option>
+            <option value="LUBN3_H2O โลตัส อุบลราชธานี" >LUBN3_H2O โลตัส อุบลราชธานี</option>
+            <option value="LUBN4_Samsung (SIS) โลตัส อุบลราชธานี" >LUBN4_Samsung (SIS) โลตัส อุบลราชธานี
+            </option>
+            <option value="LUDI1_TG FONE โลตัสอุตรดิตถ์" >LUDI1_TG FONE โลตัสอุตรดิตถ์</option>
+            <option value="MBKE2_TG FONE เดอะมอลล์ บางแค ชั้น2" >MBKE2_TG FONE เดอะมอลล์ บางแค ชั้น2</option>
+            <option value="MBKE5_SAMSUNG SHOP เดอะมอลล์บางแค" >MBKE5_SAMSUNG SHOP เดอะมอลล์บางแค</option>
+            <option value="MBKE6_Realme SHOP เดอะมอลล์บางแค" >MBKE6_Realme SHOP เดอะมอลล์บางแค</option>
+            <option value="MBKP5_TG FONE เดอะมอลล์บางกะปิ (ร้าน 2)" >MBKP5_TG FONE เดอะมอลล์บางกะปิ (ร้าน 2)
+            </option>
+            <option value="MBKP7_VIVO Shop เดอะมอลล์บางกะปิ" >MBKP7_VIVO Shop เดอะมอลล์บางกะปิ</option>
+            <option value="MNGW1_TG FONE เดอะมอลล์ งามวงศ์วาน (ชั้น 6)" >MNGW1_TG FONE เดอะมอลล์ งามวงศ์วาน
+              (ชั้น 6)</option>
+            <option value="MNGW3_Samsung : เดอะมอลล์ งามวงศ์วาน (ชั้น 6)" >MNGW3_Samsung : เดอะมอลล์ งามวงศ์วาน
+              (ชั้น 6)</option>
+            <option value="MNSM1_TG FONE เดอะมอลล์ นครราชสีมา" >MNSM1_TG FONE เดอะมอลล์ นครราชสีมา</option>
+            <option value="MNSM3_SAMSUNG SHOP เดอะมอลล์นครราชสีมา(โคราช)" >MNSM3_SAMSUNG SHOP
+              เดอะมอลล์นครราชสีมา(โคราช)</option>
+            <option value="MTPA3_TG FONE เดอะมอลล์ ท่าพระ (ชั้น 3)" >MTPA3_TG FONE เดอะมอลล์ ท่าพระ (ชั้น 3)
+            </option>
+            <option value="OAYA2_OPPO SHOP อยุธยาซิติ้พาร์ค G12 สาขา 1" >OAYA2_OPPO SHOP อยุธยาซิติ้พาร์ค G12
+              สาขา 1</option>
+            <option value="OAYA3_OPPO SHOP อยุธยาซิติ้พาร์ค G66 สาขา 2" >OAYA3_OPPO SHOP อยุธยาซิติ้พาร์ค G66
+              สาขา 2</option>
+            <option value="OBNA1_TG FONE เมกะบางนา" >OBNA1_TG FONE เมกะบางนา</option>
+            <option value="OBRM2_SAMSUNG SHOP ทวีกิจบุรีรัมย์" >OBRM2_SAMSUNG SHOP ทวีกิจบุรีรัมย์</option>
+            <option value="OBRM3_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 1" >OBRM3_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 1
+            </option>
+            <option value="OBRM4_TG FONE ทวีกิจซุปเปอร์เซ็นเตอร์ บุรีรัมย์" >OBRM4_TG FONE
+              ทวีกิจซุปเปอร์เซ็นเตอร์ บุรีรัมย์</option>
+            <option value="OBRM5_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 2" >OBRM5_OPPO SHOP ทวีกิจบุรีรัมย์ สาขา 2
+            </option>
+            <option value="OBSN1_Samsung (SIS) แหลมทอง บางแสน" >OBSN1_Samsung (SIS) แหลมทอง บางแสน</option>
+            <option value="OCUD1_TG FONE เซ็นทรัลอุดรธานี" >OCUD1_TG FONE เซ็นทรัลอุดรธานี</option>
+            <option value="OCUD4_TG FONE ตึกคอมอุดรธานี" >OCUD4_TG FONE ตึกคอมอุดรธานี</option>
+            <option value="OCUD5_Samsung (SIS) ตึกคอมอุดรธานี" >OCUD5_Samsung (SIS) ตึกคอมอุดรธานี</option>
+            <option value="OESR2_TG FONE อิมพิเรียลเวิลด์สำโรง" >OESR2_TG FONE อิมพิเรียลเวิลด์สำโรง</option>
+            <option value="OFIL1_TG FONE แฟชั่น ไอส์แลนด์ ชั้น 3" >OFIL1_TG FONE แฟชั่น ไอส์แลนด์ ชั้น 3
+            </option>
+            <option value="OFNK2_TG FONE Asawann Shopping Complex 1 หนองคาย" >OFNK2_TG FONE Asawann Shopping
+              Complex 1 หนองคาย</option>
+            <option value="OFPK1_TG FONE ฟิวเจอร์พาร์ค รังสิต ชั้น 3" >OFPK1_TG FONE ฟิวเจอร์พาร์ค รังสิต ชั้น 3
+            </option>
+            <option value="OFPK3_Samsung : สาขาฟิวเจอร์พาร์ค รังสิต" >OFPK3_Samsung : สาขาฟิวเจอร์พาร์ค รังสิต
+            </option>
+            <option value="OFPK4_TG FONE:สาขา service ฟิวเจอร์พาร์ค รังสิต" >OFPK4_TG FONE:สาขา service
+              ฟิวเจอร์พาร์ค รังสิต</option>
+            <option value="OITS3_TG FONE ไอทีสแควร์ (ร้าน 3)" >OITS3_TG FONE ไอทีสแควร์ (ร้าน 3)</option>
+            <option value="OITS4_Samsung SIS ไอทีสแควร์หลักสี่" >OITS4_Samsung SIS ไอทีสแควร์หลักสี่</option>
+            <option value="OPTY1_TG FONE ตึกคอม พัทยา" >OPTY1_TG FONE ตึกคอม พัทยา</option>
+            <option value="OPTY3_tg Terminal 21 พัทยา" >OPTY3_tg Terminal 21 พัทยา</option>
+            <option value="OSBK3_TG FONE ศูนย์การค้าซีคอนบางแค" >OSBK3_TG FONE ศูนย์การค้าซีคอนบางแค</option>
+            <option value="OSSQ6_TG FONE ซีคอนสแควร์ ชั้น 2" >OSSQ6_TG FONE ซีคอนสแควร์ ชั้น 2</option>
+            <option value="OSSQ7_TG FONE ซีคอนสแควร์ ศรีนครินทร์ ชั้น G" >OSSQ7_TG FONE ซีคอนสแควร์ ศรีนครินทร์
+              ชั้น G</option>
+            <option value="OSSQ8_TG FONE Smart club ซีคอนสแควร์ ศรีนครินทร์" >OSSQ8_TG FONE Smart club
+              ซีคอนสแควร์ ศรีนครินทร์</option>
+            <option value="OSTP1_TG FONE ศูนย์การค้าเสริมไทยคอมเพล็กซ์" >OSTP1_TG FONE
+              ศูนย์การค้าเสริมไทยคอมเพล็กซ์</option>
+            <option value="OSTP2_Realme Kiosk ศูนย์การค้าเสริมไทยคอมเพล็กซ์" >OSTP2_Realme Kiosk
+              ศูนย์การค้าเสริมไทยคอมเพล็กซ์</option>
+            <option value="OTMI2_SAMSUNG SHOP เทอร์มินอลทเวนตี้วัน(โคราช)" >OTMI2_SAMSUNG SHOP
+              เทอร์มินอลทเวนตี้วัน(โคราช)</option>
+            <option value="OUCS1_TG FONE:สาขา service ยูไนเต็ด สีลม (ชั้น 3)" >OUCS1_TG FONE:สาขา service
+              ยูไนเต็ด สีลม (ชั้น 3)</option>
+            <option value="OVSB1_TG FONE ศูนย์การค้ามาร์เก็ตวิลเลจสุวรรณภูมิ" >OVSB1_TG FONE
+              ศูนย์การค้ามาร์เก็ตวิลเลจสุวรรณภูมิ</option>
+            <option value="RBOW1_Realme โรบินสัน บ่อวิน" >RBOW1_Realme โรบินสัน บ่อวิน</option>
+            <option value="RBRM1_SAMSUNG SHOP โรบินสันบุรีรัมย์" >RBRM1_SAMSUNG SHOP โรบินสันบุรีรัมย์</option>
+            <option value="RCHL1_tg โรบินสันฉลอง" >RCHL1_tg โรบินสันฉลอง</option>
+            <option value="RCYP1_SAMSUNG SHOP โรบินสันชัยภูมิ" >RCYP1_SAMSUNG SHOP โรบินสันชัยภูมิ</option>
+            <option value="RSKN1_SAMSUNG (SIS) โรบินสันสกลนคร" >RSKN1_SAMSUNG (SIS) โรบินสันสกลนคร</option>
+            <option value="RSRN1_SAMSUNG SHOP โรบินสันสุรินทร์" >RSRN1_SAMSUNG SHOP โรบินสันสุรินทร์</option>
+            <option value="SCMA1_TG FONE :สาขา service ฟิวเจอร์ เชียงใหม่" >SCMA1_TG FONE :สาขา service ฟิวเจอร์
+              เชียงใหม่</option>
+            <option value="SHAY1_TG FONE :สาขา service เมกา หาดใหญ่" >SHAY1_TG FONE :สาขา service เมกา หาดใหญ่
+            </option>
+            <option value="SKKN1_TG FONE :สาขา service SY THAI ขอนแก่น" >SKKN1_TG FONE :สาขา service SY THAI
+              ขอนแก่น</option>
+            <option value="SKOR1_TG FONE :สาขา service STS โคราช" >SKOR1_TG FONE :สาขา service STS โคราช
+            </option>
+            <option value="SPKT1_TG FONE :สาขา service SMT ภูเก็ต" >SPKT1_TG FONE :สาขา service SMT ภูเก็ต
+            </option>
+            <option value="SPSL1_TG FONE :สาขา service ฟิวเจอร์ พิษณุโลก" >SPSL1_TG FONE :สาขา service ฟิวเจอร์
+              พิษณุโลก</option>
+            <option value="SSUR1_TG FONE :สาขา service SMTสุราษฎร์ธานี" >SSUR1_TG FONE :สาขา service
+              SMTสุราษฎร์ธานี</option>
+            <option value="SUBN2_TG FONE :สาขา service AITอุบลราชธานี" >SUBN2_TG FONE :สาขา service
+              AITอุบลราชธานี</option>
+            <option value="SUDO1_TG FONE :สาขา service ASM อุดรธานี" >SUDO1_TG FONE :สาขา service ASM อุดรธานี
+            </option>
+            <option value="BC001_Consignment Big C:สาขาอำนาจเจริญ" >BC001_Consignment Big C:สาขาอำนาจเจริญ
+            </option>
+            <option value="BC004_Consignment Big C:สาขาเมกาบางนา" >BC004_Consignment Big C:สาขาเมกาบางนา
+            </option>
+            <option value="BC005_Consignment Big C:สาขาบางบอน" >BC005_Consignment Big C:สาขาบางบอน</option>
+            <option value="BC007_Consignment Big C:สาขาบางพลี" >BC007_Consignment Big C:สาขาบางพลี</option>
+            <option value="BC010_Consignment Big C:สาขาบางปะกอก" >BC010_Consignment Big C:สาขาบางปะกอก</option>
+            <option value="BC011_Consignment Big C:สาขาบางใหญ่" >BC011_Consignment Big C:สาขาบางใหญ่</option>
+            <option value="BC014_Consignment Big C:ฉะเชิงเทรา" >BC014_Consignment Big C:ฉะเชิงเทรา</option>
+            <option value="BC015_Consignment Big C:สาขาฉะเชิงเทรา (ร้าน2)" >BC015_Consignment Big
+              C:สาขาฉะเชิงเทรา (ร้าน2)</option>
+            <option value="BC016_Consignment Big C:สาขาเชียงใหม่ (ร้าน2)" >BC016_Consignment Big C:สาขาเชียงใหม่
+              (ร้าน2)</option>
+            <option value="BC017_Consignment Big C:สาขาแจ้งวัฒนะ 2" >BC017_Consignment Big C:สาขาแจ้งวัฒนะ 2
+            </option>
+            <option value="BC018_Consignment Big C:สาขาชัยภูมิ" >BC018_Consignment Big C:สาขาชัยภูมิ</option>
+            <option value="BC020_Consignment Big C:สาขาดาวคะนอง" >BC020_Consignment Big C:สาขาดาวคะนอง</option>
+            <option value="BC021_Consignment Big C:สาขาดอนเมือง" >BC021_Consignment Big C:สาขาดอนเมือง</option>
+            <option value="BC022_Consignment Big C:สาขาเอกมัย" >BC022_Consignment Big C:สาขาเอกมัย</option>
+            <option value="BC023_Consignment Big C:สาขาแฟชั่น ไอแลนด์" >BC023_Consignment Big C:สาขาแฟชั่น
+              ไอแลนด์</option>
+            <option value="BC027_Consignment Big C:สาขาขอนแก่น" >BC027_Consignment Big C:สาขาขอนแก่น</option>
+            <option value="BC033_Consignment Big C:สาขาลำลูกกา" >BC033_Consignment Big C:สาขาลำลูกกา</option>
+            <option value="BC037_Consignment Big C:อิมพีเรียลลาดพร้าว" >BC037_Consignment Big
+              C:อิมพีเรียลลาดพร้าว</option>
+            <option value="BC038_Consignment Big C:สาขาลาดพร้าว" >BC038_Consignment Big C:สาขาลาดพร้าว</option>
+            <option value="BC039_Consignment Big C:สาขามหาชัย" >BC039_Consignment Big C:สาขามหาชัย</option>
+            <option value="BC043_Consignment Big C:สาขานครปฐม" >BC043_Consignment Big C:สาขานครปฐม</option>
+            <option value="BC044_Consignment Big C:สาขาศรีนครินทร์" >BC044_Consignment Big C:สาขาศรีนครินทร์
+            </option>
+            <option value="BC045_Consignment Big C:สาขานครสวรรค์" >BC045_Consignment Big C:สาขานครสวรรค์
+            </option>
+            <option value="BC046_Consignment Big C:สาขาหนองบัว" >BC046_Consignment Big C:สาขาหนองบัว</option>
+            <option value="BC047_Consignment Big C:สาขาหนองจอก" >BC047_Consignment Big C:สาขาหนองจอก</option>
+            <option value="BC048_Consignment Big C:สาขาหนองกี่" >BC048_Consignment Big C:สาขาหนองกี่</option>
+            <option value="BC056_Consignment Big C:สาขาเพชรเกษม" >BC056_Consignment Big C:สาขาเพชรเกษม</option>
+            <option value="BC057_Consignment Big C:สาขาโพนพิสัย-หนองคาย" >BC057_Consignment Big
+              C:สาขาโพนพิสัย-หนองคาย</option>
+            <option value="BC061_Consignment Big C:สาขาราชบุรี" >BC061_Consignment Big C:สาขาราชบุรี</option>
+            <option value="BC062_Consignment Big C:สาขารัชดา" >BC062_Consignment Big C:สาขารัชดา</option>
+            <option value="BC063_Consignment Big C:สาขารามอินทรา" >BC063_Consignment Big C:สาขารามอินทรา
+            </option>
+            <option value="BC064_Consignment Big C:สาขาพระราม2 สาขา2" >BC064_Consignment Big C:สาขาพระราม2 สาขา2
+            </option>
+            <option value="BC065_Consignment Big C:สาขาร่มเกล้า" >BC065_Consignment Big C:สาขาร่มเกล้า</option>
+            <option value="BC067_Consignment Big C:สาขารังสิต" >BC067_Consignment Big C:สาขารังสิต</option>
+            <option value="BC071_Consignment Big C:สาขาศรีมหาโพธิ์ (ปราจีน)" >BC071_Consignment Big
+              C:สาขาศรีมหาโพธิ์ (ปราจีน)</option>
+            <option value="BC072_Consignment Big C:สาขาสกลนคร" >BC072_Consignment Big C:สาขาสกลนคร</option>
+            <option value="BC073_Consignment Big C:สาขาสุขาภิบาล 3 (ร้าน2)" >BC073_Consignment Big
+              C:สาขาสุขาภิบาล 3 (ร้าน2)</option>
+            <option value="BC074_Consignment Big C:สาขาสุโขทัย" >BC074_Consignment Big C:สาขาสุโขทัย</option>
+            <option value="BC076_Consignment Big C:สาขาสุขาภิบาล 3" >BC076_Consignment Big C:สาขาสุขาภิบาล 3
+            </option>
+            <option value="BC077_Consignment Big C:สาขาสะพานควาย" >BC077_Consignment Big C:สาขาสะพานควาย
+            </option>
+            <option value="BC078_Consignment Big C:สาขาสำโรง" >BC078_Consignment Big C:สาขาสำโรง</option>
+            <option value="BC079_Consignment Big C:สาขาสุรินทร์" >BC079_Consignment Big C:สาขาสุรินทร์</option>
+            <option value="BC080_Consignment Big C:สาขาศรีษะเกษ" >BC080_Consignment Big C:สาขาศรีษะเกษ</option>
+            <option value="BC081_Consignment Big C:สาขาสุขสวัสดิ์" >BC081_Consignment Big C:สาขาสุขสวัสดิ์
+            </option>
+            <option value="BC086_Consignment Big C:สาขาลำลูกกา คลอง 4" >BC086_Consignment Big C:สาขาลำลูกกา คลอง
+              4</option>
+            <option value="BC087_Consignment Big C:สาขาวิเชียรบุรี (จ.เพชรบูรณ์)" >BC087_Consignment Big
+              C:สาขาวิเชียรบุรี (จ.เพชรบูรณ์)</option>
+            <option value="BC090_Consignment Big C:สาขาวงศ์สว่าง" >BC090_Consignment Big C:สาขาวงศ์สว่าง
+            </option>
+            <option value="BC091_Consignment Big C:สาขาบางนา" >BC091_Consignment Big C:สาขาบางนา</option>
+            <option value="BC094_Consignment Big C:สาขาแจ้งวัฒนะ 1" >BC094_Consignment Big C:สาขาแจ้งวัฒนะ 1
+            </option>
+            <option value="BC096_Consignment Big C:สาขาหางดง" >BC096_Consignment Big C:สาขาหางดง</option>
+            <option value="BC105_Consignment Big C:สาขาพระราม 2 สาขา 1" >BC105_Consignment Big C:สาขาพระราม 2
+              สาขา 1</option>
+            <option value="BC106_Consignment Big C:สาขารัตนาธิเบศร์ 1" >BC106_Consignment Big C:สาขารัตนาธิเบศร์
+              1</option>
+            <option value="BC108_Consignment Big C สาขาสวนหลวง (MK)" >BC108_Consignment Big C สาขาสวนหลวง (MK)
+            </option>
+            <option value="BC110_Consignment Big C สาขาสุขาภิบาล 5 (MK)" >BC110_Consignment Big C สาขาสุขาภิบาล
+              5 (MK)</option>
+            <option value="BC111_Consignment Big C สาขาทุ่งครุ (MK)" >BC111_Consignment Big C สาขาทุ่งครุ (MK)
+            </option>
+            <option value="BC116_Consignment Big C:สาขาสระบุรี" >BC116_Consignment Big C:สาขาสระบุรี</option>
+            <option value="PM001_Power Mall สาขาเดอะมอลล์รามคำแหง (M3)" >PM001_Power Mall สาขาเดอะมอลล์รามคำแหง
+              (M3)</option>
+            <option value="PM002_Power Mall สาขาเดอะมอลล์โคราช (M10)" >PM002_Power Mall สาขาเดอะมอลล์โคราช (M10)
+            </option>
+            <option value="PM003_Power Mall สาขาเดอะมอลล์งามวงศ์วาน (M6)" >PM003_Power Mall
+              สาขาเดอะมอลล์งามวงศ์วาน (M6)</option>
+            <option value="PM004_Power Mall สาขาเดอะมอลล์บางแค (M7)" >PM004_Power Mall สาขาเดอะมอลล์บางแค (M7)
+            </option>
+            <option value="PM005_Power Mall สาขาเดอะมอลลบางกะปิ (M8)" >PM005_Power Mall สาขาเดอะมอลลบางกะปิ (M8)
+            </option>
+            <option value="PM006_Power Mall สาขาพารากอน (M11)" >PM006_Power Mall สาขาพารากอน (M11)</option>
+            <option value="PM007_Power Mall สาขาเอ็มโพเรี่ยม (M9)" >PM007_Power Mall สาขาเอ็มโพเรี่ยม (M9)
+            </option>
+            <option value="PM008_Power Mall สาขาเดอะมอลล์ท่าพระ (M5)" >PM008_Power Mall สาขาเดอะมอลล์ท่าพระ (M5)
+            </option>
+            <option value="กรุณากรอกย้ายจากสาขา">กรุณากรอกย้ายจากสาขา</option>
+
+          </select>
           <div class="invalid-feedback">
             กรุณากรอก ย้ายไปใช้ที่สาขา
           </div>
-        </div>        
+        </div>
 
         <div class="col-12 text-center">
           <button type="submit" class="btn btn-warning w-100"><i class="bi bi-send-fill"></i>&nbsp;ยืนยัน</button>
@@ -710,7 +867,10 @@
     </form>
   </div>
   <script>
-        // Replace with YOUR APPSCIPT LINK
+    $(document).on('select2:open', () => {
+      document.querySelector('.select2-search__field').focus();
+    });
+    // Replace with YOUR APPSCIPT LINK
     const scriptUrl = 'https://script.google.com/macros/s/AKfycbwzfBA-Y-KaXUV1bmnIpp2fI3ui2mMnRVw1CKMBjrufM_9Cm5TFupEl_tRJYmustLdo/exec'
     var uid
     $(document).ready(() => {
@@ -721,53 +881,59 @@
       })
       liff.ready.then(() => {
         console.log('liff ready')
+        $('#locationto ,#locationform').select2({
+          placeholder: 'กรุณาเลือกสาขา',
+          allowClear: true,
+          theme: 'bootstrap-5',
+        });
       })
     })
+    
     function submit() {
-  $.LoadingOverlay('show');
+      $.LoadingOverlay('show');
 
-  let data = {
-    opt: 'savedata',
-    uid: liff.getDecodedIDToken().sub,
-    name: $('#name').val(),
-    id: $('#id').val(),
-    phone: $('#phone').val(),
-    locationform: $('#locationform').val(),
-    locationto: $('#locationto').val(),          
-  };
+      let data = {
+        opt: 'savedata',
+        uid: liff.getDecodedIDToken().sub,
+        name: $('#name').val(),
+        id: $('#id').val(),
+        phone: $('#phone').val(),
+        locationform: $('#locationform').val(),
+        locationto: $('#locationto').val(),
+      };
 
-  // Send the AJAX request without the file data
-  $.ajax({
-    method: "POST",
-    url: scriptUrl,
-    data: data,
-    dataType: 'json',
-    success: function (res) {
-      $.LoadingOverlay('hide');
-      if (res.status == 'success') {
-        // reset the form
-        $('#myForm')[0].reset();
-        return Swal.fire({
-          icon: 'success',
-          title: 'บันทึกข้อมูลเรียบร้อย',
-          allowOutsideClick: false,
-          confirmButtonText: 'ตกลง',
-        });
-      }
-      return Swal.fire({
-        icon: 'error',
-        title: 'เกิดข้อผิดพลาด',
-        allowOutsideClick: false,
-        confirmButtonText: 'ตกลง',
+      // Send the AJAX request without the file data
+      $.ajax({
+        method: "POST",
+        url: scriptUrl,
+        data: data,
+        dataType: 'json',
+        success: function (res) {
+          $.LoadingOverlay('hide');
+          if (res.status == 'success') {
+            // reset the form
+            $('#myForm')[0].reset();
+            return Swal.fire({
+              icon: 'success',
+              title: 'บันทึกข้อมูลเรียบร้อย',
+              allowOutsideClick: false,
+              confirmButtonText: 'ตกลง',
+            });
+          }
+          return Swal.fire({
+            icon: 'error',
+            title: 'เกิดข้อผิดพลาด',
+            allowOutsideClick: false,
+            confirmButtonText: 'ตกลง',
+          });
+        },
+        error: function (err) {
+          console.log(err);
+          $.LoadingOverlay('hide');
+          alert('บันทึกข้อมูลไม่สำเร็จ');
+        },
       });
-    },
-    error: function (err) {
-      console.log(err);
-      $.LoadingOverlay('hide');
-      alert('บันทึกข้อมูลไม่สำเร็จ');
-    },
-  });
-}
+    }
 
   </script>
   <script>
