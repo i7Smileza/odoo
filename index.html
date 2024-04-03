@@ -156,7 +156,16 @@
         <div class="col-12">
           <label for="locationto">
             <i class="fa fa-exchange" aria-hidden="true"></i> ย้ายไปใช้ที่สาขา </label>
-          <input type="text" id="locationto" name="locationto" class="form-control" placeholder="กรุณากรอก ย้ายไปใช้ที่สาขา" required>
+              <select name="locationto" id="locationto">
+              <option value="" selected disabled>เลือกสาขา</option>
+              <option value="สาขาA"selected>สาขาA</option>
+              <option value="สาขาB"selected>สาขาB</option>
+              <option value="สาขาC"selected>สาขาC</option>
+              <option value="สาขาD"selected>สาขาD</option>
+              <option value="สาขาE"selected>สาขาE</option>
+              <option value="สาขาF"selected>สาขาF</option>
+
+           </select>  
           <div class="invalid-feedback">
             กรุณากรอก ย้ายไปใช้ที่สาขา
           </div>
