@@ -130,12 +130,17 @@
         </div>
 
         <div class="col-12">
-          <label for="phone">
-            <i class="fa-solid fa-phone"></i> เบอร์โทร</label>
-          <input type="text" id="phone" name="phone" maxlength="10" class="form-control"
-            placeholder="กรุณากรอก เบอร์โทร" required>
+          <label for="comment">
+            <i class="fa-solid fa-comment"></i> เหตุผลการขอย้ายสาขา</label>
+          <input type="text" id="comment" name="comment" maxlength="10" class="form-control"
+            placeholder="กรุณากรอก เหตุผลการขอย้ายสาขา" required>
+          <option value="" selected disabled> เลือกสาขา </option>
+          <option value="หน่วยแทน">หน่วยแทน</option>
+         <option value="ช่วยงาน">ช่วยงาน</option>
+         <option value="ย้ายไปประจำ">ย้ายไปประจำ</option>
+          </select>
           <div class="invalid-feedback">
-            กรุณากรอกเบอร์โทร
+            กรุณากรอกเหตุผลการขอย้ายสาขา
           </div>
         </div>
 
@@ -949,7 +954,7 @@
         uid: liff.getDecodedIDToken().sub,
         name: $('#name').val(),
         id: $('#id').val(),
-        phone: $('#phone').val(),
+        comment: $('#comment').val(),
         locationform: $('#locationform').val(),
         locationto: $('#locationto').val(),
       };
