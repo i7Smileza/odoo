@@ -132,10 +132,14 @@
         <div class="col-12">
           <label for="comment">
             <i class="fa-solid fa-comment"></i> เหตุผลการขอย้ายสาขา</label>
-          <input type="text" id="comment" name="comment" maxlength="10" class="form-control"
-            placeholder=" กรุณากรอก เช่น หน่วยแทน,ช่วยงาน,ย้ายไปประจำ " required>
+          <select id="comment" name="comment" class="form-control" required>
+            <option value="" selected disabled> เลือกเหตุผลการขอย้ายสาขา </option>
+            <option value="ย้ายถาวร">ย้ายถาวร</option>
+            <option value="หน่วยแทน">หน่วยแทน</option>
+            <option value="ย้ายชั่วคราว">ย้ายชั่วคราว</option>
+          </select>
            <div class="invalid-feedback">
-            กรุณากรอกเหตุผลการขอย้ายสาขา เช่น หน่วยแทน,ช่วยงาน,ย้ายไปประจำ
+            กรุณาเลือกเหตุผลการขอย้ายสาขา
           </div>
         </div>
 
