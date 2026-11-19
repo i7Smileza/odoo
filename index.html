@@ -91,10 +91,28 @@
       background: #FFCE00;
       color: #000;
     }
+    /* ===== หน้าตั้งค่า ===== */
+    #settingsView .container { max-width: 760px; }
+    .card-box {
+      background: #fff; padding: 1.4em 1.2em; border-radius: .6em;
+      box-shadow: rgba(0, 0, 0, .24) 0 3px 8px;
+    }
+    .btn-main { background: #b26bc2; color: #fff; border: none; }
+    .btn-main:hover { background: #FFCE00; color: #000; }
+    .nav-tabs .nav-link { color: #555; }
+    .nav-tabs .nav-link.active { color: #b26bc2; font-weight: 600; }
+    .table td { vertical-align: middle; }
+    .code-cell { font-family: ui-monospace, Consolas, monospace; white-space: nowrap; font-weight: 600; }
+    .actions { white-space: nowrap; width: 1%; }
+    .list-wrap { max-height: 60vh; overflow-y: auto; }
+    .list-wrap thead th { position: sticky; top: 0; background: #f8f9fa; z-index: 1; }
+    .count-badge { background: #f1e4f4; color: #7a3d88; }
   </style>
 </head>
 
 <body>
+  <!-- ===== หน้าแจ้งย้าย ===== -->
+  <div id="formView">
   <center>
     <br />
     <img src="https://lh3.googleusercontent.com/d/112PEsKlhRMhE-PXDRdCOvhSIwN3cug4_?dwd=123"
@@ -529,7 +547,6 @@
 <option value="KMBK8 Huawei Shop มาบุญครอง (MBK) ชั้น 4">KMBK8 Huawei Shop มาบุญครอง (MBK) ชั้น 4</option>
 <option value="LUDN1 tg โลตัสอุดรธานี">LUDN1 tg โลตัสอุดรธานี</option>
 <option value="LUDN2 Huawei Shop โลตัสอุดรธานี Kiosk">LUDN2 Huawei Shop โลตัสอุดรธานี Kiosk</option>
-<option value="LCEI1 tg โลตัสเชียงราย">LCEI1 tg โลตัสเชียงราย</option> 
           </select>
           <div class="invalid-feedback">
             กรุณากรอกย้ายจากสาขา
@@ -922,7 +939,6 @@
 <option value="KMBK8 Huawei Shop มาบุญครอง (MBK) ชั้น 4">KMBK8 Huawei Shop มาบุญครอง (MBK) ชั้น 4</option>
 <option value="LUDN1 tg โลตัสอุดรธานี">LUDN1 tg โลตัสอุดรธานี</option>
 <option value="LUDN2 Huawei Shop โลตัสอุดรธานี Kiosk">LUDN2 Huawei Shop โลตัสอุดรธานี Kiosk</option>
-<option value="LCEI1 tg โลตัสเชียงราย">LCEI1 tg โลตัสเชียงราย</option>           
           </select>
           <div class="invalid-feedback">
             กรุณากรอก ย้ายไปใช้ที่สาขา
@@ -935,6 +951,72 @@
       </div>
     </form>
   </div>
+  </div><!-- /formView -->
+
+  <!-- ===== หน้าตั้งค่า (index.html#settings) ===== -->
+  <div id="settingsView" class="d-none">
+  <div class="container py-4">
+    <div class="text-center mb-3">
+      <img src="https://lh3.googleusercontent.com/d/112PEsKlhRMhE-PXDRdCOvhSIwN3cug4_?dwd=123" style="width:160px;height:auto">
+      <h3 class="mt-2 mb-0"><i class="fa-solid fa-gear"></i> ตั้งค่าข้อมูล</h3>
+      <div class="text-muted">แจ้งย้ายสาขา Odoo</div>
+    </div>
+
+    <!-- เข้าสู่ระบบ -->
+    <div id="loginBox" class="card-box mx-auto" style="max-width:380px">
+      <form id="loginForm">
+        <label for="pin" class="form-label"><i class="fa-solid fa-lock"></i> รหัสผู้ดูแล</label>
+        <input type="password" id="pin" class="form-control mb-3" autocomplete="current-password" required>
+        <button type="submit" class="btn btn-main w-100">เข้าสู่ระบบ</button>
+      </form>
+    </div>
+
+    <!-- หน้าจัดการ -->
+    <div id="adminBox" class="card-box d-none">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <a href="./" class="small text-decoration-none"><i class="fa-solid fa-arrow-left"></i> กลับหน้าแจ้งย้าย</a>
+        <button id="logoutBtn" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-right-from-bracket"></i> ออก</button>
+      </div>
+
+      <ul class="nav nav-tabs mb-3" role="tablist">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabBranch" type="button">
+          <i class="fa-solid fa-store"></i> สาขา <span id="branchCount" class="badge count-badge">0</span></button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabReason" type="button">
+          <i class="fa-solid fa-comment"></i> เหตุผลการย้าย <span id="reasonCount" class="badge count-badge">0</span></button></li>
+      </ul>
+
+      <div class="tab-content">
+        <!-- สาขา -->
+        <div class="tab-pane fade show active" id="tabBranch">
+          <div class="d-flex gap-2 mb-2">
+            <input id="branchSearch" class="form-control" placeholder="ค้นหารหัส หรือ ชื่อสาขา">
+            <button class="btn btn-main text-nowrap" id="addBranchBtn"><i class="fa-solid fa-plus"></i> เพิ่มสาขา</button>
+          </div>
+          <div class="list-wrap border rounded">
+            <table class="table table-hover table-sm mb-0">
+              <thead><tr><th>รหัส</th><th>ชื่อสาขา</th><th class="actions"></th></tr></thead>
+              <tbody id="branchBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- เหตุผล -->
+        <div class="tab-pane fade" id="tabReason">
+          <div class="d-flex justify-content-end mb-2">
+            <button class="btn btn-main" id="addReasonBtn"><i class="fa-solid fa-plus"></i> เพิ่มเหตุผล</button>
+          </div>
+          <div class="list-wrap border rounded">
+            <table class="table table-hover table-sm mb-0">
+              <thead><tr><th>เหตุผลการขอย้ายสาขา</th><th class="actions"></th></tr></thead>
+              <tbody id="reasonBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div><!-- /settingsView -->
+
   <script>
     $(document).on('select2:open', () => {
       document.querySelector('.select2-search__field').focus();
@@ -975,7 +1057,10 @@
     }
     loadSettings();
 
+    const IS_SETTINGS = location.hash === '#settings';
+
     $(document).ready(() => {
+      if (IS_SETTINGS) return; // หน้าตั้งค่าไม่ต้องใช้ LINE login
       liff.init({
         // Replace with YOUR LIFF ID
         liffId: '2004282129-LPpglaY5',
@@ -1071,12 +1156,206 @@
   <script
     src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
 
+  <!-- ===== สคริปต์หน้าตั้งค่า ===== -->
+  <script>
+    (() => {
+    const PIN_KEY = 'transfer_admin_pin';
+
+    let pin = '';
+    let branches = [];
+    let reasons = [];
+
+    // ---------- เรียก Apps Script ----------
+    function api(method, data) {
+      return new Promise((resolve, reject) => {
+        $.ajax({ method, url: scriptUrl, data, dataType: 'json', timeout: 30000 })
+          .done(res => res && res.status === 'success' ? resolve(res) : reject(new Error((res && res.message) || 'เกิดข้อผิดพลาด')))
+          .fail(() => reject(new Error('เชื่อมต่อเซิร์ฟเวอร์ไม่สำเร็จ')));
+      });
+    }
+
+    async function run(task) {
+      $.LoadingOverlay('show');
+      try {
+        const res = await task();
+        if (res && res.branches) { branches = res.branches; reasons = res.reasons; render(); }
+        return res;
+      } catch (err) {
+        if (/รหัสผู้ดูแล/.test(err.message)) logout();
+        Swal.fire({ icon: 'error', title: 'ไม่สำเร็จ', text: err.message, confirmButtonText: 'ตกลง' });
+        throw err;
+      } finally {
+        $.LoadingOverlay('hide', true);
+      }
+    }
+
+    const save = (opt, fields) => run(() => api('POST', Object.assign({ opt, pin }, fields)));
+
+    // ---------- แสดงผล ----------
+    function esc(s) {
+      return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    function render() {
+      const q = $('#branchSearch').val().trim().toLowerCase();
+      const list = q ? branches.filter(b => (b.code + ' ' + b.name).toLowerCase().includes(q)) : branches;
+      $('#branchBody').html(list.length ? list.map(b => `
+        <tr>
+          <td class="code-cell">${esc(b.code)}</td>
+          <td>${esc(b.name)}</td>
+          <td class="actions">
+            <button class="btn btn-sm btn-outline-primary edit-branch" data-code="${esc(b.code)}" title="แก้ไข"><i class="fa-solid fa-pen"></i></button>
+            <button class="btn btn-sm btn-outline-danger del-branch" data-code="${esc(b.code)}" title="ลบ"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>`).join('') : `<tr><td colspan="3" class="text-center text-muted py-3">ไม่พบสาขา</td></tr>`);
+      $('#branchCount').text(branches.length);
+
+      $('#reasonBody').html(reasons.length ? reasons.map((r, i) => `
+        <tr>
+          <td>${esc(r)}</td>
+          <td class="actions">
+            <button class="btn btn-sm btn-outline-primary edit-reason" data-i="${i}" title="แก้ไข"><i class="fa-solid fa-pen"></i></button>
+            <button class="btn btn-sm btn-outline-danger del-reason" data-i="${i}" title="ลบ"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>`).join('') : `<tr><td colspan="2" class="text-center text-muted py-3">ยังไม่มีเหตุผล</td></tr>`);
+      $('#reasonCount').text(reasons.length);
+    }
+
+    // ---------- ฟอร์มสาขา ----------
+    async function branchDialog(b) {
+      const { value } = await Swal.fire({
+        title: b ? 'แก้ไขสาขา' : 'เพิ่มสาขา',
+        html: `
+          <div class="text-start">
+            <label class="form-label mb-1">รหัสสาขา</label>
+            <input id="swCode" class="form-control mb-3" maxlength="20" placeholder="เช่น BACR1" value="${b ? esc(b.code) : ''}">
+            <label class="form-label mb-1">ชื่อสาขา</label>
+            <input id="swName" class="form-control" maxlength="150" placeholder="เช่น tg บิ๊กซีอำนาจเจริญ" value="${b ? esc(b.name) : ''}">
+          </div>`,
+        showCancelButton: true, confirmButtonText: 'บันทึก', cancelButtonText: 'ยกเลิก',
+        focusConfirm: false,
+        didOpen: () => document.getElementById('swCode').focus(),
+        preConfirm: () => {
+          const code = $('#swCode').val().trim().toUpperCase();
+          const name = $('#swName').val().trim();
+          if (!code || !name) return Swal.showValidationMessage('กรุณากรอกรหัสและชื่อสาขา');
+          if (/\s/.test(code)) return Swal.showValidationMessage('รหัสสาขาห้ามมีช่องว่าง');
+          const dup = branches.some(x => x.code.toUpperCase() === code && (!b || x.code.toUpperCase() !== b.code.toUpperCase()));
+          if (dup) return Swal.showValidationMessage('รหัสสาขา ' + code + ' มีอยู่แล้ว');
+          return { code, name };
+        }
+      });
+      if (!value) return;
+      await (b ? save('branch_update', { oldCode: b.code, code: value.code, name: value.name })
+               : save('branch_add', value));
+      toast('บันทึกสาขาเรียบร้อย');
+    }
+
+    // ---------- ฟอร์มเหตุผล ----------
+    async function reasonDialog(oldName) {
+      const { value } = await Swal.fire({
+        title: oldName ? 'แก้ไขเหตุผล' : 'เพิ่มเหตุผล',
+        input: 'text', inputValue: oldName || '', inputPlaceholder: 'เช่น ย้ายถาวร',
+        inputAttributes: { maxlength: 100 },
+        showCancelButton: true, confirmButtonText: 'บันทึก', cancelButtonText: 'ยกเลิก',
+        inputValidator: v => {
+          v = v.trim();
+          if (!v) return 'กรุณากรอกเหตุผล';
+          if (reasons.some(r => r === v && r !== oldName)) return 'เหตุผลนี้มีอยู่แล้ว';
+        }
+      });
+      if (!value) return;
+      await (oldName ? save('reason_update', { oldName, name: value.trim() })
+                     : save('reason_add', { name: value.trim() }));
+      toast('บันทึกเหตุผลเรียบร้อย');
+    }
+
+    async function confirmDelete(label) {
+      const r = await Swal.fire({
+        icon: 'warning', title: 'ยืนยันการลบ', text: label,
+        showCancelButton: true, confirmButtonText: 'ลบ', cancelButtonText: 'ยกเลิก', confirmButtonColor: '#dc3545'
+      });
+      return r.isConfirmed;
+    }
+
+    function toast(msg) {
+      Swal.fire({ toast: true, position: 'top-end', icon: 'success', title: msg, showConfirmButton: false, timer: 1800 });
+    }
+
+    // ---------- เข้า/ออก ----------
+    async function login(p) {
+      pin = p;
+      await run(async () => {
+        await api('POST', { opt: 'checkpin', pin });
+        try { sessionStorage.setItem(PIN_KEY, pin); } catch (e) { }
+        $('#loginBox').addClass('d-none');
+        $('#adminBox').removeClass('d-none');
+        return api('GET', { opt: 'getsettings' });
+      });
+    }
+
+    function logout() {
+      pin = '';
+      try { sessionStorage.removeItem(PIN_KEY); } catch (e) { }
+      $('#adminBox').addClass('d-none');
+      $('#loginBox').removeClass('d-none');
+      $('#pin').val('').focus();
+    }
+
+    // ---------- ผูกเหตุการณ์ ----------
+    $('#loginForm').on('submit', e => { e.preventDefault(); login($('#pin').val()).catch(() => { }); });
+    $('#logoutBtn').on('click', logout);
+    $('#branchSearch').on('input', render);
+    $('#addBranchBtn').on('click', () => branchDialog().catch(() => { }));
+    $('#addReasonBtn').on('click', () => reasonDialog().catch(() => { }));
+
+    $('#branchBody')
+      .on('click', '.edit-branch', function () {
+        const b = branches.find(x => x.code === $(this).attr('data-code'));
+        if (b) branchDialog(b).catch(() => { });
+      })
+      .on('click', '.del-branch', async function () {
+        const b = branches.find(x => x.code === $(this).attr('data-code'));
+        if (b && await confirmDelete(`${b.code} ${b.name}`)) {
+          save('branch_delete', { code: b.code }).then(() => toast('ลบสาขาแล้ว')).catch(() => { });
+        }
+      });
+
+    $('#reasonBody')
+      .on('click', '.edit-reason', function () { reasonDialog(reasons[$(this).data('i')]).catch(() => { }); })
+      .on('click', '.del-reason', async function () {
+        const r = reasons[$(this).data('i')];
+        if (r && await confirmDelete(r)) {
+          save('reason_delete', { name: r }).then(() => toast('ลบเหตุผลแล้ว')).catch(() => { });
+        }
+      });
+
+    // สลับหน้า: index.html#settings = หน้าตั้งค่า
+    let started = false;
+    function showView() {
+      const isSettings = location.hash === '#settings';
+      $('#formView').toggleClass('d-none', isSettings);
+      $('#settingsView').toggleClass('d-none', !isSettings);
+      document.title = isSettings ? 'ตั้งค่า แจ้งย้ายสาขา' : 'Transfer user odoo';
+      if (isSettings && !started) {
+        started = true;
+        let saved = '';
+        try { saved = sessionStorage.getItem(PIN_KEY) || ''; } catch (e) { }
+        if (saved) login(saved).catch(() => { });
+        else $('#pin').focus();
+      }
+    }
+    $(window).on('hashchange', showView);
+    showView();
+    })();
+  </script>
+
 
   <br />
   <div class="text-center p-4 col-12 mt-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2023 Copyright | พัฒนาโดยอาจารย์เจ็ดเรือบิน
     <div class="mt-2">
-      <a href="settings.html" class="text-secondary small text-decoration-none">
+      <a href="#settings" class="text-secondary small text-decoration-none">
         <i class="fa-solid fa-gear"></i> ตั้งค่าข้อมูล (ผู้ดูแล)
       </a>
     </div>
