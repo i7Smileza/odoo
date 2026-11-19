@@ -107,6 +107,28 @@
     .list-wrap { max-height: 60vh; overflow-y: auto; }
     .list-wrap thead th { position: sticky; top: 0; background: #f8f9fa; z-index: 1; }
     .count-badge { background: #f1e4f4; color: #7a3d88; }
+
+    /* ===== หน้ารายการแจ้งย้าย (เจ้าหน้าที่) ===== */
+    #requestsView .container { max-width: 900px; }
+    .req-tabs .nav-link { color: #555; border-radius: 2rem; padding: .35rem .9rem; }
+    .req-tabs .nav-link.active { background: #b26bc2; color: #fff; }
+    .req-tabs .nav-link .badge { background: rgba(0, 0, 0, .08); color: inherit; }
+    .req-tabs .nav-link.active .badge { background: rgba(255, 255, 255, .25); }
+    .req-card {
+      border: 1px solid #e6e6e6; border-left: 5px solid #f0ad4e; border-radius: .6em;
+      padding: .8rem 1rem; margin-bottom: .6rem; background: #fff;
+    }
+    .req-card.done { border-left-color: #28a745; background: #f6fbf7; }
+    .req-card .route { font-size: .92rem; }
+    .req-card .route .arrow { color: #b26bc2; }
+    .req-meta { font-size: .82rem; color: #777; }
+    .req-name { font-weight: 600; }
+    .req-reason { background: #f1e4f4; color: #7a3d88; font-weight: 500; }
+    .req-toggle { display: flex; align-items: center; gap: .5rem; cursor: pointer; user-select: none;
+      border: 1px solid #ddd; border-radius: .5rem; padding: .35rem .7rem; white-space: nowrap; }
+    .req-toggle input { width: 1.25rem; height: 1.25rem; cursor: pointer; }
+    .req-card.done .req-toggle { border-color: #28a745; color: #1e7e34; }
+    .req-list { max-height: 65vh; overflow-y: auto; padding-right: 2px; }
   </style>
 </head>
 
@@ -547,7 +569,6 @@
 <option value="KMBK8 Huawei Shop มาบุญครอง (MBK) ชั้น 4">KMBK8 Huawei Shop มาบุญครอง (MBK) ชั้น 4</option>
 <option value="LUDN1 tg โลตัสอุดรธานี">LUDN1 tg โลตัสอุดรธานี</option>
 <option value="LUDN2 Huawei Shop โลตัสอุดรธานี Kiosk">LUDN2 Huawei Shop โลตัสอุดรธานี Kiosk</option>
-<option value="LCEI1 tg โลตัสเชียงราย">LCEI1 tg โลตัสเชียงราย</option>
           </select>
           <div class="invalid-feedback">
             กรุณากรอกย้ายจากสาขา
@@ -940,7 +961,6 @@
 <option value="KMBK8 Huawei Shop มาบุญครอง (MBK) ชั้น 4">KMBK8 Huawei Shop มาบุญครอง (MBK) ชั้น 4</option>
 <option value="LUDN1 tg โลตัสอุดรธานี">LUDN1 tg โลตัสอุดรธานี</option>
 <option value="LUDN2 Huawei Shop โลตัสอุดรธานี Kiosk">LUDN2 Huawei Shop โลตัสอุดรธานี Kiosk</option>
-<option value="LCEI1 tg โลตัสเชียงราย">LCEI1 tg โลตัสเชียงราย</option>
           </select>
           <div class="invalid-feedback">
             กรุณากรอก ย้ายไปใช้ที่สาขา
@@ -1019,6 +1039,50 @@
   </div>
   </div><!-- /settingsView -->
 
+  <!-- ===== หน้ารายการแจ้งย้าย สำหรับเจ้าหน้าที่ (index.html#requests) ===== -->
+  <div id="requestsView" class="d-none">
+    <div class="container py-4">
+      <div class="text-center mb-3">
+        <img src="https://lh3.googleusercontent.com/d/112PEsKlhRMhE-PXDRdCOvhSIwN3cug4_?dwd=123" style="width:160px;height:auto">
+        <h3 class="mt-2 mb-0"><i class="fa-solid fa-list-check"></i> รายการแจ้งย้ายสาขา</h3>
+        <div class="text-muted">สำหรับเจ้าหน้าที่รับเรื่องโอนย้ายระบบ</div>
+      </div>
+
+      <!-- เข้าสู่ระบบ -->
+      <div id="reqLoginBox" class="card-box mx-auto" style="max-width:380px">
+        <form id="reqLoginForm">
+          <label for="reqPin" class="form-label"><i class="fa-solid fa-lock"></i> รหัสเจ้าหน้าที่</label>
+          <input type="password" id="reqPin" class="form-control mb-3" autocomplete="current-password" required>
+          <button type="submit" class="btn btn-main w-100">เข้าสู่ระบบ</button>
+        </form>
+      </div>
+
+      <!-- รายการ -->
+      <div id="reqBox" class="card-box d-none">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <a href="./" class="small text-decoration-none"><i class="fa-solid fa-arrow-left"></i> กลับหน้าแจ้งย้าย</a>
+          <div class="d-flex gap-2">
+            <button id="reqRefresh" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-rotate"></i> รีเฟรช</button>
+            <button id="reqLogout" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-right-from-bracket"></i> ออก</button>
+          </div>
+        </div>
+
+        <ul class="nav nav-pills req-tabs gap-1 mb-3 flex-nowrap overflow-auto">
+          <li class="nav-item"><button class="nav-link active" data-filter="pending" type="button">
+            <i class="fa-regular fa-clock"></i> รอดำเนินการ <span class="badge" id="cntPending">0</span></button></li>
+          <li class="nav-item"><button class="nav-link" data-filter="done" type="button">
+            <i class="fa-solid fa-circle-check"></i> ดำเนินการแล้ว <span class="badge" id="cntDone">0</span></button></li>
+          <li class="nav-item"><button class="nav-link" data-filter="all" type="button">
+            <i class="fa-solid fa-list"></i> รายการทั้งหมด <span class="badge" id="cntAll">0</span></button></li>
+        </ul>
+
+        <input id="reqSearch" class="form-control mb-2" placeholder="ค้นหา ชื่อ / รหัสพนักงาน / เลขที่ / สาขา">
+        <div class="req-meta mb-2" id="reqUpdated"></div>
+        <div class="req-list" id="reqList"></div>
+      </div>
+    </div>
+  </div><!-- /requestsView -->
+
   <script>
     $(document).on('select2:open', () => {
       document.querySelector('.select2-search__field').focus();
@@ -1059,7 +1123,8 @@
     }
     loadSettings();
 
-    const IS_SETTINGS = location.hash === '#settings';
+    // หน้าตั้งค่า / หน้าเจ้าหน้าที่ ไม่ต้องใช้ LINE login
+    const IS_SETTINGS = location.hash === '#settings' || location.hash === '#requests';
 
     $(document).ready(() => {
       if (IS_SETTINGS) return; // หน้าตั้งค่าไม่ต้องใช้ LINE login
@@ -1336,7 +1401,7 @@
     let started = false;
     function showView() {
       const isSettings = location.hash === '#settings';
-      $('#formView').toggleClass('d-none', isSettings);
+      $('#formView').toggleClass('d-none', isSettings || location.hash === '#requests');
       $('#settingsView').toggleClass('d-none', !isSettings);
       document.title = isSettings ? 'ตั้งค่า แจ้งย้ายสาขา' : 'Transfer user odoo';
       if (isSettings && !started) {
@@ -1352,6 +1417,162 @@
     })();
   </script>
 
+  <!-- ===== สคริปต์หน้ารายการแจ้งย้าย (เจ้าหน้าที่) ===== -->
+  <script>
+    (() => {
+    const PIN_KEY = 'transfer_staff_pin';
+    let pin = '';
+    let items = [];
+    let filter = 'pending';
+    let started = false;
+
+    const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+    function api(data) {
+      return new Promise((resolve, reject) => {
+        $.ajax({ method: 'POST', url: scriptUrl, data: Object.assign({ pin }, data), dataType: 'json', timeout: 30000 })
+          .done(res => res && res.status === 'success' ? resolve(res) : reject(new Error((res && res.message) || 'เกิดข้อผิดพลาด')))
+          .fail(() => reject(new Error('เชื่อมต่อเซิร์ฟเวอร์ไม่สำเร็จ')));
+      });
+    }
+
+    function fail(err) {
+      if (/รหัสเข้าใช้/.test(err.message)) logout();
+      Swal.fire({ icon: 'error', title: 'ไม่สำเร็จ', text: err.message, confirmButtonText: 'ตกลง' });
+    }
+
+    async function load(showLoading) {
+      if (showLoading) $.LoadingOverlay('show');
+      try {
+        const res = await api({ opt: 'list_requests' });
+        items = res.items || [];
+        $('#reqUpdated').text('อัปเดตล่าสุด ' + new Date().toLocaleTimeString('th-TH'));
+        render();
+      } catch (err) {
+        fail(err);
+        throw err;
+      } finally {
+        if (showLoading) $.LoadingOverlay('hide', true);
+      }
+    }
+
+    function render() {
+      const pending = items.filter(x => !x.done).length;
+      $('#cntPending').text(pending);
+      $('#cntDone').text(items.length - pending);
+      $('#cntAll').text(items.length);
+      $('#reqBox .req-tabs .nav-link').each(function () {
+        $(this).toggleClass('active', $(this).data('filter') === filter);
+      });
+
+      const q = $('#reqSearch').val().trim().toLowerCase();
+      const list = items.filter(x =>
+        (filter === 'all' || (filter === 'done') === x.done) &&
+        (!q || [x.regid, x.name, x.empId, x.reason, x.from, x.to, x.date].join(' ').toLowerCase().includes(q)));
+
+      if (!list.length) {
+        const msg = q ? 'ไม่พบรายการที่ค้นหา' : (filter === 'pending' ? 'ไม่มีรายการรอดำเนินการ 🎉' : 'ยังไม่มีรายการ');
+        $('#reqList').html(`<div class="text-center text-muted py-5">${msg}</div>`);
+        return;
+      }
+
+      $('#reqList').html(list.map(x => `
+        <div class="req-card ${x.done ? 'done' : ''}">
+          <div class="d-flex justify-content-between align-items-start gap-2 flex-wrap">
+            <div>
+              <div class="req-name">${esc(x.name)} <span class="text-muted fw-normal">· ${esc(x.empId)}</span></div>
+              <div class="req-meta">${esc(x.regid)} · ${esc(x.date)}</div>
+            </div>
+            <label class="req-toggle">
+              <input type="checkbox" class="form-check-input m-0 req-done" data-regid="${esc(x.regid)}" ${x.done ? 'checked' : ''}>
+              ${x.done ? 'โอนย้ายเรียบร้อย' : 'แจ้งโอนย้ายเรียบร้อย'}
+            </label>
+          </div>
+          <div class="mt-2"><span class="badge req-reason">${esc(x.reason)}</span></div>
+          <div class="route mt-2">
+            <div><i class="fa-solid fa-store text-muted"></i> ${esc(x.from)}</div>
+            <div class="arrow ps-1"><i class="fa-solid fa-arrow-down"></i></div>
+            <div><i class="fa-solid fa-location-dot text-muted"></i> ${esc(x.to)}</div>
+          </div>
+        </div>`).join(''));
+    }
+
+    async function setDone(regid, done, $cb) {
+      const item = items.find(x => x.regid === regid);
+      if (!item) return;
+      if (!done) {
+        const r = await Swal.fire({
+          icon: 'question', title: 'ยกเลิกสถานะเรียบร้อย?', text: `${item.name} (${item.regid}) จะกลับไปอยู่ในรอดำเนินการ`,
+          showCancelButton: true, confirmButtonText: 'ยืนยัน', cancelButtonText: 'ไม่ใช่'
+        });
+        if (!r.isConfirmed) { $cb.prop('checked', true); return; }
+      }
+      $cb.prop('disabled', true);
+      try {
+        await api({ opt: 'request_setdone', regid, row: item.row, done });
+        item.done = done;
+        render();
+        Swal.fire({ toast: true, position: 'top-end', icon: 'success', showConfirmButton: false, timer: 1800,
+          title: done ? 'บันทึกว่าโอนย้ายเรียบร้อย' : 'ย้ายกลับไปรอดำเนินการ' });
+      } catch (err) {
+        $cb.prop('checked', !done).prop('disabled', false);
+        fail(err);
+      }
+    }
+
+    async function login(p) {
+      pin = p;
+      $.LoadingOverlay('show');
+      try {
+        await api({ opt: 'staff_check' });
+        try { sessionStorage.setItem(PIN_KEY, pin); } catch (e) { }
+        $('#reqLoginBox').addClass('d-none');
+        $('#reqBox').removeClass('d-none');
+        await load(false);
+      } catch (err) {
+        fail(err);
+      } finally {
+        $.LoadingOverlay('hide', true);
+      }
+    }
+
+    function logout() {
+      pin = '';
+      items = [];
+      try { sessionStorage.removeItem(PIN_KEY); } catch (e) { }
+      $('#reqBox').addClass('d-none');
+      $('#reqLoginBox').removeClass('d-none');
+      $('#reqPin').val('').focus();
+    }
+
+    $('#reqLoginForm').on('submit', e => { e.preventDefault(); login($('#reqPin').val()); });
+    $('#reqLogout').on('click', logout);
+    $('#reqRefresh').on('click', () => load(true).catch(() => { }));
+    $('#reqSearch').on('input', render);
+    $('#reqBox .req-tabs').on('click', '.nav-link', function () { filter = $(this).data('filter'); render(); });
+    $('#reqList').on('change', '.req-done', function () {
+      setDone($(this).attr('data-regid'), this.checked, $(this));
+    });
+
+    // index.html#requests = หน้ารายการสำหรับเจ้าหน้าที่
+    function showView() {
+      const active = location.hash === '#requests';
+      $('#requestsView').toggleClass('d-none', !active);
+      if (!active) return;
+      document.title = 'รายการแจ้งย้ายสาขา';
+      if (!started) {
+        started = true;
+        let saved = '';
+        try { saved = sessionStorage.getItem(PIN_KEY) || ''; } catch (e) { }
+        if (saved) login(saved);
+        else $('#reqPin').focus();
+      }
+    }
+    $(window).on('hashchange', showView);
+    showView();
+    })();
+  </script>
+
 
   <br />
   <div class="text-center p-4 col-12 mt-4" style="background-color: rgba(0, 0, 0, 0.05);">
@@ -1359,6 +1580,10 @@
     <div class="mt-2">
       <a href="#settings" class="text-secondary small text-decoration-none">
         <i class="fa-solid fa-gear"></i> ตั้งค่าข้อมูล (ผู้ดูแล)
+      </a>
+      <span class="text-secondary small mx-2">|</span>
+      <a href="#requests" class="text-secondary small text-decoration-none">
+        <i class="fa-solid fa-list-check"></i> รายการแจ้งย้าย (เจ้าหน้าที่)
       </a>
     </div>
   </div>
