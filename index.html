@@ -529,7 +529,6 @@
 <option value="KMBK8 Huawei Shop มาบุญครอง (MBK) ชั้น 4">KMBK8 Huawei Shop มาบุญครอง (MBK) ชั้น 4</option>
 <option value="LUDN1 tg โลตัสอุดรธานี">LUDN1 tg โลตัสอุดรธานี</option>
 <option value="LUDN2 Huawei Shop โลตัสอุดรธานี Kiosk">LUDN2 Huawei Shop โลตัสอุดรธานี Kiosk</option>
-<option value="LCEI1 tg โลตัสเชียงราย">LCEI1 tg โลตัสเชียงราย</option>           
           </select>
           <div class="invalid-feedback">
             กรุณากรอกย้ายจากสาขา
@@ -922,7 +921,6 @@
 <option value="KMBK8 Huawei Shop มาบุญครอง (MBK) ชั้น 4">KMBK8 Huawei Shop มาบุญครอง (MBK) ชั้น 4</option>
 <option value="LUDN1 tg โลตัสอุดรธานี">LUDN1 tg โลตัสอุดรธานี</option>
 <option value="LUDN2 Huawei Shop โลตัสอุดรธานี Kiosk">LUDN2 Huawei Shop โลตัสอุดรธานี Kiosk</option>
-<option value="LCEI1 tg โลตัสเชียงราย">LCEI1 tg โลตัสเชียงราย</option>            
           </select>
           <div class="invalid-feedback">
             กรุณากรอก ย้ายไปใช้ที่สาขา
@@ -942,6 +940,39 @@
     // Replace with YOUR APPSCIPT LINK
     const scriptUrl = 'https://script.google.com/macros/s/AKfycbwzfBA-Y-KaXUV1bmnIpp2fI3ui2mMnRVw1CKMBjrufM_9Cm5TFupEl_tRJYmustLdo/exec'
     var uid
+
+    // โหลดรายการสาขา / เหตุผล จากหน้าตั้งค่า (ชีต Branches, Reasons)
+    // ถ้าโหลดไม่ได้ จะใช้รายการเดิมที่อยู่ใน HTML แทน
+    function escHtml(s) {
+      return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    function fillSelect(sel, placeholder, values) {
+      const $sel = $(sel);
+      const current = $sel.val();
+      $sel.html(`<option value="" selected disabled>${placeholder}</option>` +
+        values.map(v => `<option value="${escHtml(v)}">${escHtml(v)}</option>`).join(''));
+      if (current && values.includes(current)) $sel.val(current);
+      $sel.trigger('change.select2');
+    }
+
+    function loadSettings() {
+      $.ajax({ method: 'GET', url: scriptUrl, data: { opt: 'getsettings' }, dataType: 'json', timeout: 20000 })
+        .done(res => {
+          if (!res || res.status !== 'success') return;
+          if (res.reasons && res.reasons.length) {
+            fillSelect('#comment', ' เลือกเหตุผลการขอย้ายสาขา ', res.reasons);
+          }
+          if (res.branches && res.branches.length) {
+            const list = res.branches.map(b => (b.code + ' ' + b.name).trim());
+            fillSelect('#locationform', ' เลือกสาขา ', list);
+            fillSelect('#locationto', ' เลือกสาขา ', list);
+          }
+        })
+        .fail(err => console.log('โหลดตั้งค่าไม่สำเร็จ ใช้รายการเดิม', err));
+    }
+    loadSettings();
+
     $(document).ready(() => {
       liff.init({
         // Replace with YOUR LIFF ID
@@ -1042,6 +1073,11 @@
   <br />
   <div class="text-center p-4 col-12 mt-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2023 Copyright | พัฒนาโดยอาจารย์เจ็ดเรือบิน
+    <div class="mt-2">
+      <a href="settings.html" class="text-secondary small text-decoration-none">
+        <i class="fa-solid fa-gear"></i> ตั้งค่าข้อมูล (ผู้ดูแล)
+      </a>
+    </div>
   </div>
 
 </body>
