@@ -566,4 +566,5 @@ var DEFAULT_BRANCHES = [
     ["KMBK8", "Huawei Shop มาบุญครอง (MBK) ชั้น 4"],
     ["LUDN1", "tg โลตัสอุดรธานี"],
     ["LUDN2", "Huawei Shop โลตัสอุดรธานี Kiosk"],
+    ["LCEI1", "LCEI1 tg โลตัสเชียงราย"],
 ];
